@@ -1,0 +1,31 @@
+"secadm" (* slogan = "Manages security configuration and administration on network nodes" *) WS "snmp" (* slogan = "Manages both the authnopriv and the authpriv SNMPv3 security levels" *) WS ( AUTHNOPRIV | AUTHPRIV | GETSNMP ) WS TARGET_NODES
+
+AUTHNOPRIV ::= "authnopriv" (* slogan = "authnopriv SNMPv3 Security Level" *) WS SNMP_AUTHNOPRIV_PARAM
+
+AUTHPRIV ::=   "authpriv" (* slogan = "authpriv SNMPv3 Security Level" *) WS SNMP_AUTHPRIV_PARAM
+
+SNMP_AUTHNOPRIV_PARAM ::= AUTH_ALGO WS AUTH_PASSWORD
+
+SNMP_AUTHPRIV_PARAM ::=  AUTH_ALGO WS AUTH_PASSWORD WS PRIV_ALGO WS PRIV_PASSWORD
+
+GETSNMP ::= "get" (* slogan = "Allows you to retrieve SNMPv3 Passwords encrypted or in plain text, " *) [ PLAIN_TEXT ] WS TARGET_NODES
+
+PLAIN_TEXT ::= WS ( "-pt" (* hide = "true" *) | "--plaintext" (* slogan = "Password in plain text" *) ) WS PLAIN_TEXT_VALUE
+
+PLAIN_TEXT_VALUE ::= ( "show" (* slogan = "Show password in plain text" *) | "hide" (* slogan = "Hide password in plain text" *) )
+
+AUTH_ALGO ::= ( "-aa" (* hide = "true" *) | "--auth_algo" (* slogan = "auth_algo. Tip: -aa for short" *) ) WS <auth_algo> (* slogan = "Algorithm to use. E.g MD5,SHA1" *)
+
+AUTH_PASSWORD ::= ( "-ap" (* hide = "true" *) | "--auth_password" (* slogan = "auth_password. Tip: -ap for short" *) ) WS <auth_password> (* inputType = "wrapDoubleQuotes,wrapSingleQuotes" slogan = "Auth password" *)
+
+PRIV_ALGO ::= ( "-pa" (* hide = "true" *) | "--priv_algo" (* slogan = "priv_algo. Tip: -pa for short" *) ) WS <priv_algo> (* slogan = "Algorithm to use. E.g MD5,SHA1" *)
+
+PRIV_PASSWORD ::= ( "-pp" (* hide = "true" *) | "--priv_password" (* slogan = "priv_password. Tip: -pp for short" *) ) WS <priv_password> (* inputType = "wrapDoubleQuotes,wrapSingleQuotes" slogan = "Priv password" *)
+
+TARGET_NODES ::= ( NODE_LIST | NODE_FILE )
+
+NODE_LIST ::= ( "-n" (* hide = "true" *) | "--nodelist" (* slogan = "Specify the list of nodes. Tip: -n for short" *) ) WS NODE_NAME { ( "," | ";" ) (* slogan = "Comma used to add another node name to the list." *) NODE_NAME }
+
+NODE_NAME ::= [ ( "MeContext=" | "NetworkElement=" | "ManagementSystem=" ) ] <node_name> (* slogan = "Scope the Command using Node names. E.g. MyNode1,MyNode2" *)
+
+NODE_FILE ::= ( "-nf" (* hide = "true" *) | "--nodefile" (* slogan = "Specify the file containing a list of nodes. Tip: -nf for short" *) ) WS "file:" <file_name> (* inputType = "fileName" slogan = "Specify a file containing a list of nodes" *)

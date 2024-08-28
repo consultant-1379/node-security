@@ -1,0 +1,23 @@
+"secadm" (* slogan = "Manages security configuration and administration on network nodes" *) WS "https" (* slogan = "Manages HTTPS for CPP node or a list of CPP nodes" *) WS ( HTTPS_ACTIVATE | HTTPS_DEACTIVATE | HTTPS_GETSTATUS )
+
+HTTPS_ACTIVATE ::= ( "act" (* hide = "true" *) | "activate" (* slogan = "Activates HTTPS on CPP node or list of CPP nodes." *) ) WS HTTPS_TARGET_NODES
+
+HTTPS_DEACTIVATE ::= ( "deact" (* hide = "true" *) | "deactivate" (* slogan = "Deactivates HTTPS on CPP node or list of CPP nodes." *) ) WS HTTPS_TARGET_NODES
+
+HTTPS_GETSTATUS ::= ( "get" (* hide = "true" *) | "getstatus" (* slogan = "Returns HTTPS status for CPP node or list of CPP nodes. " *) ) WS HTTPS_TARGET_NODES
+
+HTTPS_TARGET_NODES ::= ( HTTPS_NODE_LIST | HTTPS_NODE_FILE | HTTPS_SAVED_SEARCH | HTTPS_COLLECTION )
+
+HTTPS_NODE_LIST ::= ( "-n" (* hide = "true" *) | "--nodelist" (* slogan = "Specify the list of nodes. Tip: -n for short" *) ) WS HTTPS_NODE_NAME { "," (* slogan = "Comma used to add another node name to the list." *) HTTPS_NODE_NAME }
+
+HTTPS_NODE_NAME ::= <node_name> (* slogan = "Scope the HTTPS Command using Node names. E.g. MyNode1,MyNode2" *)
+
+HTTPS_NODE_FILE ::= ( "-nf" (* hide = "true" *) | "--nodefile" (* slogan = "Specify the file containing a list of nodes. Tip: -nf for short" *) ) WS "file:" <file_name> (* inputType = "fileName" slogan = "Specify a file containing a list of nodes" *)
+
+HTTPS_SAVED_SEARCH ::= ( "-sa" (* hide = "true" *) | "--savedsearch" (* slogan = "Specify the savedsearch name which contains a list of nodes. Tip: -sa for short" *) ) WS SAVED_SEARCH_NAME { "," (* slogan = "Comma used to add another savedsearch name to the list." *) SAVED_SEARCH_NAME }
+
+HTTPS_COLLECTION ::= ( "-co" (* hide = "true" *) | "--collection" (* slogan = "Specify the collection name which contains a list of nodes. Tip: -co for short" *) ) WS COLLECTION_NAME { "," (* slogan = "Comma used to add another collection name to the list." *) COLLECTION_NAME }
+
+SAVED_SEARCH_NAME ::= <saved_search_name> (* slogan = "Scope the Command using saved search names. E.g. MySavedSearch1, MySavedSearch2" *) )
+
+COLLECTION_NAME ::= <collection_name> (* slogan = "Scope the Command using saved search names. E.g. MyCollection1, MyCollection2" *) )

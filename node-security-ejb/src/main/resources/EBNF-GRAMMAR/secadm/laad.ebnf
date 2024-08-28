@@ -1,0 +1,19 @@
+"secadm" (* slogan = "Manages security configuration and administration on network nodes" *) WS "laad" (* slogan = "Distribute LAAD files to the nodes." *) WS LAAD_DISTRIBUTE LAAD_TARGET_NODES
+
+LAAD_DISTRIBUTE ::= ( "distr" (* hide = "true" *) | "distribute" (* slogan = "Starts a job for LAAD files distribution to the nodes. Tip: distr for short" *) )
+
+LAAD_TARGET_NODES ::= WS ( LAAD_NODE_LIST | LAAD_NODE_FILE | SAVED_SEARCH | COLLECTION )
+
+LAAD_NODE_LIST ::= ( "-n" (* hide = "true" *) | "--nodelist" (* slogan = "Specify the list of nodes. Tip: -n for short" *) ) WS LAAD_NODE_NAME { ( "," | ";" ) (* slogan = "Comma used to add another node name to the list." *) LAAD_NODE_NAME }
+
+LAAD_NODE_NAME ::= [ ( "MeContext=" | "NetworkElement=" ) ] <node_name> (* slogan = "Specify the node name. E.g. MyNode1,MyNode2" *)
+
+LAAD_NODE_FILE ::= ( "-nf" (* hide = "true" *) | "--nodefile" (* slogan = "Specify the file containing a list of nodes. Tip: -nf for short" *) ) WS "file:" <file_name> (* inputType = "fileName" slogan = "Specify a file containing a list of nodes" *)
+
+SAVED_SEARCH ::= ( "-sa" (* hide = "true" *) | "--savedsearch" (* slogan = "Specify the savedsearch containing list of nodes. Tip: -sa for short" *) ) WS SAVED_SEARCH_NAME { "," (* slogan = "Comma used to add another savedsearch to the list." *) SAVED_SEARCH_NAME }
+
+COLLECTION ::= ( "-co" (* hide = "true" *) | "--collection" (* slogan = "Specify the collection containing list of nodes. Tip: -co for short" *) ) WS COLLECTION_NAME { "," (* slogan = "Comma used to add another collection to the list." *) COLLECTION_NAME }
+
+SAVED_SEARCH_NAME ::= <saved_search_name> (* slogan = "Scope the Command using savedsearch names. E.g. MySavedSearch1, MySavedSearch2" *) )
+
+COLLECTION_NAME ::= <collection_name> (* slogan = "Scope the Command using collection names. E.g. MyCollection1, MyCollection2" *) )

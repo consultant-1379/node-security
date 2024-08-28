@@ -1,0 +1,1 @@
+secadm certificate issue --certtype OAM -xf file:XXISSUEFILENAMEXX-OAM-issue.xml

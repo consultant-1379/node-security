@@ -1,0 +1,1 @@
+secadm trust rm --certtype XXCERTTYPEXX -isdn "XXISSUERXX" -sn "XXSNXX" --nodefile file:XXNODEFILEXX-nodefile.txt

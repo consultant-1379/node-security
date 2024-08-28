@@ -1,0 +1,10 @@
+/.settings
+/.project
+/.classpath
+/target
+.pmd
+/CosServices.cfg
+/test.log
+/opendj-test
+*.rpm
+/target

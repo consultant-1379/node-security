@@ -1,0 +1,1 @@
+secadm trust XXTRUSTCOMMANDXX --certtype XXCERTTYPEXX --nodelist XXNODENAMEXX

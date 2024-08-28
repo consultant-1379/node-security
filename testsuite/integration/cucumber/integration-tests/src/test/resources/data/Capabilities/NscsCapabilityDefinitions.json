@@ -1,0 +1,200 @@
+[ {
+  "function" : "NSCS",
+  "name" : "ntpRemoveWorkflow",
+  "defaultValue" : "COMNtpRemove"
+}, {
+  "function" : "NSCS",
+  "name" : "configureLdapWorkflow",
+  "defaultValue" : "COMConfigureLdap"
+}, {
+  "function" : "NSCS",
+  "name" : "supportedSecurityLevels",
+  "defaultValue" : [ "LEVEL_NOT_SUPPORTED" ]
+}, {
+  "function" : "NSCS",
+  "name" : "isDeprecatedAuthorityTypeSupported",
+  "defaultValue" : true
+}, {
+  "function" : "NSCS",
+  "name" : "isDeprecatedEnrollmentAuthorityUsed",
+  "defaultValue" : false
+}, {
+  "function" : "NSCS",
+  "name" : "supportedCipherProtocolTypes",
+  "defaultValue" : [ "SSH_SFTP", "SSL_HTTPS_TLS" ]
+}, {
+  "function" : "NSCS",
+  "name" : "comEcimDefaultNodeCredentialId",
+  "defaultValue" : {
+    "IPSEC" : "ipsecNodeCredential",
+    "OAM" : "oamNodeCredential"
+  }
+}, {
+  "function" : "NSCS",
+  "name" : "crlCheckSupportedCertificateTypes",
+  "defaultValue" : null
+}, {
+  "function" : "NSCS",
+  "name" : "issueCertificateWorkflows",
+  "defaultValue" : {
+    "IPSEC" : "COMIssueCert",
+    "OAM" : "COMIssueCert"
+  }
+}, {
+  "function" : "NSCS",
+  "name" : "defaultKeyAlgorithm",
+  "defaultValue" : null
+}, {
+  "function" : "NSCS",
+  "name" : "supportedCertificateTypes",
+  "defaultValue" : [ "IPSEC", "OAM" ]
+}, {
+  "function" : "NSCS",
+  "name" : "unsupportedSecadmCliCommands",
+  "defaultValue" : [ "sshkey", "securitylevel", "ipsec", "enrollment", "certificate", "trust", "ldap", "crlcheck", "crldownload", "ciphers", "rtsel", "https", "ftpes", "laad" ]
+}, {
+  "function" : "NSCS",
+  "name" : "supportedTrustCategories",
+  "defaultValue" : [ "IPSEC", "OAM" ]
+}, {
+  "function" : "NSCS",
+  "name" : "trustDistributeWorkflows",
+  "defaultValue" : {
+    "IPSEC" : "COMIssueTrustCert",
+    "OAM" : "COMIssueTrustCert"
+  }
+}, {
+  "function" : "NSCS",
+  "name" : "isIkev2PolicyProfileSupported",
+  "defaultValue" : true
+}, {
+  "function" : "NSCS",
+  "name" : "comEcimDefaultTrustCategoryId",
+  "defaultValue" : {
+    "IPSEC" : "ipsecTrustCategory",
+    "OAM" : "oamTrustCategory"
+  }
+}, {
+  "function" : "NSCS",
+  "name" : "defaultPassPhraseHashAlgorithm",
+  "defaultValue" : null
+}, {
+  "function" : "NSCS",
+  "name" : "defaultEnrollmentMode",
+  "defaultValue" : "NOT_SUPPORTED"
+}, {
+  "function" : "NSCS",
+  "name" : "ntpConfigureWorkflow",
+  "defaultValue" : "COMNtpConfigure"
+}, {
+  "function" : "NSCS",
+  "name" : "credentialsParams",
+  "defaultValue" : {
+    "unexpected" : [ "normalusername", "normaluserpassword", "rootusername", "rootuserpassword", "nwieasecureusername", "nwieasecureuserpassword", "nwiebsecureusername", "nwiebsecureuserpassword" ],
+    "expected" : [ "secureusername", "secureuserpassword" ]
+  }
+}, {
+  "function" : "NSCS",
+  "name" : "isNodeSshPrivateKeyImportSupported",
+  "defaultValue" : false
+}, {
+  "function" : "NSCS",
+  "name" : "trustRemoveWorkflows",
+  "defaultValue" : {
+    "IPSEC" : "COMRemoveTrust",
+    "OAM" : "COMRemoveTrust"
+  }
+}, {
+  "function" : "NSCS",
+  "name" : "crlCheckWorkflows",
+  "defaultValue" : {
+    "IPSEC" : "COMEnableOrDisableCRLCheck",
+    "ALL" : "COMEnableOrDisableCRLCheck",
+    "OAM" : "COMEnableOrDisableCRLCheck"
+  }
+}, {
+  "function" : "NSCS",
+  "name" : "onDemandCrlDownloadWorkflow",
+  "defaultValue" : "COMOnDemandCrlDownload"
+}, {
+  "function" : "NSCS",
+  "name" : "defaultFingerprintAlgorithm",
+  "defaultValue" : null
+}, {
+  "function" : "NSCS",
+  "name" : "isCertificateManagementSupported",
+  "defaultValue" : false
+}, {
+  "function" : "NSCS",
+  "name" : "defaultEnrollmentCaTrustCategoryId",
+  "defaultValue" : null
+}, {
+  "function" : "NSCS",
+  "name" : "defaultOtpValidityPeriodInMinutes",
+  "defaultValue" : "30"
+}, {
+  "function" : "NSCS",
+  "name" : "isLdapCommonUserSupported",
+  "defaultValue" : false
+}, {
+  "function" : "NSCS",
+  "name" : "isEmptyCiphersSupported",
+  "defaultValue" : false
+}, {
+  "function" : "NSCS",
+  "name" : "defaultEntityProfiles",
+  "defaultValue" : null
+}, {
+  "function" : "NSCS",
+  "name" : "enrollmentCAAuthorizationModes",
+  "defaultValue" : {
+    "IPSEC" : "ENROLLMENT_ROOT_CA_FINGERPRINT",
+    "OAM" : "ENROLLMENT_ROOT_CA_FINGERPRINT"
+  }
+}, {
+  "function" : "NSCS",
+  "name" : "pushM2MUser",
+  "defaultValue" : null
+}, {
+  "function" : "NSCS",
+  "name" : "defaultInitialOtpCount",
+  "defaultValue" : "5"
+}, {
+  "function" : "NSCS",
+  "name" : "momType",
+  "defaultValue" : null
+}, {
+  "function" : "NSCS",
+  "name" : "supportedEnrollmentModes",
+  "defaultValue" : [ "NOT_SUPPORTED" ]
+}, {
+  "function" : "NSCS",
+  "name" : "isSynchronousEnrollmentSupported",
+  "defaultValue" : true
+}, {
+  "function" : "NSCS",
+  "name" : "ldapMoName",
+  "defaultValue" : "Ldap"
+}, {
+  "function" : "NSCS",
+  "name" : "isConfiguredSubjectNameUsedForEnrollment",
+  "defaultValue" : true
+}, {
+  "function" : "NSCS",
+  "name" : "cipherMoAttributes",
+  "defaultValue" : {
+    "SSH_SFTP" : {
+      "supported_key_exchange" : "supportedKeyExchanges",
+      "supported_mac" : "supportedMacs",
+      "selected_cipher" : "selectedCiphers",
+      "selected_mac" : "selectedMacs",
+      "selected_key_exchange" : "selectedKeyExchanges",
+      "supported_cipher" : "supportedCiphers"
+    },
+    "SSL_HTTPS_TLS" : {
+      "cipher_filter" : "cipherFilter",
+      "supported_cipher" : "supportedCiphers",
+      "enabled_cipher" : "enabledCiphers"
+    }
+  }
+} ]

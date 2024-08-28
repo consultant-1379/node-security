@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arquillian xmlns="http://jboss.org/schema/arquillian"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+	<defaultProtocol type="Servlet 3.0" />
+        <engine>
+            <property name="deploymentExportPath">target/arquillian</property>
+        </engine>
+
+        <container qualifier="jboss_managed" default="false">
+            <configuration>
+                <property name="jbossHome">${jboss.home}</property>
+                <property name="serverConfig">standalone-full.xml</property>
+                <!--property name="managementPort">9999</property-->
+                <property name="startupTimeoutInSeconds">180000</property>
+		        <property name="javaVmArguments">-Xmx4g -XX:MaxPermSize=1g
+                    -Djboss.node.name=NSCService
+                    -Dcom.ericsson.oss.sdk.node.identifier=NSCService
+                    -Dsfwk.opendj.installed=true
+                    -Dsfwk.healthcheck.udp.mcast_addr=239.6.6.1
+                    -Dsfwk.healthcheck.udp.mcast_port=35661
+                    -Dsfwk.upgrade.udp.mcast_addr=239.6.6.2
+                    -Dsfwk.upgrade.udp.mcast_port=35662
+                    -Dsfwk.config.property.change.notifications.udp.mcast_addr=239.6.6.3
+                    -Dsfwk.config.udp.mcast_addr=239.6.6.4
+                    -Dsfwk.eservice.udp.mcast_addr=239.6.6.5
+                    -Dsfwk.service.availability.udp.mcast_addr=239.6.6.6
+                    -Dsdk.jgroups.distributed.udp.mcast_addr=239.6.6.8
+                    -Djboss.messaging.group.address=239.6.6.9
+                    -Djboss.messaging.group.port=7929
+                    -DdataPersistence.cache.persist.disabled=true
+                    -Dcom.ericsson.oss.itpf.sdk.cache.persistence.location.absolute.path=${project.basedir}/target/cache-persistence
+                    -DXML_REPO_PATH=${XML_REPO_PATH}
+                    -DxmlRepoPath=${xmlRepo}
+                    -Djava.net.preferIPv4Stack=true
+                    -Dneo4j.server.credentials=${jboss.home}/standalone/data/dps/credentials/neo4j.properties
+                    -Dneo4j.serverTransport=bolt
+                    -Dneo4j.server.hostname=localhost
+                    -Dneo4jIdBlockSize=1000
+                    -Dneo4j.bolt.encryption=false
+                </property>
+            </configuration>
+	</container>
+
+	<container qualifier="jboss_docker" default="false">
+		<configuration>
+			<property name="allowConnectingToRunningServer">true</property>
+			<property name="outputToConsole">true</property>
+			<property name="arquillian.debug">true</property>
+			<property name="username">root</property>
+			<property name="password">shroot</property>
+			<property name="managementAddress">${env.JBOSS_HOST:localhost}</property>
+			<property name="managementPort">9999</property>
+		</configuration>
+		<protocol type="Servlet 3.0">
+			<property name="host">${env.JBOSS_HOST:localhost}</property>
+		</protocol>
+	</container>
+
+</arquillian>
+  

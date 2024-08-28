@@ -1,0 +1,5 @@
+cmedit set NetworkElement=XXNODENAMEXX,CmNodeHeartbeatSupervision=1 active=false
+cmedit set NetworkElement=XXNODENAMEXX,InventorySupervision=1 active=false
+cmedit set NetworkElement=XXNODENAMEXX,FmAlarmSupervision=1 active=false
+cmedit action NetworkElement=XXNODENAMEXX,CmFunction=1 deleteNrmDataFromEnm
+cmedit delete NetworkElement=XXNODENAMEXX -ALL

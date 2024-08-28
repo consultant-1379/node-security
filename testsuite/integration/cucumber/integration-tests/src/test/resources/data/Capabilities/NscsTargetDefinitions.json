@@ -1,0 +1,1599 @@
+[ {
+  "targetCategory" : "NFVO",
+  "targetType" : "HPE-NFV-Director",
+  "targetModelIdentities" : [ ],
+  "platform" : null,
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NFVO",
+  "targetType" : "HPE-NFV-Emulator",
+  "targetModelIdentities" : [ ],
+  "platform" : null,
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NFVO",
+  "targetType" : "RNFVO",
+  "targetModelIdentities" : [ ],
+  "platform" : null,
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NFVO",
+  "targetType" : "ECM",
+  "targetModelIdentities" : [ ],
+  "platform" : null,
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "GenericADP",
+  "targetModelIdentities" : [ ],
+  "platform" : "CBP-OI",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "SCU",
+  "targetModelIdentities" : [ "15D", "21A", "20A", "19B", "17C", "15A", "13A" ],
+  "platform" : "ERS-SN",
+  "targetReleases" : {
+    "15D" : [ "R15D" ],
+    "21A" : [ "R21A" ],
+    "20A" : [ "R20A" ],
+    "19B" : [ "R19B" ],
+    "17C" : [ "R17C" ],
+    "15A" : [ "R15A" ],
+    "13A" : [ "R13A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "VPN-TSP",
+  "targetModelIdentities" : [ ],
+  "platform" : "TSP",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vECE",
+  "targetModelIdentities" : [ ],
+  "platform" : "ESA",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CISCO-ASR900",
+  "targetModelIdentities" : [ "17A" ],
+  "platform" : null,
+  "targetReleases" : {
+    "17A" : [ "17A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "SMSF",
+  "targetModelIdentities" : [ ],
+  "platform" : "CBP-OI",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "EPG-OI",
+  "targetModelIdentities" : [ "2.0", "2.1", "2.2", "2.3", "2.14", "3.4", "2.5", "3.5", "2.6", "2.11" ],
+  "platform" : "IPOS-OI",
+  "targetReleases" : {
+    "2.0" : [ "2.0" ],
+    "2.1" : [ "2.1" ],
+    "2.2" : [ "2.2" ],
+    "2.3" : [ "2.3" ],
+    "2.14" : [ "2.14" ],
+    "3.4" : [ "3.4" ],
+    "2.5" : [ "2.5" ],
+    "3.5" : [ "3.5" ],
+    "2.6" : [ "2.6" ],
+    "2.11" : [ "2.11" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "UPG",
+  "targetModelIdentities" : [ "UPG-1.0", "1.5", "15A-R1A", "1.13" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "UPG-1.0" : [ "UPG-1.0" ],
+    "1.5" : [ "1.5" ],
+    "15A-R1A" : [ "15A-R1A" ],
+    "1.13" : [ "1.13" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vTIF",
+  "targetModelIdentities" : [ "18.Q4-R1A102", "20.Q1-R2A207" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "18.Q4-R1A102" : [ "18.Q4" ],
+    "20.Q1-R2A207" : [ "20.Q1" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MSC-BC-BSP",
+  "targetModelIdentities" : [ ],
+  "platform" : "ECIM",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CCES",
+  "targetModelIdentities" : [ "0.1.13" ],
+  "platform" : "CBP-OI",
+  "targetReleases" : {
+    "0.1.13" : [ "0.1.13" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vMSC",
+  "targetModelIdentities" : [ ],
+  "platform" : "ECIM",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "BSC",
+  "targetModelIdentities" : [ "BSC-G20.Q3-R1AY-APG43L-3.7.0-R8C", "BSC-G21.Q2-R1BK-APG43L-4.0.0-R1D", "BSC-G20.Q4-R1BC-APG43L-3.7.0-R8C", "BSC-G18.Q4-R1T-APG43L-3.6.0-R7A05", "BSC-G18.Q4-R1S-APG43L-3.5.0-R6A", "BSC-G21.Q1-R1BG-APG43L-4.0.0-R1D", "BSC-G20.Q1-R1AL-APG43L-3.7.0-R8C", "BSC-G18.Q2-R1J-APG43L-3.4.4-R5F", "BSC-G20.Q3-R1AX-APG43L-3.7.0-R8C", "BSC-G20.Q2-R1AT-APG43L-3.7.0-R8C", "BSC-G20.Q4-R1BD-APG43L-3.7.0-R8C", "BSC-G17.Q4-R1D-APG43L-3.4.0-R5A", "BSC-G21.Q1-R1BH-APG43L-4.0.0-R1D", "BSC-G19.Q3-R1Z-APG43L-3.6.0-R7D", "BSC-G21.Q2-R1BL-APG43L-4.0.0-R1D", "BSC-G19.Q4-R1AF-APG43L-3.6.0-R7D", "BSC-G19.Q3-R1AB-APG43L-3.6.0-R7D", "BSC-G18.Q3-R1M-APG43L-3.5.0-R6A", "BSC-G20.Q4-R1BA-APG43L-3.7.0-R8C", "BSC-G17.Q4-R1C-APG43L-3.4.0-R5A", "BSC-G19.Q1-R1V-APG43L-3.6.0-R7A", "BSC-G19.Q4-R1AG-APG43L-3.6.0-R7D", "BSC-G21.Q1-R1BE-APG43L-3.8.0-R9C", "BSC-G21.Q2-R1BJ-APG43L-4.0.0-R1D", "BSC-G19.Q2-R1Y-APG43L-3.6.0-R7D", "BSC-G18.Q1-R1F-APG43L-3.4.3-R5E", "BSC-G21.Q1-R1BF-APG43L-4.0.0-R1D", "BSC-G20.Q4-R1BB-APG43L-3.7.0-R8C", "BSC-G19.Q3-R1AC-APG43L-3.6.0-R7D", "BSC-G20.Q3-R1AZ-APG43L-3.7.0-R8C" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "BSC-G20.Q3-R1AY-APG43L-3.7.0-R8C" : [ "20.Q3" ],
+    "BSC-G21.Q2-R1BK-APG43L-4.0.0-R1D" : [ "21.Q2" ],
+    "BSC-G20.Q4-R1BC-APG43L-3.7.0-R8C" : [ "20.Q4" ],
+    "BSC-G18.Q4-R1T-APG43L-3.6.0-R7A05" : [ "18.Q4" ],
+    "BSC-G18.Q4-R1S-APG43L-3.5.0-R6A" : [ "18.Q4" ],
+    "BSC-G21.Q1-R1BG-APG43L-4.0.0-R1D" : [ "21.Q1" ],
+    "BSC-G20.Q1-R1AL-APG43L-3.7.0-R8C" : [ "20.Q1" ],
+    "BSC-G18.Q2-R1J-APG43L-3.4.4-R5F" : [ "18.Q2" ],
+    "BSC-G20.Q3-R1AX-APG43L-3.7.0-R8C" : [ "20.Q3" ],
+    "BSC-G20.Q2-R1AT-APG43L-3.7.0-R8C" : [ "20.Q2" ],
+    "BSC-G20.Q4-R1BD-APG43L-3.7.0-R8C" : [ "20.Q4" ],
+    "BSC-G17.Q4-R1D-APG43L-3.4.0-R5A" : [ "17.Q4" ],
+    "BSC-G21.Q1-R1BH-APG43L-4.0.0-R1D" : [ "21.Q1" ],
+    "BSC-G19.Q3-R1Z-APG43L-3.6.0-R7D" : [ "19.Q3" ],
+    "BSC-G21.Q2-R1BL-APG43L-4.0.0-R1D" : [ "21.Q2" ],
+    "BSC-G19.Q4-R1AF-APG43L-3.6.0-R7D" : [ "19.Q4" ],
+    "BSC-G19.Q3-R1AB-APG43L-3.6.0-R7D" : [ "19.Q3" ],
+    "BSC-G18.Q3-R1M-APG43L-3.5.0-R6A" : [ "18.Q3" ],
+    "BSC-G20.Q4-R1BA-APG43L-3.7.0-R8C" : [ "20.Q4" ],
+    "BSC-G17.Q4-R1C-APG43L-3.4.0-R5A" : [ "17.Q4" ],
+    "BSC-G19.Q1-R1V-APG43L-3.6.0-R7A" : [ "19.Q1" ],
+    "BSC-G19.Q4-R1AG-APG43L-3.6.0-R7D" : [ "19.Q4" ],
+    "BSC-G21.Q1-R1BE-APG43L-3.8.0-R9C" : [ "21.Q1" ],
+    "BSC-G21.Q2-R1BJ-APG43L-4.0.0-R1D" : [ "21.Q2" ],
+    "BSC-G19.Q2-R1Y-APG43L-3.6.0-R7D" : [ "19.Q2" ],
+    "BSC-G18.Q1-R1F-APG43L-3.4.3-R5E" : [ "18.Q1" ],
+    "BSC-G21.Q1-R1BF-APG43L-4.0.0-R1D" : [ "21.Q1" ],
+    "BSC-G20.Q4-R1BB-APG43L-3.7.0-R8C" : [ "20.Q4" ],
+    "BSC-G19.Q3-R1AC-APG43L-3.6.0-R7D" : [ "19.Q3" ],
+    "BSC-G20.Q3-R1AZ-APG43L-3.7.0-R8C" : [ "20.Q3" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "JUNIPER-vMX",
+  "targetModelIdentities" : [ "18.2R1", "18.3R1", "18.4R1", "19.3R1", "19.4R1", "19.1R1", "20.1R1", "20.2R1", "19.2R1" ],
+  "platform" : "JUNOS",
+  "targetReleases" : {
+    "18.2R1" : [ "18.2" ],
+    "18.3R1" : [ "18.3" ],
+    "18.4R1" : [ "18.4" ],
+    "19.3R1" : [ "19.3" ],
+    "19.4R1" : [ "19.4" ],
+    "19.1R1" : [ "19.1" ],
+    "20.1R1" : [ "20.1" ],
+    "20.2R1" : [ "20.2" ],
+    "19.2R1" : [ "19.2" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vCU-UP",
+  "targetModelIdentities" : [ "0.3.1", "0.2.3", "0.4.1" ],
+  "platform" : "CBP-OI",
+  "targetReleases" : {
+    "0.3.1" : [ "0.3.1" ],
+    "0.2.3" : [ "0.2.3" ],
+    "0.4.1" : [ "0.4.1" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "HLR-FE-BSP",
+  "targetModelIdentities" : [ ],
+  "platform" : "ECIM",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Switch-6391",
+  "targetModelIdentities" : [ "M17.Q4-6391-2.9", "M17B-6391-2.8" ],
+  "platform" : "MINI-LINK-Outdoor",
+  "targetReleases" : {
+    "M17.Q4-6391-2.9" : [ "17.Q4" ],
+    "M17B-6391-2.8" : [ "17B" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "BSP",
+  "targetModelIdentities" : [ "R7-R1A", "R14", "R10-R10D", "R13", "R18", "R17", "R19", "BSP-R11" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "R7-R1A" : [ "R7" ],
+    "R14" : [ "R14" ],
+    "R10-R10D" : [ "R10" ],
+    "R13" : [ "R13" ],
+    "R18" : [ "R18" ],
+    "R17" : [ "R17" ],
+    "R19" : [ "R19" ],
+    "BSP-R11" : [ "R11" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vWMG-OI",
+  "targetModelIdentities" : [ "2.3" ],
+  "platform" : "IPOS-OI",
+  "targetReleases" : {
+    "2.3" : [ "2.3" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "RBS",
+  "targetModelIdentities" : [ "18.Q4-U.4.1000", "WRBS01.A09-U.4.1370", "WRBS01.A05-U.4.1360", "17A-U.4.460", "18.Q1-U.4.750", "17.Q4-U.4.720", "13B-S2.1.100", "20.Q1-U.4.1290", "20.Q2-U.4.1310", "20.Q3-U.4.1340", "18.Q4-U.4.960", "17B-U.4.570", "13B-S.1.100", "18.Q4-U.4.1010", "18.Q3-U.4.940", "17B-U.4.630", "WRBS01.A09-U.4.1380", "18.Q1-U.4.800", "16B-U.4.340", "19.Q4-U.4.1230", "19.Q1-U.4.1070", "16A-U.4.210", "19.Q2-U.4.1130", "15B-U.4.91", "18.Q2-U.4.910", "19.Q2-U.4.1110", "19.Q3-U.4.1180" ],
+  "platform" : "CPP",
+  "targetReleases" : {
+    "18.Q4-U.4.1000" : [ "18.Q4" ],
+    "WRBS01.A09-U.4.1370" : [ "WRBS01.A09" ],
+    "WRBS01.A05-U.4.1360" : [ "WRBS01.A05" ],
+    "17A-U.4.460" : [ "17A" ],
+    "18.Q1-U.4.750" : [ "18.Q1" ],
+    "17.Q4-U.4.720" : [ "17.Q4" ],
+    "13B-S2.1.100" : [ "13B" ],
+    "20.Q1-U.4.1290" : [ "20.Q1" ],
+    "20.Q2-U.4.1310" : [ "20.Q2" ],
+    "20.Q3-U.4.1340" : [ "20.Q3" ],
+    "18.Q4-U.4.960" : [ "18.Q4" ],
+    "17B-U.4.570" : [ "17B" ],
+    "13B-S.1.100" : [ "13B" ],
+    "18.Q4-U.4.1010" : [ "18.Q4" ],
+    "18.Q3-U.4.940" : [ "18.Q3" ],
+    "17B-U.4.630" : [ "17.Q3" ],
+    "WRBS01.A09-U.4.1380" : [ "WRBS01.A09" ],
+    "18.Q1-U.4.800" : [ "18.Q1" ],
+    "16B-U.4.340" : [ "16B" ],
+    "19.Q4-U.4.1230" : [ "19.Q4" ],
+    "19.Q1-U.4.1070" : [ "19.Q1" ],
+    "16A-U.4.210" : [ "16A" ],
+    "19.Q2-U.4.1130" : [ "19.Q2" ],
+    "15B-U.4.91" : [ "15B" ],
+    "18.Q2-U.4.910" : [ "18.Q2" ],
+    "19.Q2-U.4.1110" : [ "19.Q2" ],
+    "19.Q3-U.4.1180" : [ "19.Q3" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MTAS-TSP",
+  "targetModelIdentities" : [ ],
+  "platform" : "TSP",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "WMG-OI",
+  "targetModelIdentities" : [ "2.3" ],
+  "platform" : "IPOS-OI",
+  "targetReleases" : {
+    "2.3" : [ "2.3" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vRC",
+  "targetModelIdentities" : [ "20.Q3-R4A", "20.Q2-R2E", "20.Q4-R5B", "20.Q4-R7C", "20.Q1-R1D", "21.Q2-R10A" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "20.Q3-R4A" : [ "20.Q3" ],
+    "20.Q2-R2E" : [ "20.Q2" ],
+    "20.Q4-R5B" : [ "20.Q4" ],
+    "20.Q4-R7C" : [ "20.Q4" ],
+    "20.Q1-R1D" : [ "20.Q1" ],
+    "21.Q2-R10A" : [ "21.Q2" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vEPG-OI",
+  "targetModelIdentities" : [ "2.0", "2.1", "2.2", "2.3", "2.14", "3.4", "2.5", "3.5", "2.6", "2.11" ],
+  "platform" : "IPOS-OI",
+  "targetReleases" : {
+    "2.0" : [ "2.0" ],
+    "2.1" : [ "2.1" ],
+    "2.2" : [ "2.2" ],
+    "2.3" : [ "2.3" ],
+    "2.14" : [ "2.14" ],
+    "3.4" : [ "3.4" ],
+    "2.5" : [ "2.5" ],
+    "3.5" : [ "3.5" ],
+    "2.6" : [ "2.6" ],
+    "2.11" : [ "2.11" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "JUNIPER-PTX",
+  "targetModelIdentities" : [ "18.2R1", "18.3R1", "18.4R1", "19.3R1", "17A", "19.4R1", "19.1R1", "20.1R1", "19.2R1", "20.2R1" ],
+  "platform" : "JUNOS",
+  "targetReleases" : {
+    "18.2R1" : [ "18.2" ],
+    "18.3R1" : [ "18.3" ],
+    "18.4R1" : [ "18.4" ],
+    "19.3R1" : [ "19.3" ],
+    "17A" : [ "17A" ],
+    "19.4R1" : [ "19.4" ],
+    "19.1R1" : [ "19.1" ],
+    "20.1R1" : [ "20.1" ],
+    "19.2R1" : [ "19.2" ],
+    "20.2R1" : [ "20.2" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vNSDS",
+  "targetModelIdentities" : [ ],
+  "platform" : "ECIM",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-CN210",
+  "targetModelIdentities" : [ "M12A-CN210-1.2" ],
+  "platform" : "MINI-LINK-Indoor",
+  "targetReleases" : {
+    "M12A-CN210-1.2" : [ "12A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vMTAS",
+  "targetModelIdentities" : [ "1.16", "vMTAS-1.2", "vMTAS-1.0", "vMTAS-1.5", "1.11", "vMTAS-1.7" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "1.16" : [ "1.16" ],
+    "vMTAS-1.2" : [ "16B" ],
+    "vMTAS-1.0" : [ "16A" ],
+    "vMTAS-1.5" : [ "1.5" ],
+    "1.11" : [ "1.11" ],
+    "vMTAS-1.7" : [ "1.7" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-665x",
+  "targetModelIdentities" : [ "M20.Q1-665x-1.12", "M19.Q2-665x-1.9", "M18.Q2-665x-1.5", "M20.Q2-665x-1.13", "M18.Q4-665x-1.7", "M19.Q4-665x-1.11", "M20.Q4-665x-1.15", "M19.Q1-665x-1.8", "M20.Q3-665x-1.14", "M18.Q1-665x-1.4", "M19.Q3-665x-1.10" ],
+  "platform" : "MINI-LINK-Indoor",
+  "targetReleases" : {
+    "M20.Q1-665x-1.12" : [ "20.Q1" ],
+    "M19.Q2-665x-1.9" : [ "19.Q2" ],
+    "M18.Q2-665x-1.5" : [ "18.Q2" ],
+    "M20.Q2-665x-1.13" : [ "20.Q2" ],
+    "M18.Q4-665x-1.7" : [ "18.Q4" ],
+    "M19.Q4-665x-1.11" : [ "19.Q4" ],
+    "M20.Q4-665x-1.15" : [ "20.Q4" ],
+    "M19.Q1-665x-1.8" : [ "19.Q1" ],
+    "M20.Q3-665x-1.14" : [ "20.Q3" ],
+    "M18.Q1-665x-1.4" : [ "18.Q1" ],
+    "M19.Q3-665x-1.10" : [ "19.Q3" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "HLR-FE",
+  "targetModelIdentities" : [ ],
+  "platform" : "ECIM",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "WMG",
+  "targetModelIdentities" : [ "WMG-1.0", "16B-R11D03", "1.3-R8A06" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "WMG-1.0" : [ "1.0" ],
+    "16B-R11D03" : [ "16B" ],
+    "1.3-R8A06" : [ "1.3" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vMRF",
+  "targetModelIdentities" : [ "1.10.0", "vMRF-1.2", "vMRF-1.1", "17A-R29C", "1.6" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "1.10.0" : [ "1.10.0" ],
+    "vMRF-1.2" : [ "1.2" ],
+    "vMRF-1.1" : [ "17B" ],
+    "17A-R29C" : [ "17A" ],
+    "1.6" : [ "1.6" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MTAS",
+  "targetModelIdentities" : [ "MTAS-1.5", "MTAS-1.2", "MTAS-1.0" ],
+  "platform" : null,
+  "targetReleases" : {
+    "MTAS-1.5" : [ "17A" ],
+    "MTAS-1.2" : [ "16B" ],
+    "MTAS-1.0" : [ "16A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "cSAPC-TSP",
+  "targetModelIdentities" : [ ],
+  "platform" : "TSP",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-CN810R1",
+  "targetModelIdentities" : [ "M13B-CN810R1-1.0" ],
+  "platform" : "MINI-LINK-Indoor",
+  "targetReleases" : {
+    "M13B-CN810R1-1.0" : [ "13B" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MRF",
+  "targetModelIdentities" : [ "MRF-1.1", "17A-R29C" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "MRF-1.1" : [ "1.1" ],
+    "17A-R29C" : [ "17A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-CN810R2",
+  "targetModelIdentities" : [ "M16A-CN810R2-2.4FP" ],
+  "platform" : "MINI-LINK-Indoor",
+  "targetReleases" : {
+    "M16A-CN810R2-2.4FP" : [ "16A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vHLR-FE",
+  "targetModelIdentities" : [ ],
+  "platform" : "ECIM",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vSD",
+  "targetModelIdentities" : [ "18A-R3A11", "20.Q2-R34A02", "20.Q2-R36A02", "20.Q4-R46A03" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "18A-R3A11" : [ "17.Q3" ],
+    "20.Q2-R34A02" : [ "20.Q2" ],
+    "20.Q2-R36A02" : [ "20.Q2" ],
+    "20.Q4-R46A03" : [ "20.Q4" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MSRBS_V1",
+  "targetModelIdentities" : [ "18.Q3-R4J", "17B-R4C", "18.Q3-R4H", "18.Q1-R4E", "18.Q2-R4G", "17B-R4B", "16A-R9F", "19.Q1-R4N", "16A-R4B" ],
+  "platform" : null,
+  "targetReleases" : {
+    "18.Q3-R4J" : [ "18.Q3" ],
+    "17B-R4C" : [ "17.Q3" ],
+    "18.Q3-R4H" : [ "18.Q3" ],
+    "18.Q1-R4E" : [ "18.Q1" ],
+    "18.Q2-R4G" : [ "18.Q2" ],
+    "17B-R4B" : [ "17B" ],
+    "16A-R9F" : [ "16A" ],
+    "19.Q1-R4N" : [ "19.Q1" ],
+    "16A-R4B" : [ "16A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-PT2020",
+  "targetModelIdentities" : [ "M17.Q4-PT2020-2.9", "M17B-PT2020-2.8" ],
+  "platform" : "MINI-LINK-Outdoor",
+  "targetReleases" : {
+    "M17.Q4-PT2020-2.9" : [ "17.Q4" ],
+    "M17B-PT2020-2.8" : [ "17B" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CCPC",
+  "targetModelIdentities" : [ "1.0" ],
+  "platform" : "CBP-OI",
+  "targetReleases" : {
+    "1.0" : [ "1.0" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "GenericESA",
+  "targetModelIdentities" : [ ],
+  "platform" : "ESA",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vHSS-FE",
+  "targetModelIdentities" : [ "1.28", "1.25", "1.21", "1.31" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "1.28" : [ "1.28" ],
+    "1.25" : [ "1.25" ],
+    "1.21" : [ "1.21" ],
+    "1.31" : [ "1.31" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MRS",
+  "targetModelIdentities" : [ "6.9.4.0", "6.11.6.0", "6.10.6.0", "6.10.2.0", "6.11.2.0" ],
+  "platform" : "CPP",
+  "targetReleases" : {
+    "6.9.4.0" : [ "6.9.4.0" ],
+    "6.11.6.0" : [ "6.11.6.0" ],
+    "6.10.6.0" : [ "6.10.6.0" ],
+    "6.10.2.0" : [ "6.10.2.0" ],
+    "6.11.2.0" : [ "6.11.2.0" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "SC",
+  "targetModelIdentities" : [ "1.0.0_70", "1.1.0_829", "0.1.1", "1.0.0_58" ],
+  "platform" : "CBP-OI",
+  "targetReleases" : {
+    "1.0.0_70" : [ "1.0.0_70" ],
+    "1.1.0_829" : [ "1.1.0_829" ],
+    "0.1.1" : [ "0.1.1" ],
+    "1.0.0_58" : [ "1.0.0_58" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vEME",
+  "targetModelIdentities" : [ "16A-100", "vEME-1.1", "vEME-1.8", "17A-100" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "16A-100" : [ "16A" ],
+    "vEME-1.1" : [ "1.1" ],
+    "vEME-1.8" : [ "1.8" ],
+    "17A-100" : [ "17A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "ESC",
+  "targetModelIdentities" : [ "15D", "17C", "15A", "18E", "13A" ],
+  "platform" : "ERS-SN",
+  "targetReleases" : {
+    "15D" : [ "R15D" ],
+    "17C" : [ "R17C" ],
+    "15A" : [ "R15A" ],
+    "18E" : [ "R18E" ],
+    "13A" : [ "R13A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vMSC-HC",
+  "targetModelIdentities" : [ ],
+  "platform" : "ECIM",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "EIR-FE",
+  "targetModelIdentities" : [ ],
+  "platform" : "ESA",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "5GRadioNode",
+  "targetModelIdentities" : [ "19.Q2-R17A07" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "19.Q2-R17A07" : [ "19.Q2" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "SGSN-MME",
+  "targetModelIdentities" : [ "15B-CP01", "15B-CP00", "1.11-R72B17", "1.45", "16A-CP09", "1.24", "16A-CP06", "14B-CP11", "1.42", "1.20", "16A-CP02", "16A-CP12", "1.18", "1.39", "1.13-R74B15", "1.36", "15A-CP01", "1.15", "1.33", "1.30", "16A-CP00", "16A-CP01", "1.28", "1.48" ],
+  "platform" : null,
+  "targetReleases" : {
+    "15B-CP01" : [ "15B" ],
+    "15B-CP00" : [ "15B" ],
+    "1.11-R72B17" : [ "1.11" ],
+    "1.45" : [ "1.45" ],
+    "16A-CP09" : [ "16A" ],
+    "1.24" : [ "1.24" ],
+    "16A-CP06" : [ "16A" ],
+    "1.33" : [ "1.33" ],
+    "14B-CP11" : [ "14B" ],
+    "1.30" : [ "1.30" ],
+    "1.42" : [ "1.42" ],
+    "1.20" : [ "1.20" ],
+    "16A-CP02" : [ "16A" ],
+    "16A-CP00" : [ "16A" ],
+    "16A-CP12" : [ "16A" ],
+    "16A-CP01" : [ "16A" ],
+    "1.18" : [ "1.18" ],
+    "1.39" : [ "1.39" ],
+    "1.28" : [ "1.28" ],
+    "1.13-R74B15" : [ "1.13" ],
+    "1.36" : [ "1.36" ],
+    "15A-CP01" : [ "15A" ],
+    "1.15" : [ "1.15" ],
+    "1.48" : [ "1.48" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "SBG-IS",
+  "targetModelIdentities" : [ ],
+  "platform" : "IS",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vBGF",
+  "targetModelIdentities" : [ "16A-100", "vBGF-1.7", "vBGF-1.9", "1.13", "1.24" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "16A-100" : [ "16A" ],
+    "vBGF-1.7" : [ "17B" ],
+    "vBGF-1.9" : [ "1.9" ],
+    "1.13" : [ "1.13" ],
+    "1.24" : [ "1.24" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "VTFRadioNode",
+  "targetModelIdentities" : [ "18.Q2-R3A03", "18.Q3-R9A48" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "18.Q2-R3A03" : [ "18.Q2" ],
+    "18.Q3-R9A48" : [ "18.Q3" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "IP-STP",
+  "targetModelIdentities" : [ ],
+  "platform" : "ECIM",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vDSC",
+  "targetModelIdentities" : [ "17B-R1A", "17A-R1A", "1.14", "1.13", "1.11", "1.9" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "17B-R1A" : [ "17B" ],
+    "17A-R1A" : [ "17A" ],
+    "1.14" : [ "1.14" ],
+    "1.13" : [ "1.13" ],
+    "1.11" : [ "1.11" ],
+    "1.9" : [ "1.9" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Router6x71",
+  "targetModelIdentities" : [ "R18Q2-GA", "R18Q3-GA", "R18Q2-EP2", "R18Q4-GA", "R18A-EP2", "R18Q3-CP1", "R19Q2-GA", "R19Q1-GA", "R18A-GA", "R20Q3-GA", "R18Q4-CP2", "R19Q1-CP1", "R20Q4-GA", "R20Q1-GA", "R20Q2-GA" ],
+  "platform" : "ER6000",
+  "targetReleases" : {
+    "R18Q2-GA" : [ "18Q2" ],
+    "R18Q3-GA" : [ "18Q3" ],
+    "R18Q2-EP2" : [ "18Q2" ],
+    "R18Q4-GA" : [ "18Q4" ],
+    "R18A-EP2" : [ "18A" ],
+    "R18Q3-CP1" : [ "18Q3" ],
+    "R19Q2-GA" : [ "19Q2" ],
+    "R19Q1-GA" : [ "19Q1" ],
+    "R18A-GA" : [ "18A" ],
+    "R20Q3-GA" : [ "20Q3" ],
+    "R18Q4-CP2" : [ "18Q4" ],
+    "R19Q1-CP1" : [ "19Q1" ],
+    "R20Q4-GA" : [ "20Q4" ],
+    "R20Q1-GA" : [ "20Q1" ],
+    "R20Q2-GA" : [ "20Q2" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CSCF-TSP",
+  "targetModelIdentities" : [ ],
+  "platform" : "TSP",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CUDB",
+  "targetModelIdentities" : [ ],
+  "platform" : "ESA",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vIP-STP",
+  "targetModelIdentities" : [ ],
+  "platform" : "ECIM",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vBNG",
+  "targetModelIdentities" : [ "3.1" ],
+  "platform" : "VRE",
+  "targetReleases" : {
+    "3.1" : [ "18A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vCUDB",
+  "targetModelIdentities" : [ ],
+  "platform" : "ESA",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CISCO-ASR9000",
+  "targetModelIdentities" : [ "17A" ],
+  "platform" : null,
+  "targetReleases" : {
+    "17A" : [ "17A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "RVNFM",
+  "targetModelIdentities" : [ "20.Q2-R31A06", "20.Q3-R40A03", "18B-R13A02", "18A-R3A02", "20.Q4-R48A04" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "20.Q2-R31A06" : [ "20.Q2" ],
+    "20.Q3-R40A03" : [ "20.Q3" ],
+    "18B-R13A02" : [ "18.Q4.1" ],
+    "18A-R3A02" : [ "18.Q1" ],
+    "20.Q4-R48A04" : [ "20.Q4" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "RadioTNode",
+  "targetModelIdentities" : [ "17.Q4-R17A193", "16B-R2JH", "17.Q2-R12B21", "17B-R9A57", "17A-R1ASL", "17.Q4-R19C07" ],
+  "platform" : null,
+  "targetReleases" : {
+    "17.Q4-R17A193" : [ "17.Q4" ],
+    "16B-R2JH" : [ "17.Q2" ],
+    "17.Q2-R12B21" : [ "17.Q2" ],
+    "17B-R9A57" : [ "17.Q2" ],
+    "17A-R1ASL" : [ "17.Q2" ],
+    "17.Q4-R19C07" : [ "17.Q4" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "EDA",
+  "targetModelIdentities" : [ ],
+  "platform" : "CBP-OI",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "RNC",
+  "targetModelIdentities" : [ "15B-V.5.4658", "18.Q3-V.14.340", "18.Q2-V.13.601", "19.Q1-V.16.389", "16B-V.7.1659-M9", "20.Q1-V.20.246", "18.Q1-V.12.290", "16A-V.6.940", "21.Q1-V.24.215", "19.Q2-V.17.543", "20.Q4-V.23.179", "21.Q1-V.24.49", "18.Q4-V.15.439",  "20.Q2-V.21.303", "20.Q2-V.21.229",  "17.Q4-V.11.338", "17B-V.9.1240", "20.Q3-V.22.308", "20.Q2-V.21.78", "17B-V.10.304", "17A-V.8.1349", "21.Q1-V.24.9", "20.Q4-V.23.107", "19.Q3-V.18.406", "20.Q4-V.23.61", "16A-V.6.940-J2", "15B-V.5.4658-G4", "19.Q4-V.19.304", "16B-V.7.1659", "21.Q1-V.24.99" ],
+  "platform" : "CPP",
+  "targetReleases" : {
+    "15B-V.5.4658" : [ "15B" ],
+    "18.Q3-V.14.340" : [ "18.Q3" ],
+    "18.Q2-V.13.601" : [ "18.Q2" ],
+    "19.Q1-V.16.389" : [ "19.Q1" ],
+    "16B-V.7.1659-M9" : [ "16B" ],
+    "20.Q1-V.20.246" : [ "20.Q1" ],
+    "18.Q1-V.12.290" : [ "18.Q1" ],
+    "16A-V.6.940" : [ "16A" ],
+    "21.Q1-V.24.215" : [ "21.Q1" ],
+    "19.Q2-V.17.543" : [ "19.Q2" ],
+    "20.Q4-V.23.179" : [ "20.Q4" ],
+    "21.Q1-V.24.49" : [ "21.Q1" ],
+    "18.Q4-V.15.439" : [ "18.Q4" ],
+    "20.Q2-V.21.303" : [ "20.Q2" ],
+    "20.Q2-V.21.229" : [ "20.Q2" ],
+    "17.Q4-V.11.338" : [ "17.Q4" ],
+    "17B-V.9.1240" : [ "17B" ],
+    "20.Q3-V.22.308" : [ "20.Q3" ],
+    "20.Q2-V.21.78" : [ "20.Q2" ],
+    "17B-V.10.304" : [ "17.Q3" ],
+    "17A-V.8.1349" : [ "17A" ],
+    "21.Q1-V.24.9" : [ "21.Q1" ],
+    "20.Q4-V.23.107" : [ "20.Q4" ],
+    "19.Q3-V.18.406" : [ "19.Q3" ],
+    "20.Q4-V.23.61" : [ "20.Q4" ],
+    "16A-V.6.940-J2" : [ "16A" ],
+    "15B-V.5.4658-G4" : [ "15B" ],
+    "19.Q4-V.19.304" : [ "19.Q4" ],
+    "16B-V.7.1659" : [ "16B" ],
+    "21.Q1-V.24.99" : [ "21.Q1" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vDU",
+  "targetModelIdentities" : [ "0.5.1", "0.4.0", "0.7.3", "0.9.1", "0.7.4", "0.10.1", "0.3.0" ],
+  "platform" : "CBP-OI",
+  "targetReleases" : {
+    "0.5.1" : [ "0.5.1" ],
+    "0.4.0" : [ "0.4.0" ],
+    "0.7.3" : [ "0.7.3" ],
+    "0.9.1" : [ "0.9.1" ],
+    "0.7.4" : [ "0.7.4" ],
+    "0.10.1" : [ "0.10.1" ],
+    "0.3.0" : [ "0.3.0" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CCRC",
+  "targetModelIdentities" : [ "0.5.0", "0.7.2" ],
+  "platform" : "CBP-OI",
+  "targetReleases" : {
+    "0.5.0" : [ "0.5.0" ],
+    "0.7.2" : [ "0.7.2" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "JUNIPER-vSRX",
+  "targetModelIdentities" : [ "18.2R1", "18.3R1", "18.4R1", "19.3R1", "19.4R1", "19.1R1", "20.1R1", "20.2R1", "19.2R1" ],
+  "platform" : "JUNOS",
+  "targetReleases" : {
+    "18.2R1" : [ "18.2" ],
+    "18.3R1" : [ "18.3" ],
+    "18.4R1" : [ "18.4" ],
+    "19.3R1" : [ "19.3" ],
+    "19.4R1" : [ "19.4" ],
+    "19.1R1" : [ "19.1" ],
+    "20.1R1" : [ "20.1" ],
+    "20.2R1" : [ "20.2" ],
+    "19.2R1" : [ "19.2" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Controller6610",
+  "targetModelIdentities" : [ "20.Q4-R1A04" ],
+  "platform" : null,
+  "targetReleases" : {
+    "20.Q4-R1A04" : [ "20.Q4" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "HSS-FE",
+  "targetModelIdentities" : [ "1.28", "1.25", "1.21", "1.31" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "1.28" : [ "1.28" ],
+    "1.25" : [ "1.25" ],
+    "1.21" : [ "1.21" ],
+    "1.31" : [ "1.31" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-669x",
+  "targetModelIdentities" : [ "M19.Q1-669x-1.8", "M18.Q1-669x-1.4", "M18.Q2-669x-1.5", "M18.Q4-669x-1.7", "M20.Q3-669x-1.14", "M20.Q2-669x-1.13", "M19.Q2-669x-1.9", "M19.Q3-669x-1.10", "M20.Q1-669x-1.12", "M19.Q4-669x-1.11", "M20.Q4-669x-1.15" ],
+  "platform" : "MINI-LINK-Indoor",
+  "targetReleases" : {
+    "M19.Q1-669x-1.8" : [ "19.Q1" ],
+    "M18.Q1-669x-1.4" : [ "18.Q1" ],
+    "M18.Q2-669x-1.5" : [ "18.Q2" ],
+    "M18.Q4-669x-1.7" : [ "18.Q4" ],
+    "M20.Q3-669x-1.14" : [ "20.Q3" ],
+    "M20.Q2-669x-1.13" : [ "20.Q2" ],
+    "M19.Q2-669x-1.9" : [ "19.Q2" ],
+    "M19.Q3-669x-1.10" : [ "19.Q3" ],
+    "M20.Q1-669x-1.12" : [ "20.Q1" ],
+    "M19.Q4-669x-1.11" : [ "19.Q4" ],
+    "M20.Q4-669x-1.15" : [ "20.Q4" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vSAPC",
+  "targetModelIdentities" : [ "1.4", "1.12", "1.10", "1.8", "1.2-R2E" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "1.4" : [ "1.4" ],
+    "1.12" : [ "1.12" ],
+    "1.10" : [ "1.10" ],
+    "1.8" : [ "1.8" ],
+    "1.2-R2E" : [ "1.2" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vSBG",
+  "targetModelIdentities" : [ "vSBG-1.4", "vSBG-1.6", "vSBG-1.1", "2.1", "2.9.0" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "vSBG-1.4" : [ "17A" ],
+    "vSBG-1.6" : [ "1.6" ],
+    "vSBG-1.1" : [ "16A" ],
+    "2.1" : [ "2.1" ],
+    "2.9.0" : [ "2.9.0" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "DSC",
+  "targetModelIdentities" : [ "17B-R1A", "17A-R1A", "1.14", "1.13", "1.11", "1.9" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "17B-R1A" : [ "17B" ],
+    "17A-R1A" : [ "17A" ],
+    "1.14" : [ "1.14" ],
+    "1.13" : [ "1.13" ],
+    "1.11" : [ "1.11" ],
+    "1.9" : [ "1.9" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vIPWorks",
+  "targetModelIdentities" : [ "vIPWorks-1.9", "vIPWorks-2.7", "vIPWorks-2.6", "vIPWorks-2.5", "vIPWorks-2.3", "vIPWorks-1.3", "17A-8" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "vIPWorks-1.9" : [ "1.9" ],
+    "vIPWorks-2.7" : [ "2.7" ],
+    "vIPWorks-2.6" : [ "2.6" ],
+    "vIPWorks-2.5" : [ "2.5" ],
+    "vIPWorks-2.3" : [ "2.3" ],
+    "vIPWorks-1.3" : [ "1.3" ],
+    "17A-8" : [ "17A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "DSE",
+  "targetModelIdentities" : [ ],
+  "platform" : "ECIM",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-6351",
+  "targetModelIdentities" : [ "M17.Q4-6351-2.9", "M17B-6351-2.8" ],
+  "platform" : "MINI-LINK-Outdoor",
+  "targetReleases" : {
+    "M17.Q4-6351-2.9" : [ "17.Q4" ],
+    "M17B-6351-2.8" : [ "17B" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-6352",
+  "targetModelIdentities" : [ "M17B-6352-2.8", "M20.Q1-6352-2.17", "M20.Q2-6352-2.18", "M19.Q1-6352-2.14", "M20.Q4-6352-2.19", "M17A-6352-2.7", "M18.Q4-6352-2.13", "M19.Q4-6352-2.16", "M18.Q2-6352-2.11", "M19.Q2-6352-2.15", "M17.Q4-6352-2.9" ],
+  "platform" : "MINI-LINK-Outdoor",
+  "targetReleases" : {
+    "M17B-6352-2.8" : [ "17B" ],
+    "M20.Q1-6352-2.17" : [ "20.Q1" ],
+    "M20.Q2-6352-2.18" : [ "20.Q2" ],
+    "M19.Q1-6352-2.14" : [ "19.Q1" ],
+    "M20.Q4-6352-2.19" : [ "20.Q4" ],
+    "M17A-6352-2.7" : [ "17A" ],
+    "M18.Q4-6352-2.13" : [ "18.Q4" ],
+    "M19.Q4-6352-2.16" : [ "19.Q4" ],
+    "M18.Q2-6352-2.11" : [ "18.Q2" ],
+    "M19.Q2-6352-2.15" : [ "19.Q2" ],
+    "M17.Q4-6352-2.9" : [ "17.Q4" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "EME",
+  "targetModelIdentities" : [ "16A-100", "17A-100" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "16A-100" : [ "16A" ],
+    "17A-100" : [ "17A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "ERBS",
+  "targetModelIdentities" : [ "4322-436-393", "4322-940-032", "1777-370-163", "1998-184-092", "17.Q2-H.1.362", "4280-987-331", "17A-H.1.80", "18.Q4-J.2.300", "17B-H.1.361", "17B-H.1.263", "18.Q3-J.2.150", "20.Q1-J.4.604", "16B-G.1.308", "4613-704-163", "3958-644-341", "17A-H.1.160", "17Q2-H.1.351", "19.Q4-J.4.252", "20.Q1-J.4.500", "16B-G.1.301", "19.Q3-J.4.50", "19.Q2-J.2.650", "16A-G.1.142", "16A-G.1.143", "3520-829-806", "20.Q1-J.4.606", "17.Q3-J.1.82", "18.Q2-J.1.280", "17.Q4-J.1.185", "17.Q3-J.1.81", "18.Q1-J.1.220", "19.Q1-J.2.450", "6824-690-779", "20.Q1-J.4.550", "17A-H.1.190", "20.Q1-J.4.555", "6607-651-025", "19.Q3-J.3.50" ],
+  "platform" : "CPP",
+  "targetReleases" : {
+    "4322-436-393" : [ "14A" ],
+    "4322-940-032" : [ "14B" ],
+    "1777-370-163" : [ "15B" ],
+    "1998-184-092" : [ "14B" ],
+    "17.Q2-H.1.362" : [ "17.Q2" ],
+    "4280-987-331" : [ "15B" ],
+    "17A-H.1.80" : [ "17A" ],
+    "18.Q4-J.2.300" : [ "18.Q4" ],
+    "17B-H.1.361" : [ "17.Q2" ],
+    "17B-H.1.263" : [ "17.Q1" ],
+    "18.Q3-J.2.150" : [ "18.Q3" ],
+    "20.Q1-J.4.604" : [ "20.Q1" ],
+    "16B-G.1.308" : [ "16B" ],
+    "4613-704-163" : [ "16A" ],
+    "3958-644-341" : [ "15B" ],
+    "17A-H.1.160" : [ "17A" ],
+    "17Q2-H.1.351" : [ "17.Q2" ],
+    "19.Q4-J.4.252" : [ "19.Q4" ],
+    "20.Q1-J.4.500" : [ "20.Q1" ],
+    "16B-G.1.301" : [ "16B" ],
+    "19.Q3-J.4.50" : [ "19.Q3" ],
+    "19.Q2-J.2.650" : [ "19.Q2" ],
+    "16A-G.1.142" : [ "16A" ],
+    "16A-G.1.143" : [ "16A" ],
+    "3520-829-806" : [ "15B" ],
+    "20.Q1-J.4.606" : [ "20.Q1" ],
+    "17.Q3-J.1.82" : [ "17.Q3" ],
+    "18.Q2-J.1.280" : [ "18.Q2" ],
+    "17.Q4-J.1.185" : [ "17.Q4" ],
+    "17.Q3-J.1.81" : [ "17.Q3" ],
+    "18.Q1-J.1.220" : [ "18.Q1" ],
+    "19.Q1-J.2.450" : [ "19.Q1" ],
+    "6824-690-779" : [ "14A" ],
+    "20.Q1-J.4.550" : [ "20.Q1" ],
+    "17A-H.1.190" : [ "17A" ],
+    "20.Q1-J.4.555" : [ "20.Q1" ],
+    "6607-651-025" : [ "15B" ],
+    "19.Q3-J.3.50" : [ "19.Q3" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "BGF",
+  "targetModelIdentities" : [ "16A-100", "BGF-1.7" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "16A-100" : [ "16A" ],
+    "BGF-1.7" : [ "17B" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CCN-TSP",
+  "targetModelIdentities" : [ ],
+  "platform" : "TSP",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CCSM",
+  "targetModelIdentities" : [ "0.15.0", "0.12.0" ],
+  "platform" : "CBP-OI",
+  "targetReleases" : {
+    "0.15.0" : [ "0.15.0" ],
+    "0.12.0" : [ "0.12.0" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Router6274",
+  "targetModelIdentities" : [ "R18Q2-GA", "R18Q3-GA", "R18Q2-EP2", "R18Q4-GA", "R18Q3-CP1", "R19Q2-GA", "R19Q1-GA", "R20Q3-GA", "R18Q4-CP2", "R19Q1-CP1", "R20Q4-GA", "R20Q1-GA", "R20Q2-GA" ],
+  "platform" : "ER6000",
+  "targetReleases" : {
+    "R18Q2-GA" : [ "18Q2" ],
+    "R18Q3-GA" : [ "18Q3" ],
+    "R18Q2-EP2" : [ "18Q2" ],
+    "R18Q4-GA" : [ "18Q4" ],
+    "R18Q3-CP1" : [ "18Q3" ],
+    "R19Q2-GA" : [ "19Q2" ],
+    "R19Q1-GA" : [ "19Q1" ],
+    "R20Q3-GA" : [ "20Q3" ],
+    "R18Q4-CP2" : [ "18Q4" ],
+    "R19Q1-CP1" : [ "19Q1" ],
+    "R20Q4-GA" : [ "20Q4" ],
+    "R20Q1-GA" : [ "20Q1" ],
+    "R20Q2-GA" : [ "20Q2" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "HLR-FE-IS",
+  "targetModelIdentities" : [ ],
+  "platform" : "ECIM",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MSC-BC-IS",
+  "targetModelIdentities" : [ ],
+  "platform" : "ECIM",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Router6273",
+  "targetModelIdentities" : [ "R20Q3-GA", "R20Q4-GA", "R20Q1-GA", "R20Q2-GA" ],
+  "platform" : "ER6000",
+  "targetReleases" : {
+    "R20Q3-GA" : [ "20Q3" ],
+    "R20Q4-GA" : [ "20Q4" ],
+    "R20Q1-GA" : [ "20Q1" ],
+    "R20Q2-GA" : [ "20Q2" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-CN510R2",
+  "targetModelIdentities" : [ "M16A-CN510R2-2.4FP" ],
+  "platform" : "MINI-LINK-Indoor",
+  "targetReleases" : {
+    "M16A-CN510R2-2.4FP" : [ "16A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Router6672",
+  "targetModelIdentities" : [ "R18Q2-GA", "R18Q3-GA", "R18Q2-EP2", "R18Q4-GA", "R18A-EP2", "R18Q3-CP1", "R19Q2-GA", "R19Q1-GA", "R18A-GA", "R18Q4-CP2", "R20Q3-GA", "R19Q1-CP1", "R20Q4-GA", "R20Q2-GA", "R20Q1-GA", "R17B-GA", "R17A-GA" ],
+  "platform" : "ER6000",
+  "targetReleases" : {
+    "R18Q2-GA" : [ "18Q2" ],
+    "R18Q3-GA" : [ "18Q3" ],
+    "R18Q2-EP2" : [ "18Q2" ],
+    "R18Q4-GA" : [ "18Q4" ],
+    "R18A-EP2" : [ "18A" ],
+    "R18Q3-CP1" : [ "18Q3" ],
+    "R19Q2-GA" : [ "19Q2" ],
+    "R19Q1-GA" : [ "19Q1" ],
+    "R18A-GA" : [ "18A" ],
+    "R18Q4-CP2" : [ "18Q4" ],
+    "R20Q3-GA" : [ "20Q3" ],
+    "R19Q1-CP1" : [ "19Q1" ],
+    "R20Q4-GA" : [ "20Q4" ],
+    "R20Q2-GA" : [ "20Q2" ],
+    "R20Q1-GA" : [ "20Q1" ],
+    "R17B-GA" : [ "17B" ],
+    "R17A-GA" : [ "17A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Router6673",
+  "targetModelIdentities" : [ "R20Q4-GA" ],
+  "platform" : "ER6000",
+  "targetReleases" : {
+    "R20Q4-GA" : [ "20Q4" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Router6675",
+  "targetModelIdentities" : [ "R18Q2-GA", "R18Q3-GA", "R18Q2-EP2", "R18Q4-GA", "R18A-EP2", "R18Q3-CP1", "R19Q2-GA", "R19Q1-GA", "R18A-GA", "R18A-PRA2", "R20Q3-GA", "R18Q4-CP2", "R19Q1-CP1", "R20Q4-GA", "R20Q2-GA", "R20Q1-GA" ],
+  "platform" : "ER6000",
+  "targetReleases" : {
+    "R18Q2-GA" : [ "18Q2" ],
+    "R18Q3-GA" : [ "18Q3" ],
+    "R18Q2-EP2" : [ "18Q2" ],
+    "R18Q4-GA" : [ "18Q4" ],
+    "R18A-EP2" : [ "18A" ],
+    "R18Q3-CP1" : [ "18Q3" ],
+    "R19Q2-GA" : [ "19Q2" ],
+    "R19Q1-GA" : [ "19Q1" ],
+    "R18A-GA" : [ "18A" ],
+    "R18A-PRA2" : [ "18A" ],
+    "R20Q3-GA" : [ "20Q3" ],
+    "R18Q4-CP2" : [ "18Q4" ],
+    "R19Q1-CP1" : [ "19Q1" ],
+    "R20Q4-GA" : [ "20Q4" ],
+    "R20Q2-GA" : [ "20Q2" ],
+    "R20Q1-GA" : [ "20Q1" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-CN510R1",
+  "targetModelIdentities" : [ "M12A-CN510R1-1.2" ],
+  "platform" : "MINI-LINK-Indoor",
+  "targetReleases" : {
+    "M12A-CN510R1-1.2" : [ "12A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MSC-DB-BSP",
+  "targetModelIdentities" : [ ],
+  "platform" : "ECIM",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "PCC",
+  "targetModelIdentities" : [ "1.9" ],
+  "platform" : "CBP-OI",
+  "targetReleases" : {
+    "1.9" : [ "1.9" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "IPWorks",
+  "targetModelIdentities" : [ "IPWorks-2.3", "IPWorks-1.3", "IPWorks-2.5", "17A-8", "IPWorks-2.7", "IPWorks-2.6", "IPWorks-1.9" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "IPWorks-2.3" : [ "2.3" ],
+    "IPWorks-1.3" : [ "1.3" ],
+    "IPWorks-2.5" : [ "2.5" ],
+    "17A-8" : [ "17A" ],
+    "IPWorks-2.7" : [ "2.7" ],
+    "IPWorks-2.6" : [ "2.6" ],
+    "IPWorks-1.9" : [ "1.9" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-6366",
+  "targetModelIdentities" : [ "M20.Q2-6366-1.13", "M18.Q1-6366-1.4", "M19.Q1-6366-1.8", "M20.Q3-6366-1.14", "M19.Q3-6366-1.10", "M20.Q1-6366-1.12", "M19.Q2-6366-1.9", "M20.Q4-6366-1.15", "M19.Q4-6366-1.11", "M18.Q4-6366-1.7", "M18.Q2-6366-1.5" ],
+  "platform" : "MINI-LINK-Indoor",
+  "targetReleases" : {
+    "M20.Q2-6366-1.13" : [ "20.Q2" ],
+    "M18.Q1-6366-1.4" : [ "18.Q1" ],
+    "M19.Q1-6366-1.8" : [ "19.Q1" ],
+    "M20.Q3-6366-1.14" : [ "20.Q3" ],
+    "M19.Q3-6366-1.10" : [ "19.Q3" ],
+    "M20.Q1-6366-1.12" : [ "20.Q1" ],
+    "M19.Q2-6366-1.9" : [ "19.Q2" ],
+    "M20.Q4-6366-1.15" : [ "20.Q4" ],
+    "M19.Q4-6366-1.11" : [ "19.Q4" ],
+    "M18.Q4-6366-1.7" : [ "18.Q4" ],
+    "M18.Q2-6366-1.5" : [ "18.Q2" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "EXTREME-EXOS",
+  "targetModelIdentities" : [ ],
+  "platform" : "EXTREME",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "PCG",
+  "targetModelIdentities" : [ "1.0" ],
+  "platform" : "CBP-OI",
+  "targetReleases" : {
+    "1.0" : [ "1.0" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "SIU02",
+  "targetModelIdentities" : [ "17A" ],
+  "platform" : "STN",
+  "targetReleases" : {
+    "17A" : [ "17A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "NeLS",
+  "targetModelIdentities" : [ "2.9.0", "2.4.0" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "2.9.0" : [ "2.9.0" ],
+    "2.4.0" : [ "2.4.0" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vAFG",
+  "targetModelIdentities" : [ ],
+  "platform" : "ESA",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "FRONTHAUL-6020",
+  "targetModelIdentities" : [ "18.Q2", "20.Q4", "19.Q4", "19.Q3", "18.Q3", "18.Q4", "20.Q2", "20.Q2.1", "19.Q2" ],
+  "platform" : "FRONTHAUL-6000",
+  "targetReleases" : {
+    "18.Q2" : [ "18.Q2" ],
+    "20.Q4" : [ "20.Q4" ],
+    "19.Q4" : [ "19.Q4" ],
+    "19.Q3" : [ "19.Q3" ],
+    "18.Q3" : [ "18.Q3" ],
+    "18.Q4" : [ "18.Q4" ],
+    "20.Q2" : [ "20.Q2" ],
+    "20.Q2.1" : [ "20.Q2.1" ],
+    "19.Q2" : [ "19.Q2" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-Indoor",
+  "targetModelIdentities" : [ "M19.Q4-TN-6.1.6-LH-2.1.6", "M20.Q3-TN-6.1.8-LH-2.1.8", "M18.Q2-TN-6.1.2-LH-2.1.2", "M15A-TN-5.3FP-LH-1.5FP", "M18.Q4-TN-6.1.3-LH-2.1.3", "M19.Q2-TN-6.1.5-LH-2.1.5", "M16A-TN-5.4FP-LH-1.6FP", "M17A-TN-6.0-LH-2.0", "M17.Q4-TN-6.1-LH-2.1", "M11B-TN-4.4FP.7", "M18.Q1-TN-6.1.1-LH-2.1.1", "M19.Q1-TN-6.1.4-LH-2.1.4" ],
+  "platform" : "MINI-LINK-Indoor",
+  "targetReleases" : {
+    "M19.Q4-TN-6.1.6-LH-2.1.6" : [ "19.Q4" ],
+    "M20.Q3-TN-6.1.8-LH-2.1.8" : [ "20.Q3" ],
+    "M18.Q2-TN-6.1.2-LH-2.1.2" : [ "18.Q2" ],
+    "M15A-TN-5.3FP-LH-1.5FP" : [ "15A" ],
+    "M18.Q4-TN-6.1.3-LH-2.1.3" : [ "18.Q4" ],
+    "M19.Q2-TN-6.1.5-LH-2.1.5" : [ "19.Q2" ],
+    "M16A-TN-5.4FP-LH-1.6FP" : [ "16A" ],
+    "M17A-TN-6.0-LH-2.0" : [ "17A" ],
+    "M17.Q4-TN-6.1-LH-2.1" : [ "17.Q4" ],
+    "M11B-TN-4.4FP.7" : [ "11B" ],
+    "M18.Q1-TN-6.1.1-LH-2.1.1" : [ "18.Q1" ],
+    "M19.Q1-TN-6.1.4-LH-2.1.4" : [ "19.Q1" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vEIR-FE",
+  "targetModelIdentities" : [ ],
+  "platform" : "ESA",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Router8800",
+  "targetModelIdentities" : [ "2.0" ],
+  "platform" : "R8800",
+  "targetReleases" : {
+    "2.0" : [ "18A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vCU-CP",
+  "targetModelIdentities" : [ "0.1.6", "0.1.3", "0.2.1" ],
+  "platform" : "CBP-OI",
+  "targetReleases" : {
+    "0.1.6" : [ "0.1.6" ],
+    "0.1.3" : [ "0.1.3" ],
+    "0.2.1" : [ "0.2.1" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "AFG",
+  "targetModelIdentities" : [ ],
+  "platform" : "ESA",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "ECI-Optical",
+  "targetModelIdentities" : [ ],
+  "platform" : null,
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CSCF",
+  "targetModelIdentities" : [ "CSCF-1.2", "CSCF-7.2", "CSCF-7.4" ],
+  "platform" : null,
+  "targetReleases" : {
+    "CSCF-1.2" : [ "17A" ],
+    "CSCF-7.2" : [ "16A" ],
+    "CSCF-7.4" : [ "16B" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Fronthaul-6392",
+  "targetModelIdentities" : [ "M17.Q4-6392-2.9" ],
+  "platform" : "MINI-LINK-Outdoor",
+  "targetReleases" : {
+    "M17.Q4-6392-2.9" : [ "17.Q4" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vWMG",
+  "targetModelIdentities" : [ "vWMG-1.0", "16B-R11D03", "1.3-R8A06" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "vWMG-1.0" : [ "1.0" ],
+    "16B-R11D03" : [ "16B" ],
+    "1.3-R8A06" : [ "1.3" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "VEPG",
+  "targetModelIdentities" : [ "17B-1.0", "16B-R13C", "1.3", "1.6", "16A-CP06" ],
+  "platform" : null,
+  "targetReleases" : {
+    "17B-1.0" : [ "17B" ],
+    "16B-R13C" : [ "16B" ],
+    "1.3" : [ "1.3" ],
+    "1.6" : [ "1.6" ],
+    "16A-CP06" : [ "16A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "HSS-FE-TSP",
+  "targetModelIdentities" : [ ],
+  "platform" : "TSP",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "JUNIPER-SRX",
+  "targetModelIdentities" : [ "18.2R1", "18.3R1", "18.4R1", "19.3R1", "17A", "19.4R1", "19.1R1", "20.1R1", "19.2R1", "20.2R1" ],
+  "platform" : "JUNOS",
+  "targetReleases" : {
+    "18.2R1" : [ "18.2" ],
+    "18.3R1" : [ "18.3" ],
+    "18.4R1" : [ "18.4" ],
+    "19.3R1" : [ "19.3" ],
+    "17A" : [ "17A" ],
+    "19.4R1" : [ "19.4" ],
+    "19.1R1" : [ "19.1" ],
+    "20.1R1" : [ "20.1" ],
+    "19.2R1" : [ "19.2" ],
+    "20.2R1" : [ "20.2" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "HDS",
+  "targetModelIdentities" : [ ],
+  "platform" : null,
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vCSCF",
+  "targetModelIdentities" : [ "vCSCF-1.3", "vCSCF-1.2", "vCSCF-7.2", "1.7.0", "vCSCF-7.4", "1.13.0" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "vCSCF-1.3" : [ "1.3" ],
+    "vCSCF-1.2" : [ "17A" ],
+    "vCSCF-7.2" : [ "16A" ],
+    "1.7.0" : [ "1.7.0" ],
+    "vCSCF-7.4" : [ "16B" ],
+    "1.13.0" : [ "1.13.0" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "SBG",
+  "targetModelIdentities" : [ "SBG-1.4", "SBG-1.1" ],
+  "platform" : null,
+  "targetReleases" : {
+    "SBG-1.4" : [ "17A" ],
+    "SBG-1.1" : [ "16A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "IP-STP-BSP",
+  "targetModelIdentities" : [ ],
+  "platform" : "ECIM",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vUPG",
+  "targetModelIdentities" : [ "vUPG-1.0", "15A-R1A", "1.13" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "vUPG-1.0" : [ "vUPG-1.0" ],
+    "15A-R1A" : [ "15A-R1A" ],
+    "1.13" : [ "1.13" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "EXTREME-EOS",
+  "targetModelIdentities" : [ ],
+  "platform" : "EXTREME",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "SAPC",
+  "targetModelIdentities" : [ "1.1-R2A", "17A-R1C", "SAPC-1.0", "1.12", "1.10", "1.2-R2E", "1.8", "16B-R1A" ],
+  "platform" : null,
+  "targetReleases" : {
+    "1.1-R2A" : [ "1.1" ],
+    "17A-R1C" : [ "17A" ],
+    "SAPC-1.0" : [ "1.0" ],
+    "1.12" : [ "1.12" ],
+    "1.10" : [ "1.10" ],
+    "1.2-R2E" : [ "1.2" ],
+    "1.8" : [ "1.8" ],
+    "16B-R1A" : [ "16B" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "RadioNode",
+  "targetModelIdentities" : [ "16A-R29AJ", "21.Q1-R23A35", "16B-R2ZV", "18.Q3-R49A16", "20.Q1-R83A03", "15B-R12EC", "18.Q1-R36A20", "18.Q4-R57A02", "19.Q2-R38A59", "16A-R28CJ", "19.Q2-R37A02", "20.Q2-R6A06", "18.Q2-R43A23", "17.Q3-R25D04", "17.Q3-R25C05", "17B-R12B12", "20.Q4-R19A30", "17A-R2E", "19.Q3-R40A04", "17A-R2YX", "17B-R5B02", "19.Q4-R82A02", "20.Q1-R87A18", "20.Q1-R88A07", "19.Q3-R44A20", "17.Q2-R12G10", "20.Q2-R3A08", "19.Q1-R31A15", "18.Q4-R55A36", "18.Q1-R36A20_P1", "20.Q3-R13A40", "17.Q4-R32B07" ],
+  "platform" : null,
+  "targetReleases" : {
+    "16A-R29AJ" : [ "16A" ],
+    "21.Q1-R23A35" : [ "21.Q1" ],
+    "16B-R2ZV" : [ "16B" ],
+    "18.Q3-R49A16" : [ "18.Q3" ],
+    "20.Q1-R83A03" : [ "20.Q1" ],
+    "15B-R12EC" : [ "15B" ],
+    "18.Q1-R36A20" : [ "18.Q1" ],
+    "18.Q4-R57A02" : [ "18.Q4" ],
+    "19.Q2-R38A59" : [ "19.Q2" ],
+    "16A-R28CJ" : [ "16A" ],
+    "19.Q2-R37A02" : [ "19.Q2" ],
+    "20.Q2-R6A06" : [ "20.Q2" ],
+    "18.Q2-R43A23" : [ "18.Q2" ],
+    "17.Q3-R25D04" : [ "17.Q3" ],
+    "17.Q3-R25C05" : [ "17.Q3" ],
+    "17B-R12B12" : [ "17.Q2" ],
+    "20.Q4-R19A30" : [ "20.Q4" ],
+    "17A-R2E" : [ "17A" ],
+    "19.Q3-R40A04" : [ "19.Q3" ],
+    "17A-R2YX" : [ "17A" ],
+    "17B-R5B02" : [ "17.Q1" ],
+    "19.Q4-R82A02" : [ "19.Q4" ],
+    "20.Q1-R87A18" : [ "20.Q1" ],
+    "20.Q1-R88A07" : [ "20.Q1" ],
+    "19.Q3-R44A20" : [ "19.Q3" ],
+    "17.Q2-R12G10" : [ "17.Q2" ],
+    "20.Q2-R3A08" : [ "20.Q2" ],
+    "19.Q1-R31A15" : [ "19.Q1" ],
+    "18.Q4-R55A36" : [ "18.Q4" ],
+    "18.Q1-R36A20_P1" : [ "18.Q1" ],
+    "20.Q3-R13A40" : [ "20.Q3" ],
+    "17.Q4-R32B07" : [ "17.Q4" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "JUNIPER-MX",
+  "targetModelIdentities" : [ "16.1R7", "18.2R1", "18.3R1", "18.4R1", "19.3R1", "17A", "19.4R1", "19.1R1", "20.1R1", "20.2R1", "19.2R1" ],
+  "platform" : "JUNOS",
+  "targetReleases" : {
+    "16.1R7" : [ "16.1" ],
+    "18.2R1" : [ "18.2" ],
+    "18.3R1" : [ "18.3" ],
+    "18.4R1" : [ "18.4" ],
+    "19.3R1" : [ "19.3" ],
+    "17A" : [ "17A" ],
+    "19.4R1" : [ "19.4" ],
+    "19.1R1" : [ "19.1" ],
+    "20.1R1" : [ "20.1" ],
+    "20.2R1" : [ "20.2" ],
+    "19.2R1" : [ "19.2" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "FRONTHAUL-6080",
+  "targetModelIdentities" : [ "17.Q3", "17.Q4" ],
+  "platform" : null,
+  "targetReleases" : {
+    "17.Q3" : [ "17.Q3" ],
+    "17.Q4" : [ "17.Q4" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "SSR",
+  "targetModelIdentities" : [ "4.0" ],
+  "platform" : "SSR",
+  "targetReleases" : {
+    "4.0" : [ "18A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vWCG",
+  "targetModelIdentities" : [ "vWCG-1.2", "15B-6220" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "vWCG-1.2" : [ "17B" ],
+    "15B-6220" : [ "15B" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CCDM",
+  "targetModelIdentities" : [ "0.4.0", "0.8.1" ],
+  "platform" : "CBP-OI",
+  "targetReleases" : {
+    "0.4.0" : [ "0.4.0" ],
+    "0.8.1" : [ "0.8.1" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vPP",
+  "targetModelIdentities" : [ "18.Q4-R17A05", "19.Q3-R24A163", "21.Q1-R48A17", "20.Q2-R34A14", "19.Q4-R24A325", "20.Q4-R43A04", "20.Q4-R46A03", "19.Q2-R22A96", "20.Q1-R30A33", "20.Q3-R41A01" ],
+  "platform" : "ECIM",
+  "targetReleases" : {
+    "18.Q4-R17A05" : [ "18.Q4" ],
+    "19.Q3-R24A163" : [ "19.Q3" ],
+    "21.Q1-R48A17" : [ "21.Q1" ],
+    "20.Q2-R34A14" : [ "20.Q2" ],
+    "19.Q4-R24A325" : [ "19.Q4" ],
+    "20.Q4-R43A04" : [ "20.Q4" ],
+    "20.Q4-R46A03" : [ "20.Q4" ],
+    "19.Q2-R22A96" : [ "19.Q2" ],
+    "20.Q1-R30A33" : [ "20.Q1" ],
+    "20.Q3-R41A01" : [ "20.Q3" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "TCU02",
+  "targetModelIdentities" : [ "17A" ],
+  "platform" : "STN",
+  "targetReleases" : {
+    "17A" : [ "17A" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MSC-DB",
+  "targetModelIdentities" : [ ],
+  "platform" : "ECIM",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MGW",
+  "targetModelIdentities" : [ "6.11.6.0", "6.9.6.0", "1484-383-806", "6.10.2.0", "14B-C.1.141", "6.9.2.0", "17A-C.1.257", "17A-C.1.267", "6.10.6.0", "17B-C.1.278", "17B-C.1.288", "6.11.2.0", "16A-C.1.203", "16A-C.1.214", "16B-C.1.243" ],
+  "platform" : "CPP",
+  "targetReleases" : {
+    "6.11.6.0" : [ "6.11.6.0" ],
+    "6.9.6.0" : [ "6.9.6.0" ],
+    "1484-383-806" : [ "15B" ],
+    "6.10.2.0" : [ "6.10.2.0" ],
+    "14B-C.1.141" : [ "14B" ],
+    "6.9.2.0" : [ "6.9.2.0" ],
+    "17A-C.1.257" : [ "17A" ],
+    "17A-C.1.267" : [ "17A" ],
+    "6.10.6.0" : [ "6.10.6.0" ],
+    "17B-C.1.278" : [ "17B" ],
+    "17B-C.1.288" : [ "17B" ],
+    "6.11.2.0" : [ "6.11.2.0" ],
+    "16A-C.1.203" : [ "16A" ],
+    "16A-C.1.214" : [ "16A" ],
+    "16B-C.1.243" : [ "16B" ]
+  }
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "EPG",
+  "targetModelIdentities" : [ "16A-CP00", "17B-1.0", "16B-R13C", "1.3", "1.6" ],
+  "platform" : null,
+  "targetReleases" : {
+    "16A-CP00" : [ "16A" ],
+    "17B-1.0" : [ "17B" ],
+    "16B-R13C" : [ "16B" ],
+    "1.3" : [ "1.3" ],
+    "1.6" : [ "1.6" ]
+  }
+}, {
+  "targetCategory" : "MS",
+  "targetType" : "ECI-LightSoft",
+  "targetModelIdentities" : [ ],
+  "platform" : null,
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "MS",
+  "targetType" : "ENM",
+  "targetModelIdentities" : [ ],
+  "platform" : null,
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "VNFM",
+  "targetType" : "RVNFM",
+  "targetModelIdentities" : [ ],
+  "platform" : "VNFM",
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "VNFM",
+  "targetType" : "ECM",
+  "targetModelIdentities" : [ ],
+  "platform" : null,
+  "targetReleases" : { }
+}, {
+  "targetCategory" : "VIM",
+  "targetType" : "ECEE",
+  "targetModelIdentities" : [ ],
+  "platform" : null,
+  "targetReleases" : { }
+} ]

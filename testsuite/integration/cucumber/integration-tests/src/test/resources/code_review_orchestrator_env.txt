@@ -1,0 +1,70 @@
+####################################################
+# JENKINS CONFIGURATION
+# 
+# Used only to test the interaction with jenkins
+####################################################
+#BUILD_ID=3164
+#JENKINS_URL=https://fem105-eiffel004.lmera.ericsson.se:8443/jenkins/
+#JOB_URL=${JENKINS_URL}/job/${JENKINS_PROJECT_NAME}/
+#BUILD_URL=${JOB_URL}/${BUILD_ID}/
+#START_DATE="Sat Dec 10 10:47:06 CET 2016"
+
+####################################################
+# GERRIT CONFIGURATION
+# 
+# Used only to test the trigger by gerrit review
+####################################################
+#GERRIT_PATCHSET_REVISION=9fcace8772734ef1e6f4ced2d2fe6ba0c26b3345
+#GERRIT_CHANGE_OWNER_NAME="Biagio Laneve"
+#GERRIT_REFSPEC=refs/changes/52/1916152/45
+#GERRIT_TOPIC=TORF-TEST_COMPLETE_FLOW_1
+
+#GERRIT_CHANGE_NUMBER=1916152
+#GERRIT_PROJECT=OSS/com.ericsson.oss.mediation.pm.testsuite/pm-mediation-vertical-slice
+#GERRIT_CHANGE_OWNER="\"Biagio Laneve\" <biagio.laneve@ericsson.com>"
+
+#GERRIT_CENTRAL=ssh://gerrit.ericsson.se:29418
+#GERRIT_MIRROR=ssh://gerritmirror.lmera.ericsson.se:29418
+
+####################################################
+# DOCKER CONFIGURATION
+# 
+####################################################
+#COMPOSE_PROJECT_NAME=pmmediationverticalslice
+
+####################################################
+# ORCHESTRATOR CONFIGURATION
+# 
+####################################################
+#WORKSPACE=target/workspace
+
+#REPO_NAME=cm-mediation-vertical-slice
+#PROJECT_NAME=cm-mediation-vertical-slice
+#PROJECT_DIR=${WORKSPACE}/${PROJECT_NAME}
+
+REPO_NAME=shared-test-tool
+PROJECT_NAME=vertical-slice-sample
+PROJECT_DIR=${WORKSPACE}/${REPO_NAME}/${PROJECT_NAME}
+IT_FOLDER=${PROJECT_DIR}/testsuite
+
+#GIT_REPO=OSS/com.ericsson.nms.mediation/${REPO_NAME}
+GIT_REPO=OSS/com.ericsson.oss.services.test/${REPO_NAME}
+
+#GIT_URL=${GERRIT_MIRROR}/${GIT_REPO}
+
+####################################################
+# JOB RUN CONFIGURATION
+# 
+####################################################
+#TOPIC=CDS-6292
+#INSPECT_REVIEW_USER_CHANGE_NUMBERS=2170286
+#INSPECT_REVIEW_TOPIC_USERS="Luca Abete" 
+INSPECT_REVIEW_IGNORE_TEST_REPO_RPMS=false
+INSPECT_REVIEW_IGNORE_RPMS=ERICservicehelper_CXP0000000,ERICservicehelpermodel_CXP0000000,ERICnetconfresourceadaptermodule_CXP9034899
+INSPECT_REVIEW_THREAD_POOL_SIZE=10
+INSPECT_REVIEW_ADDITIONAL_BUILD_PROPERTIES=clean -DintegrationPom
+SNAPSHOT_MODEL_RPMS_DIR=${IT_FOLDER}/testsuite/src/test/docker/dps_integration/config/init/rpms
+SNAPSHOT_CODE_RPMS_DIR=${IT_FOLDER}/testsuite/src/test/docker/jboss/config/init/rpms
+
+ 
+

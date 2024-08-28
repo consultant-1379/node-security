@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <!--
+    ================================================================
+    Copyright (C) Ericsson AB 2009 - All rights reserved
+
+    *************** Ericsson Confidental ****************
+
+    IntialSecConf.rnc
+
+    Specification of XML data file for automatic initial
+    security configuration in CPP.
+
+    This definition is written in RELAX NG Compact Syntax.
+    The file can be used by RELAX NG aware XML engines to
+    verify that a given file is valid, adheres to the general
+    XML syntax as well as this specification. For more information,
+    refer to http://relaxng.org/
+
+    Quick reading instructions:
+     * The specification is structured as a grammar. 'start'
+       is the start symbol.
+
+     * The characters '*', '+', and '?' are used as in regular
+       expressions to denote '0 or more', '1 or more', and '0 or 1',
+       respectively
+
+     * Subelements in a definition are joined using ',' , '|', and
+       '&'. ',' is used for ordered sequences of elements.
+       '|' is used for choice. '&' forms unordered sequences of
+       elements. Sequences of attributes are always unordered.
+       Brackets '(' and ')' must be used to express operator
+       precedence, there are no implicit precedence rules.
+
+    Revised: Simon Peel (erasipe)
+    Version: PA12
+    Date   : 2010-01-10
+    Changes: introduction of IPsec settings + restructuring
+
+    Revised: Simon Peel (erasipe)
+    Version: PA13
+    Date   : 2010-01-25
+    Changes: LogonServerAddress example corrected to agree with scheme
+
+    Revised: Simon Peel (erasipe)
+    Version: PA14
+    Date   : 2010-02-01
+    Changes: Ipsec element has changed there can be multiple instances of it
+             attribute type introduced under ipsec
+             wantedIpsecLevel removed
+             type removed from ipsecEnrollmentData
+
+    Revised: Simon Peel (erasipe)
+    Version: PA15
+    Date   : 2010-02-02
+    Changes: In security element attribute wantedSecurityLevel value "0"
+             removed.
+
+    Revised: Mats Hellberg (uabhgma)
+    Version: PA16
+    Date   : 2010-03-11
+    Changes: Added enrollmentTimeLimit attribute to the enrollmentData element
+
+    Revised: Mats Hellberg (uabhgma)
+    Version: PA17
+    Date   : 2010-12-08
+    Changes: HN30875 - Security element should be optional
+
+    ================================================================
+  -->
+  <!--
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Principal file structure
+
+  -->
+  <xs:element name="secConfData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="body"/>
+        <xs:element ref="validators"/>
+      </xs:sequence>
+      <xs:attribute name="fileFormatVersion" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="1.0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="body">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="metaData"/>
+        <xs:element minOccurs="0" ref="security"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ipsec"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="metaData">
+    <xs:complexType>
+      <xs:attribute name="creationTime" use="required"/>
+      <xs:attribute name="notValidAfter" use="required"/>
+      <xs:attribute name="logicalName" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="security">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="fileTransferClient"/>
+        <xs:element minOccurs="0" ref="telnetAndFtpServers"/>
+        <xs:element minOccurs="0" ref="level2"/>
+        <xs:element minOccurs="0" ref="level3"/>
+      </xs:sequence>
+      <xs:attribute name="wantedSecurityLevel" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:positiveInteger">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="minimumSecurityLevel">
+        <xs:simpleType>
+          <xs:restriction base="xs:positiveInteger">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="userLabel">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fileTransferClient">
+    <xs:simpleType>
+      <xs:restriction base="xs:token">
+        <xs:enumeration value="Secure"/>
+        <xs:enumeration value="Unsecure"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="telnetAndFtpServers">
+    <xs:simpleType>
+      <xs:restriction base="xs:token">
+        <xs:enumeration value="Secure"/>
+        <xs:enumeration value="Unsecure"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="level2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="level2ConfigSettings"/>
+        <xs:element ref="level2Files"/>
+        <xs:element ref="secEnrollmentData"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="level3">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="level3ConfigSettings"/>
+        <xs:element ref="level3Files"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="level2ConfigSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="logonServerAddress"/>
+      </xs:sequence>
+      <xs:attribute name="certExpirWarnTime">
+        <xs:simpleType>
+          <xs:restriction base="xs:positiveInteger">
+            <xs:minInclusive value="2"/>
+            <xs:maxInclusive value="365"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="installTrustedCertDuration" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:positiveInteger">
+            <xs:minInclusive value="5"/>
+            <xs:maxInclusive value="600"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="logonServerAddress" type="xs:string"/>
+  <!--
+    e.g.
+    <level2ConfigSettings certExpirWarnTime="30" installTrustedCertDuration="5">
+      <logonServerAddress>
+    	 "https://sls1.mycompany:8443/ericsson/servlet/sls"
+      </logonServerAddress>
+      <logonServerAddress>
+    	 "https://sls2.yourcompany:8443/nokia/servlet/sls"
+      </logonServerAddress>
+    </level2ConfigSettings>
+  -->
+  <xs:element name="level2Files">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="certFile"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="secEnrollmentData">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="EnrollmentData">
+          <xs:attribute name="rollbackTimeout" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:nonNegativeInteger">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="240"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="level3ConfigSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="aaServerIPAddressList"/>
+      </xs:sequence>
+      <xs:attribute name="securityLevel3Timeout">
+        <xs:simpleType>
+          <xs:restriction base="xs:positiveInteger">
+            <xs:minInclusive value="5"/>
+            <xs:maxInclusive value="300"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="authorizationCacheTimeOut">
+        <xs:simpleType>
+          <xs:restriction base="xs:positiveInteger">
+            <xs:minInclusive value="15"/>
+            <xs:maxInclusive value="480"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="installLaadDuration" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:positiveInteger">
+            <xs:minInclusive value="5"/>
+            <xs:maxInclusive value="600"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="aaServerIPAddressList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="ipAddress"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    e.g.
+    <level3ConfigSettings securityLevel3Timeout="30" authorizationCacheTimeOut="15"
+    installLaadDuration="5">
+      <aaServerIPAddressList>
+         <ipV4Address>"192.134.138.4"</ipV4Address>
+         <ipV4Address>"122.64.128.16"</ipV4Address>
+      </aaServerIPAddressList>
+    </level3ConfigSettings>
+  -->
+  <xs:element name="level3Files">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="certFile"/>
+        <xs:element ref="localAuthenticationDB"/>
+        <xs:element ref="localAuthorizationDB"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="localAuthenticationDB" type="EncryptedContent"/>
+  <xs:element name="localAuthorizationDB" type="EncryptedContent"/>
+  <xs:element name="ipsec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ipsecFiles"/>
+        <xs:element ref="ipsecEnrollmentData"/>
+      </xs:sequence>
+      <xs:attribute name="type"/>
+      <xs:attribute name="userLabel">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="128"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="certExpirWarnTime">
+        <xs:simpleType>
+          <xs:restriction base="xs:positiveInteger">
+            <xs:minInclusive value="2"/>
+            <xs:maxInclusive value="365"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ipsecFiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="certFile"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ipsecEnrollmentData">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="EnrollmentData">
+          <xs:attribute name="subjectAltNameType">
+            <xs:simpleType>
+              <xs:restriction base="xs:nonNegativeInteger">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="3"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="subjectAltName"/>
+          <xs:attribute name="rollbackTimeout" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:nonNegativeInteger">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="240"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    +++++++++COMMON ELEMENTS+++++++++++++++++++++++++++++++++++++++++++++
+    +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  -->
+  <xs:element name="ipAddress">
+    <xs:complexType>
+      <xs:attribute name="type"/>
+      <xs:attribute name="ipAddress" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    IPv4 addressed are expected to be in "quad-dotted" format,
+    for instance "192.168.133.4"
+  -->
+  <xs:complexType name="EnrollmentData">
+    <xs:annotation><xs:appinfo>
+      <jaxb:class name="ISCFEnrollmentData"> 
+        <jaxb:javadoc>Enrollment data for ISCF XML output.</jaxb:javadoc>
+      </jaxb:class>
+    </xs:appinfo></xs:annotation>
+    <xs:sequence>
+      <xs:element ref="enrollmentData"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="enrollmentData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="dataChallengePassword"/>
+      </xs:sequence>
+      <xs:attribute name="distinguishedName" use="required"/>
+      <xs:attribute name="enrollmentServerURL" use="required"/>
+      <xs:attribute name="cAFingerprint" use="required"/>
+      <xs:attribute name="keyLength">
+        <xs:simpleType>
+          <xs:restriction base="xs:nonNegativeInteger">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="enrollmentTimeLimit">
+        <xs:simpleType>
+          <xs:restriction base="xs:nonNegativeInteger">
+            <xs:minInclusive value="120"/>
+            <xs:maxInclusive value="1800"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dataChallengePassword" type="EncryptedContent"/>
+  <xs:element name="certFile">
+    <xs:complexType>
+     <xs:complexContent>
+      <xs:extension base="EncryptedContent">
+        <xs:attribute name="category" use="required"/>
+        <xs:attribute name="certFingerprint" use="required"/>
+        <xs:attribute name="certSerialNumber" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:element>
+  <!--
+    Contains encrypted payload according to PKCS#5 v2.1
+    plus the attributes needed to decrypt the payload
+  -->
+  <xs:complexType name="EncryptedContent">
+    <xs:annotation><xs:appinfo>
+     <jaxb:class name="ISCFEncryptedContent"> 
+      <jaxb:javadoc>Encrypted content for ISCF XML output.</jaxb:javadoc>
+     </jaxb:class>
+   </xs:appinfo></xs:annotation>
+    <xs:sequence>
+      <xs:element ref="encryptedContent"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="encryptedContent">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:base64Binary">
+          <xs:attribute name="PBKDF2salt" use="required" type="xs:base64Binary"/>
+          <xs:attribute name="PBKDF2iterationCount" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:positiveInteger">
+                <xs:minInclusive value="1000"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    The validator serves to protect the file against manipulation
+    and also makes the file a proprietary Ericsson interface.
+
+  -->
+  <xs:element name="validators">
+    <xs:complexType>
+      <xs:attribute name="hash" use="required" type="xs:base64Binary"/>
+      <xs:attribute name="hmac" use="required" type="xs:base64Binary"/>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    The validator is a HMAC-SHA1 checksum computed over the
+    contents of the file from and including the initial '<' in
+    <body> upto and including the closing '>' in </body>.
+
+    For the purpose of the hash computation, all white space
+    (char value <= 0x20) is to be removed from the data. This
+    allow for the file to be formatted whithout changing the
+    checksum. However, no data can be modified, removed, or
+    added without affecting the resulting hash.
+
+    The HMAC key shall be the 20 bytes SHA1 hash of the RBS
+    Integration Code (RIC).
+    +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  -->
+</xs:schema>
+<!--
+  Time and date are expected to be specified using
+  the format "YYYYMMDDHHMMSS". UTC is assumed.
+  e.g. "20100223145629"
+-->

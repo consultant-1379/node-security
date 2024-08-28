@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nodes>
+	<Node>
+		<!-- Missing NodeFdn -->
+		<EntityProfileName>DUSGen2OAM EP</EntityProfileName>
+		<SubjectAltName>10.0.0.5</SubjectAltName>
+		<SubjectAltNameType>IP_ADDRESS</SubjectAltNameType>
+		<EnrollmentMode>SCAP</EnrollmentMode>
+		<KeySize>RSA_1024</KeySize>
+	</Node>
+	<Node>
+		<NodeFdn>NODE002</NodeFdn>
+		<EntityProfileName>MacroRBSGen1OAM EP</EntityProfileName>
+		<SubjectAltName>10.0.0.6</SubjectAltName>
+		<SubjectAltNameType>IP_ADDRESS</SubjectAltNameType>
+		<EnrollmentMode>SCEP</EnrollmentMode>
+		<KeySize>RSA_2048</KeySize>
+	</Node>
+</Nodes>

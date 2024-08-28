@@ -1,0 +1,5 @@
+cmedit create NetworkElement=XXNODENAMEXX networkElementId="XXNODENAMEXX",neType="XXNETYPEXX",platformType="CPP",ossPrefix="XXOSSPREFIXXX" -ns=OSS_NE_DEF -v=2.0.0
+cmedit create NetworkElement=XXNODENAMEXX,CppConnectivityInformation=1 CppConnectivityInformationId="1",port="80",ipAddress="XXIPADDRESSXX" -ns=CPP_MED -v=1.0.0
+secadm credentials create --rootusername XXUSERNAMEXX --rootuserpassword XXPASSWORDXX --secureusername XXUSERNAMEXX --secureuserpassword XXPASSWORDXX --normalusername XXUSERNAMEXX --normaluserpassword XXPASSWORDXX -n XXNODENAMEXX
+cmedit set NetworkElement=XXNODENAMEXX,CmNodeHeartbeatSupervision=1 active=true
+fmedit set NetworkElement=XXNODENAMEXX,FmAlarmSupervision=1 alarmSupervisionState=true

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name='security'>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="challengePassword" type="xs:string"/>
+				<xs:element name="enrollmentCaFingerprint" type="xs:string"/>
+				<xs:element name="issuerCA" type="xs:string"/>
+				<xs:element name="keyInfo" type="xs:string"/>
+				<xs:element name="subjectName" type="xs:string"/>
+				<xs:element name="url" type="xs:string"/>
+				<xs:element name="trustedCertificateFingerPrints" type="TrustedCertificateFingerPrints"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="TrustedCertificateFingerPrints">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="certificateFingerPrint" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

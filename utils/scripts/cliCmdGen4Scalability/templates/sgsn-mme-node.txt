@@ -1,0 +1,69 @@
+# get all NetworkElement trees
+cmedit get * NetworkElement.(*)
+
+# get specific NetworkElement
+cmedit get * NetworkElement.networkElementId==XXNODENAMEXX
+
+# ISCF
+# svc-1-secserv
+secadm test --restGet "http://10.247.246.125:8080/node-security/pkimanager/mockStatus"
+# svc-2-secserv
+secadm test --restGet "http://10.247.246.126:8080/node-security/pkimanager/mockStatus"
+
+# create MeContext and NetworkElement tree
+cmedit create MeContext=XXNODENAMEXX MeContextId=XXNODENAMEXX, neType=SGSN-MME -ns=OSS_TOP -version=3.0.0
+cmedit get MeContext=XXNODENAMEXX
+cmedit create NetworkElement=XXNODENAMEXX networkElementId=XXNODENAMEXX, neType=SGSN-MME, ossModelIdentity="XXOSSMODELIDENTITYXX", ossPrefix="MeContext=XXNODENAMEXX" -ns=OSS_NE_DEF -version=2.0.0
+cmedit get NetworkElement=XXNODENAMEXX
+
+# create NetworkElement tree without MeContext
+cmedit create NetworkElement=XXNODENAMEXX networkElementId=XXNODENAMEXX, neType=SGSN-MME, ossModelIdentity="XXOSSMODELIDENTITYXX", ossPrefix="" -ns=OSS_NE_DEF -version=2.0.0
+
+# create Connectivity Info
+cmedit create NetworkElement=XXNODENAMEXX,ComConnectivityInformation=1 ComConnectivityInformationId="1", port=22, ipAddress="XXIPADDRESSXX", strictHostKeyChecking="yes", isNetconfSubsystemSupported="true" -ns=COM_MED -version=1.1.0
+
+# check that the NetworkElement 'add' flow worked ok... i.e. that the CmFunction, SecurityFunction and Supervision objects have been created
+cmedit get NetworkElement=XXNODENAMEXX,CmFunction=1
+cmedit get NetworkElement=XXNODENAMEXX,SecurityFunction=1
+cmedit get NetworkElement=XXNODENAMEXX,CmNodeHeartbeatSupervision=1
+
+# sets all supervision tasks... including sync, notifications, FM, PM & SHM supervision etc
+cmedit set NetworkElement=XXNODENAMEXX,CmNodeHeartbeatSupervision=1 active=true
+
+# set the alarm notification 
+fmedit set NetworkElement=XXNODENAMEXX,FmAlarmSupervision=1 alarmSupervisionState=true
+
+#
+# check sync status
+cmedit get NetworkElement=XXNODENAMEXX,CmFunction=1
+
+# credentials create
+secadm credentials create --secureusername netsim1 --secureuserpassword netsim -n XXNODENAMEXX
+# credentials update
+secadm credentials update --secureusername netsim --secureuserpassword netsim -n XXNODENAMEXX
+
+# check that the NetworkElementSecurity object has been created
+cmedit get NetworkElement=XXNODENAMEXX,SecurityFunction=1,NetworkElementSecurity=1
+
+# keygen
+secadm keygen create -n XXNODENAMEXX -t RSA_1024
+secadm keygen update -n XXNODENAMEXX -t RSA_2048
+
+http://localhost:8380/node-security/workflow/SSHKeyGeneration/XXNODENAMEXX?wfVariables=IS_CREATE=true,ALGORITHM=RSA_1024
+
+# issue certificate OAM
+secadm certificate issue -ct OAM -xf file:XXNODENAMEXX-OAM.xml
+
+# issue certificate IPSEC
+secadm certificate issue -ct IPSEC -xf file:XXNODENAMEXX-IPSEC.xml
+ 
+# Turn off supervision, for safe delete of Node in DPS
+cmedit set NetworkElement=XXNODENAMEXX,CmNodeHeartbeatSupervision=1 active=false
+
+fmedit set NetworkElement=XXNODENAMEXX,FmAlarmSupervision=1 alarmSupervisionState=false
+
+# Mirror delete
+cmedit delete MeContext=XXNODENAMEXX -ALL
+# Normalized delete
+cmedit delete NetworkElement=XXNODENAMEXX -ALL
+

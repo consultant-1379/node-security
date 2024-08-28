@@ -1,0 +1,6 @@
+cmedit create MeContext=XXNODENAMEXX MeContextId=XXNODENAMEXX, neType=SGSN-MME -ns=OSS_TOP -version=3.0.0
+cmedit create NetworkElement=XXNODENAMEXX networkElementId=XXNODENAMEXX, neType=SGSN-MME, ossModelIdentity="XXOSSMODELIDENTITYXX", ossPrefix="MeContext=XXNODENAMEXX" -ns=OSS_NE_DEF -version=2.0.0
+cmedit create NetworkElement=XXNODENAMEXX,ComConnectivityInformation=1 ComConnectivityInformationId="1", port=22, ipAddress="XXIPADDRESSXX", strictHostKeyChecking="yes", isNetconfSubsystemSupported="true" -ns=COM_MED -version=1.1.0
+cmedit set NetworkElement=XXNODENAMEXX,CmNodeHeartbeatSupervision=1 active=true
+fmedit set NetworkElement=XXNODENAMEXX,FmAlarmSupervision=1 alarmSupervisionState=true
+

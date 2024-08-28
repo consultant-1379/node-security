@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name='rtselDeleteServerConfiguration'>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name='nodeRtselDetails' type='NodeRtselDetails'
+					minOccurs='1' maxOccurs='unbounded' />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="NodeRtselDetails">
+		<xs:sequence>
+			<xs:element name="nodes" type="Nodes" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="servers" type="Servers"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Nodes">
+		<xs:sequence>
+			<xs:element name="nodeFdn" type="minStringLength" minOccurs="1"
+				maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Servers">
+		<xs:sequence>
+			<xs:element name="serverName" type="minStringLength" minOccurs="1" maxOccurs="2" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="minStringLength">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:pattern value=".*[^\s].*" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

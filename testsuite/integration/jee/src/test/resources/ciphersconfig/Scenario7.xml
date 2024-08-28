@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ciphersConfiguration>
+  <nodeCiphers>
+    <nodes>
+      <nodeFdn>DG200001</nodeFdn>	  
+    </nodes>    
+	<sshProtocol>
+      <keyExchangeCiphers>
+        <cipher>ssh-dss</cipher>
+	   </keyExchangeCiphers>
+    </sshProtocol>
+</nodeCiphers>
+</ciphersConfiguration>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EnrollmentDetails>
+    <nodeEnrollmentDetails>
+        <Nodes>
+            <Node>
+                <NodeFdn>dg2ERBS01</NodeFdn>
+                <SubjectAltName>192.168.103.1</SubjectAltName>
+                <SubjectAltNameType>IP_ADDRESS</SubjectAltNameType>
+                <CertificateSubjectDn>CN=dg2ERBS01-ipsec,C=SE,O=ERICSSON,OU=BUCI DUAC NAM</CertificateSubjectDn>
+                <ChallengePhrase>Ericsson@1</ChallengePhrase>
+                <InterfaceFdn>ManagedElement=dg2ERBS01,Transport=1,Router=1,Interface=1,AddressIpv4=1</InterfaceFdn>
+            </Node>
+        </Nodes>
+        <externalCAEnrollmentInfo>
+            <externalCAEnrollmentDetails>
+                <certificateAuthorityDn>CN=NE_IPsec_CA,OU=BUCI_DUAC_NAM,O=ERICSSON,C=SE</certificateAuthorityDn>
+                <caCertificate>MIIDDzCCAfegAwIBAgIIAQn7LdU2zNswDQYJKoZIhvcNAQELBQAwFTETMBEGA1UEAwwKUm9vdF9DQV9USDAeFw0xODEwMzAxMzQ0MTVaFw0yMzEwMjkxMzQ0MTVaMBUxEzARBgNVBAMMClJvb3RfQ0FfVEgwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDcRGfkadIqZupAOIkqu+1E2VrT4JcU3j3FC4lRvWFKZa3OcXOpqp52I6FrU+wmNaUvswkgDVWSIPzqKMj+10fyildVUAQQmXnVrgHAs9HALxfEqlx0mALT0waucmPTmicUc3gde3DMTzTarc4v2IdyzgY0m7yXUzn4Z7ASQBmK/KFnSPg5TrlbAHIP6YADL4z0lWv8XC0PLw0jC2dnq44C5owjut8XTSAdZLwzL7mSya7wBI+FSd/UlRsWrlwvlcITpJBxJ9YIFw7SsCsLIlqtNTM08ctOncYch1vHOhk7KOiILmHfXKUIPxGaan0m8B/fpy0YkT8KBsE5JwDZKBoHAgMBAAGjYzBhMA8GA1UdEwEB/wQFMAMBAf8wHwYDVR0jBBgwFoAUuMWf/RWtRnJqypBh66V9zN1ztV4wHQYDVR0OBBYEFLjFn/0VrUZyasqQYeulfczdc7VeMA4GA1UdDwEB/wQEAwIBhjANBgkqhkiG9w0BAQsFAAOCAQEA0CmcWWPcswN8OJQ0z4jhQYTwHzh1/69oH/5ChBVL6nu2kqZeferWP4kaDBeK0PAxkI3Ttm8d5VSl5T/8fE04l5Q7e2LogB9puyUh3fyQtgylgiz+zixDsj4fqOvRUO27rCA0d4kzhs4NkX8VhxS5ylrCIQjFGGXkzR+IoFLogqofreAU1I9/EUyziUrNvKWJhy/ICIdMW4XqwxpZTaOPLfUC7h+cE+w7/tCZqlbA47EYogbinJQueMB7KMUINSbZyGvkWoU16gXFmU2rHMQ9jegV4v8xqqRr41hkwr6Otw4t/Oj6anFBQcfvwFP15jnQzzuQPO1TEQlxOGNYZpeF2A==</caCertificate>
+                <enrollmentServerUrl>http://192.168.0.155:8091/pkira-cmp/NE_IPsec_CA/synch</enrollmentServerUrl>
+            </externalCAEnrollmentDetails>
+        </externalCAEnrollmentInfo>
+    </nodeEnrollmentDetails>
+</EnrollmentDetails>

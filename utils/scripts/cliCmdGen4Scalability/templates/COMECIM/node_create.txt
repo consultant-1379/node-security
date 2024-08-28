@@ -1,0 +1,5 @@
+cmedit create NetworkElement=XXNODENAMEXX networkElementId="XXNODENAMEXX",neType="XXNETYPEXX",ossPrefix="XXOSSPREFIXXX" -ns=OSS_NE_DEF -v=2.0.0
+cmedit create NetworkElement=XXNODENAMEXX,ComConnectivityInformation=1 ComConnectivityInformationId="1",port="6513",transportProtocol="TLS",ipAddress="XXIPADDRESSXX" -ns=COM_MED -v=1.1.0
+secadm credentials create --secureusername XXUSERNAMEXX --secureuserpassword XXPASSWORDXX -n XXNODENAMEXX
+cmedit set NetworkElement=XXNODENAMEXX,CmNodeHeartbeatSupervision=1 active=true
+fmedit set NetworkElement=XXNODENAMEXX,FmAlarmSupervision=1 alarmSupervisionState=true

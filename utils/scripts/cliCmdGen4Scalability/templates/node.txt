@@ -1,0 +1,60 @@
+####################
+###   NODE GET   ###
+####################
+cmedit get * NetworkElement.(*)
+cmedit get * NetworkElementSecurity.(secureUserName, secureUserPassword)
+cmedit get NetworkElement=XXNODENAMEXX
+cmedit get * NetworkElement.networkElementId==XXNODENAMEXX
+cmedit get NetworkElement=XXNODENAMEXX,SecurityFunction=1 NetworkElementSecurity.enrollmentMode
+
+#######################
+###   NODE DELETE   ###
+#######################
+XXNODEDELETEXX
+
+##################################################
+###   NODE CREATE                              ###
+###   CREDENTIALS CREATE                       ###
+###   NODE SYNC AND ENABLE ALARM SUPERVISION   ###
+##################################################
+XXNODECREATEXX
+
+cmedit get NetworkElement=XXNODENAMEXX
+cmedit get NetworkElement=XXNODENAMEXX,ComConnectivityInformation=1
+
+cmedit get NetworkElement=XXNODENAMEXX,SecurityFunction=1,NetworkElementSecurity=1
+
+cmedit get NetworkElement=XXNODENAMEXX,CmFunction=1
+
+#######################
+###   NODE RESYNC   ###
+#######################
+cmedit set NetworkElement=XXNODENAMEXX,CmNodeHeartbeatSupervision=1 active=false
+cmedit set NetworkElement=XXNODENAMEXX,CmNodeHeartbeatSupervision=1 active=true
+
+cmedit get NetworkElement=XXNODENAMEXX,CmNodeHeartbeatSupervision=1
+cmedit get * CmFunction.syncStatus==SYNCHRONIZED
+cmedit get NetworkElement=XXNODENAMEXX,FmAlarmSupervision=1
+
+################################
+###   OAM NODE CERTIFICATE   ###
+################################
+secadm certificate get --certtype OAM --nodelist XXNODENAMEXX
+secadm certificate issue -ct OAM -xf file:XXNODENAMEXX-OAM.xml
+secadm certificate reissue -ct OAM -n XXNODENAMEXX
+
+secadm trust get --certtype OAM --nodelist XXNODENAMEXX
+secadm trust distribute --certtype OAM --nodelist XXNODENAMEXX
+secadm trust rm -ct OAM -isdn "XXOAMISSUERXX" -sn "XXOAMSNXX" -n XXNODENAMEXX
+
+##################################
+###   IPSEC NODE CERTIFICATE   ###
+##################################
+secadm certificate get --certtype IPSEC --nodelist XXNODENAMEXX
+secadm certificate issue -ct IPSEC -xf file:XXNODENAMEXX-IPSEC.xml
+secadm certificate reissue -ct IPSEC -n XXNODENAMEXX
+ 
+secadm trust get --certtype IPSEC --nodelist XXNODENAMEXX
+secadm trust distribute --certtype IPSEC --nodelist XXNODENAMEXX
+secadm trust rm -ct IPSEC -isdn "XXIPSECISSUERXX" -sn "XXIPSECSNXX" -n XXNODENAMEXX
+

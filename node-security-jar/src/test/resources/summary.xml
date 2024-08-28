@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AutoIntegrationRbsSummaryFile>
+    <Format revision="F"/>
+    <ConfigurationFiles siteBasicFilePath="C:\Users\emehsau\workspace\juno\ipsec\TestProject\src\generated\NewIpForOamSetting.xml"
+                        siteEquipmentFilePath="C:\Users\emehsau\workspace\juno\ipsec\TestProject\src\generated\NewIpForOamSetting.xml"
+                        siteBasicFileHash="A57A9110CBAAAED959FDC18F8D520A6BD07A9372"
+                        siteEquipmentFileHash="A57A9110CBAAAED959FDC18F8D520A6BD07A9372"/>
+</AutoIntegrationRbsSummaryFile>

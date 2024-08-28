@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="LdapConfigurationSchema.xsd">
+	<Node>
+		<nodeFdn>DUG22</nodeFdn>
+		<tlsMode>STARTTLS</tlsMode>
+		<userLabel>Ldap Configuration</userLabel>
+		<useTls>true</useTls>
+	</Node>
+	<Node>
+		<nodeFdn>DUG33</nodeFdn>
+		<tlsMode>STARTTLS</tlsMode>
+		<userLabel>Ldap Configuration</userLabel>
+		<useTls>true</useTls>
+	</Node>	
+</Nodes>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name='Nodes'>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name='Node' type='NodeType' minOccurs='1' maxOccurs='unbounded' />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="NodeType">
+		<xs:sequence>
+			<xs:element name="nodeFdn" type="xs:string" minOccurs="1" nillable="false" />
+			<xs:element name="certType" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="entityProfileName" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="keySize" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="commonName" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="enrollmentMode" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="subjectAltName" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="subjectAltNameType" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="ipVersion" type="ipVersionValues" minOccurs="0" maxOccurs="1" />
+			<xs:element name="otpCount" type="xs:integer" minOccurs="0" maxOccurs="1" />
+			<xs:element name="otpValidityPeriodInMinutes" type="xs:integer" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ipVersionValues">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="INET" />
+			<xs:enumeration value="INET6" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

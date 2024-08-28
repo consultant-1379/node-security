@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EnrollmentDetails>
+    <!-- can have multiple NodeEnrollmentDetails -->
+    <nodeEnrollmentDetails>
+        <Nodes>
+            <!-- can have multiple Nodes -->
+            <Node>
+                <NodeFdn>LTE01dg2ERBS00001</NodeFdn> <!-- mandatory -->
+                <SubjectAltName>192.168.101.71</SubjectAltName> <!-- mandatory for IPSec-->
+                <SubjectAltNameType>IP_ADDRESS</SubjectAltNameType> <!-- mandatory for IPSec -->
+                <CertificateSubjectDn>CN=LTE01dg2ERBS00001-ipsec,C=SE,O=ERICSSON,OU=BUCI DUAC NAM</CertificateSubjectDn><!-- mandatory only for ExternalCA enrollment -->
+                <ChallengePhrase>Ericsson@1</ChallengePhrase><!-- can be provided only for ExternalCA enrollment and is mandatory if enrollment mode is CMP(IAK) -->			
+            </Node>
+        </Nodes>
+        <!-- Optional, mandatory for ext ca -->
+        <externalCAEnrollmentInfo>
+            <externalCAEnrollmentDetails>
+                <certificateAuthorityDn>C=SE,OU=BUCI_DUAC_NAM,O=ERICSSON,CN=NE_IPsec_CA</certificateAuthorityDn> <!-- mandatory-->
+                <caCertificate>MIIEcTCCA1mgAwIBAgIICJ1AKC2cVuwwDQYJKoZIhvcNAQELBQAwUjEYMBYGA1UEAwwPRU5NX1BLSV9Sb290X0NBMREwDwYDVQQKDAhFUklDU1NPTjELMAkGA1UEBhMCU0UxFjAUBgNVBAsMDUJVQ0lfRFVBQ19OQU0wHhcNMTgxMTExMTU0OTA4WhcNMjYxMTExMTU0OTA4WjBOMRQwEgYDVQQDDAtORV9JUHNlY19DQTERMA8GA1UECgwIRVJJQ1NTT04xCzAJBgNVBAYTAlNFMRYwFAYDVQQLDA1CVUNJX0RVQUNfTkFNMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjkMggyPQ4UJ1kYjB0nH0H4ZoDRrKFlJStzRQLM8wa13IpEhSRDz+EFmquJNOesGS68Z14QaAI8M/MZCdgduSHZkAeCupmHejODKwk+5xDTP/IBVDPAf4jyEWdUyORnzimxhB8xnU/nPbzy1pX9cGmYnwk6WQRcdk8PK3k4PrDmnyj2Rw/+kcAxQ1yFBXxkhWk5B9tzgUvNK+5l7h4zFDQmPo+5D09+erd115D0ZPdUwDDd7sfSINQJnk17QgtxbKQpSPyzzDYFKTaL3NHGoj9Q8NR2KtDm2gAsjX1K6erfIBKy8DsjMJhxzPxw3ykvJJ99SG/3+jzbePosyO/qnDdQIDAQABo4IBTTCCAUkwgeUGA1UdHwSB3TCB2jBloGOgYYZfaHR0cDovLzE5Mi4xNjguMC4xNTU6ODA5Mi9wa2ktY2Rwcz9jYV9uYW1lPUVOTV9QS0lfUm9vdF9DQSZjYV9jZXJ0X3NlcmlhbG51bWJlcj0zNzllN2I3NDM5MDc3ZjQwcaBvoG2Ga2h0dHA6Ly9bMjAwMToxYjcwOjgyYTE6MTAzOjoxODFdOjgwOTIvcGtpLWNkcHM/Y2FfbmFtZT1FTk1fUEtJX1Jvb3RfQ0EmY2FfY2VydF9zZXJpYWxudW1iZXI9Mzc5ZTdiNzQzOTA3N2Y0MB0GA1UdDgQWBBSaubX+3KWgXxIDfyH3Xjhk93ZOPDAPBgNVHRMBAf8EBTADAQH/MB8GA1UdIwQYMBaAFHvcrYxoKtqlLJNEI/oheicGPK2oMA4GA1UdDwEB/wQEAwIBBjANBgkqhkiG9w0BAQsFAAOCAQEANoSK2zZnBP7jVkC8x94CpKinIT+vdyYNzeBhdVqYRdvFih1ibKGHXGVo4BYRlKa0CR653CmKpHbmbINVMxoKwDo1jmLl4JT1Dp+XH4fpNp9P6aRsNYoUXxCbp3Gp2euf+ntLrXlbEoE5bzlGMkWuoXbcW+pBYFz+5SqGTR6lkYQoWbqPxLRqj6dOwy1/SrfcZk9Hihv0MXUah66m6LBlcWveoASBz8nYdIaa0uVDgdGYAFDgyQBBm1MbEYWWjniK6pYC3t1U2o7LfP5RTcWOoiP1dK0tzBkMDpx9zpCMljVXmb7RjFsMfwkAwo7lnpC5iifg7qoGN2nb6K4Xc2kIug==</caCertificate> <!-- mandatory --> <!-- will be provided in base64 format -->
+                <enrollmentServerUrl>http://192.168.0.155:8091/pkira-cmp/NE_IPsec_CA</enrollmentServerUrl> <!-- mandatory -->
+				<InterfaceIpAddressFdn>ManagedElement=LTE04dg2ERBS00002,Transport=1,Router=1,InterfaceIPv4=1</InterfaceIpAddressFdn>
+            </externalCAEnrollmentDetails>
+			<TrustedCACertificates>
+				<TrustedCACertificateInfo>
+					<TDPSUrl>http://192.168.0.155:8093/pki-ra-tdps/ca_entity/NE_OAM_CA/47d7540638ac1598/active/ENM_PKI_Root_CA</TDPSUrl>
+					<TrustedCACertIssuerDn>C=SE,OU=BUCI_DUAC_NAM,O=ERICSSON,CN=ENM_PKI_Root_CA</TrustedCACertIssuerDn>
+					<CertificateSerialNumber>47d7540638ac1598</CertificateSerialNumber>
+				</TrustedCACertificateInfo>
+			</TrustedCACertificates>
+        </externalCAEnrollmentInfo>
+    </nodeEnrollmentDetails>
+</EnrollmentDetails>

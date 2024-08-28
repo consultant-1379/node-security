@@ -1,0 +1,6 @@
+cmedit create MeContext=XXNODENAMEXX MeContextId=XXNODENAMEXX, neType=ERBS, platformType=CPP -ns=OSS_TOP -version=3.0.0
+cmedit create NetworkElement=XXNODENAMEXX networkElementId=XXNODENAMEXX, neType=ERBS, platformType=CPP, ossModelIdentity="XXOSSMODELIDENTITYXX", ossPrefix="MeContext=XXNODENAMEXX" -ns=OSS_NE_DEF -version=2.0.0
+cmedit create NetworkElement=XXNODENAMEXX,CppConnectivityInformation=1 CppConnectivityInformationId=1, ipAddress="XXIPADDRESSXX", port=80 -ns=CPP_MED -version=1.0.0
+cmedit set NetworkElement=XXNODENAMEXX,CmNodeHeartbeatSupervision=1 active=true
+fmedit set NetworkElement=XXNODENAMEXX,FmAlarmSupervision=1 alarmSupervisionState=true
+

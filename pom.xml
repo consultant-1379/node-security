@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ericsson.nms</groupId>
+        <artifactId>integration</artifactId>
+        <version>15.2.0.40</version>
+    </parent>
+
+    <groupId>com.ericsson.nms.security.nscs</groupId>
+    <artifactId>node-security</artifactId>
+    <version>1.173.2-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <url>http://www.ericsson.com</url>
+    <organization>
+        <name>Ericsson</name>
+    </organization>
+
+    <prerequisites>
+        <maven>3.5.3</maven>
+    </prerequisites>
+
+    <name>[${project.artifactId}] JEE8 Project</name>
+
+    <properties>
+        <!-- JBoss modules your service will automatically add to classpath  -->
+        <project.ear.Dependencies>
+            org.slf4j,
+            com.ericsson.oss.itpf.datalayer.dps.api export meta-inf annotations,
+            com.ericsson.oss.itpf.modeling.modelservice.api meta-inf,
+            com.ericsson.oss.itpf.security.cryptography.api services export meta-inf,
+            com.ericsson.oss.services.wfs.api export meta-inf,
+            com.ericsson.oss.mediation.engine-api export meta-inf,
+            com.fasterxml.jackson.core.jackson-annotations export meta-inf,
+            com.fasterxml.jackson.core.jackson-core export meta-inf,
+            com.fasterxml.jackson.core.jackson-databind export meta-inf
+        </project.ear.Dependencies>
+        <project.ear.defaultLibBundleDir>lib</project.ear.defaultLibBundleDir>
+
+        <!-- Integration Test && JBoss-->
+        <version.arquillian.bom>1.1.15.Final</version.arquillian.bom>
+        <version.arquillian-suite-extension>1.2.1</version.arquillian-suite-extension>
+        <version.wildfly-arquillian-container-managed>2.1.1.Final</version.wildfly-arquillian-container-managed>
+
+        <version.jboss.as>7.2.5</version.jboss.as>
+        <version.jboss-javaee-8.0>1.0.1.Final-redhat-00002</version.jboss-javaee-8.0>
+        <version.jboss-ejb3-ext-api>2.1.0</version.jboss-ejb3-ext-api>
+
+        <!-- Plugins -->
+        <version.ejb>3.2</version.ejb>
+        <version.maven-ejb-plugin>3.0.1</version.maven-ejb-plugin>
+        <version.maven-war-plugin>3.1.0</version.maven-war-plugin>
+        <version.maven-ear-plugin>3.0.1</version.maven-ear-plugin>
+        <version.jee>8</version.jee> <!-- for maven-ear-plugin-->
+
+        <version.maven-antrun-plugin>1.7</version.maven-antrun-plugin>
+        <version.antlr4-maven-plugin>4.1</version.antlr4-maven-plugin>
+
+        <version.jacoco-maven-plugin>0.8.5</version.jacoco-maven-plugin>
+        <version.maven-surefire-plugin>3.0.0-M3</version.maven-surefire-plugin>
+
+        <version.exec-maven-plugin>1.6.0</version.exec-maven-plugin>
+
+        <!-- Test -->
+        <version.easymock>3.1</version.easymock>
+        <version.slf4j-simple>1.7.5</version.slf4j-simple>
+        <version.mockito-all>1.9.5</version.mockito-all>
+        <version.assertj-core>2.5.0</version.assertj-core>
+
+        <!-- Fast Commit properties -->
+        <version.groovy>2.4.13</version.groovy>
+        <version.spock>1.0-groovy-2.4</version.spock>
+        <version.cdi-test-support>1.1.184</version.cdi-test-support>
+        <version.cglib-nodep>3.1</version.cglib-nodep>
+        <version.hamcrest-all>1.3</version.hamcrest-all>
+
+        <!-- Sonarqube -->
+        <sonar.coverage.jacoco.xmlReportPaths>
+            ../node-security-test-jar/target/coverage-reports/jacoco/jacoco.xml
+        </sonar.coverage.jacoco.xmlReportPaths>
+
+        <!-- 3PP Dependencies -->
+        <version.resteasy>3.0.21.Final</version.resteasy>
+        <version.resteasy-multipart-provider>2.3.4.Final</version.resteasy-multipart-provider>
+        <version.apache.httpclient>4.5.12</version.apache.httpclient>
+
+        <!-- overwrite commons-codec version contained in httpclient -->
+        <version.commons-codec>1.12</version.commons-codec>
+        <version.iaikjce>5.2</version.iaikjce>
+        <version.xercesImpl>2.9.1-jbossas-2</version.xercesImpl>
+        <version.bouncycastle>1.67</version.bouncycastle>
+
+        <!-- commons-validator dependency only with scope test -->
+        <version.commons-validator>1.5.0</version.commons-validator>
+        <version.commons-lang3>3.9</version.commons-lang3>
+        <version.commons-compress>1.26.0</version.commons-compress>
+        <version.xercesImpl>2.9.1-jbossas-2</version.xercesImpl>
+        <version.antlr4-runtime>4.1</version.antlr4-runtime>
+        <version.resteasy-jackson-provider>3.6.3.Final</version.resteasy-jackson-provider>
+
+        <version.jackson-core>2.9.8</version.jackson-core>
+        <version.jackson-annotations>2.9.0</version.jackson-annotations>
+        <version.jackson-databind>2.9.8</version.jackson-databind>
+        <!-- 3PP for test -->
+        <version.resteasy>3.0.21.Final</version.resteasy>
+        <version.resteasy-multipart-provider>2.3.4.Final</version.resteasy-multipart-provider>
+        <!-- Not needed ??? -->
+        <version.resteasy-jackson-provider>3.6.3.Final</version.resteasy-jackson-provider>
+
+        <!-- Baseline versions -->
+        <!-- When you want to switch to new Service Framework version only change value below -->
+        <!-- ERICserviceframeworkmodule_CXP9031004 -->
+        <version.service.framework>4.62.2</version.service.framework>
+        <version.service-framework-bundle>${version.service.framework}</version.service-framework-bundle>
+        <!-- DPS -->
+        <version.dps>2.99.2</version.dps>
+
+        <!-- ERICcmread_CXP9030316 -->
+        <version.cm-reader>1.103.3</version.cm-reader>
+        <!-- ERICcmwrite_CXP9030317 -->
+        <version.cm-writer>1.99.3</version.cm-writer>
+        <!-- ERICscripteng_CXP9030314 -->
+        <version.script-engine>1.45.2</version.script-engine>
+        <version.script-engine-spi>1.34.41</version.script-engine-spi>
+        <!-- ERICsmrsservice_CXP9030755 -->
+        <version.smrs-service>1.76.1</version.smrs-service>
+        <!-- ERICidentitymgmtservices_CXP9030930 -->
+        <version.identitymgmtservices>1.58.1</version.identitymgmtservices>
+        <!-- ERICgenericidentitymgmtservice_CXP9031923 -->
+        <version.gim-service-api>1.77.2</version.gim-service-api>
+        <!-- ERICpkimanagerapi_CXP9031871 -->
+        <version.pki-manager-api>1.51.1</version.pki-manager-api>
+        <version.pki-common>1.4.77</version.pki-common>
+        <!-- ERICpkimanager_CXP9031873 -->
+        <version.mock-pki-manager>1.2.6</version.mock-pki-manager>
+        <!-- ERICnodesecuritymodel_CXP9030968 -->
+        <version.nodesecuritymodel>1.35.1</version.nodesecuritymodel>
+        <nodesecuritymodel-file-name>nodesecuritymodel-xml.jar</nodesecuritymodel-file-name>
+        <!-- ERICcryptographyserviceapi_CXP9031014 -->
+        <version.cryptography.service.api>1.6.1</version.cryptography.service.api>
+        <!-- ERICcryptographyservice_CXP9031013 -->
+        <version.cryptography.service.api.impl>1.7.1</version.cryptography.service.api.impl>
+        <!-- ERICkeymanagement_CXP9031887 -->
+        <version.key-management-jar>1.13.1</version.key-management-jar>
+        <!-- ERICcppaaserviceapi_CXP9036621  -->
+        <cpp-aa-service-api>1.0.5</cpp-aa-service-api>
+        <!-- webpush -->
+        <!--version.restsdk-webpush-api>5.1.4</version.restsdk-webpush-api-->
+        <version.webpush.bom>7.0.1</version.webpush.bom>
+
+        <!-- WFS Dependencies  -->
+        <!-- ERICwfsjee_CXP9030499 -->
+        <!-- Please note that the version.wfs is not the version of ERICwfsjee_CXP9030499 but wfs-jee-wfapp .jar version that can be found inside ERICwfsjee_CXP9030499 bom-->
+        <version.wfs>3.2.2</version.wfs>
+        <version.camunda>7.16.7-ee</version.camunda>
+        <!-- ERICsecurityworkflows_CXP9031010 -->
+        <version.security-workflows>1.78.1</version.security-workflows>
+
+        <!--EBNF to Grammar Json Translator -->
+        <version.ebnf-to-json-grammar-translator>1.0.29</version.ebnf-to-json-grammar-translator>
+        <testsToSkip>-</testsToSkip>
+        <!-- DpsObjectMapper -->
+        <version.cm-common>1.41.5</version.cm-common>
+        <version.cmedit-common>1.12.3</version.cmedit-common>
+        <!-- TopologSearchService-api -->
+        <!-- ERICtopologycollections_CXP9030498 -->
+        <version.topology.collection.service.api>1.39.1</version.topology.collection.service.api>
+        <!-- ERICtopologysearch_CXP9030474 -->
+        <version.topology.search.service.api>1.30.6</version.topology.search.service.api>
+        <!-- ERICaccesscontrolservice_CXP9032624 -->
+        <version.accesscontrolservice.api>1.12.2</version.accesscontrolservice.api>
+        <!-- ERICfmprocessedeventmodel_CXP9030673 -->
+        <version.fm-model>1.32.3</version.fm-model>
+
+        <!-- Need by Arquillian Integration Test Only -->
+        <!-- MEDIATION SDK -->
+        <version.mediation.sdk>3.0.6</version.mediation.sdk> <!-- Old or obsoloteted ToBeClarify -->
+        <!-- ERICpib_CXP9030194 -->
+        <version.pib>4.1.1</version.pib>
+        <!-- Model Deployment Tool -->
+        <!-- ERICmodeldeploymenttool_CXP9030616 -->
+        <version.model.deployment.tool>9.35.1</version.model.deployment.tool>
+        <!-- ERICmediationtopconnectivityinfomodel_CXP9031293 -->
+        <version.top-ci-model-models>1.7.2</version.top-ci-model-models>
+        <!-- ERICmediationtopconnectivityinfomodel_CXP9031293 -->
+        <version.top.ci.model.jar>1.7.2</version.top.ci.model.jar>
+        <!-- ERICosstopmodel_CXP9031292 -->
+        <version.oss-top-model-models>2.4.9</version.oss-top-model-models>
+        <!-- ERICnetworkelementdefmodel_CXP9031290 -->
+        <version.network-element-definition-model-models>3.45.1</version.network-element-definition-model-models>
+        <!-- ERICcmparametersmodel_CXP9032669 -->
+        <version.cm-parameters-model>1.30.1</version.cm-parameters-model>
+        <!-- ERICnetworkelementcmdefmodel_CXP9031291 -->
+        <version.cm-function-model-models>1.11.5</version.cm-function-model-models>
+        <!-- ERICsecurityfunctionmodel_CXP9031405 -->
+        <version.security-function-model-models>1.8.3</version.security-function-model-models>
+        <!-- ERICaddnodebootstrapmodels_CXP9031420 -->
+        <version.add-node-bootstrap-models>1.14.4</version.add-node-bootstrap-models>
+        <!-- ERICgenfmnodecimodel_CXP9033264 -->
+        <version.generic-fm-node-ci-model-models>1.14.1</version.generic-fm-node-ci-model-models> <!-- Old version ToBeClarify -->
+        <!-- ERICmedcoreapichannelmodels_CXP9030899 -->
+        <version.mediation.core.api.channel.models.xml>1.2.22</version.mediation.core.api.channel.models.xml>
+        <!-- ERICmediationservicesmodel_CXP9031296 -->
+        <version.mediation-service-model-models>1.6.23</version.mediation-service-model-models>
+        <!-- ERICmedsdkeventmodels_CXP9030898 -->
+        <version.med-sdk-event-models>1.0.28</version.med-sdk-event-models> <!--new version of the repo doesn't have this model ToBeClarify -->
+        <mediation-sdk-event-models-xml>mediation-sdk-event-models-xml</mediation-sdk-event-models-xml>
+        <!--ERICnedmediationhandlermodels_CXP9033026-->
+        <version.ned-mediation-handlers>1.52.2</version.ned-mediation-handlers>
+        <!--ERICnedmediationmodels_CXP9032963 -->
+        <version.ned-mediation-models>1.24.3</version.ned-mediation-models>
+        <!-- ERICgeolocationmodel_CXP9031964 -->
+        <version.geo.location.model.xml>1.6.7</version.geo.location.model.xml>
+        <!-- ERICnetworkexplorermodels_CXP9030552 -->
+        <version.network.explorer.models>1.15.4</version.network.explorer.models>
+        <!--- No CXP repo : dps-test-model -->
+        <dps-test-model.version>1.21.96</dps-test-model.version>
+        <!-- ERICdpsconfmodels_CXP9030872 -->
+        <dps-conf-models-jar.version>1.15.3</dps-conf-models-jar.version>
+        <!-- ERICwfsmodel_CXP9031037 -->
+        <version.wfs-model>1.2.28</version.wfs-model>
+        <!-- ERICpibmodel_CXP9030858 -->
+        <version.pib.model>2.4.7</version.pib.model>
+        <!-- ERICclialiasmodel_CXP9031874 -->
+        <version.clialias-models>1.4.5</version.clialias-models>
+        <!-- ERICsmrsservicemodel_CXP9030970 -->
+        <version.smrsservicemodel>1.63.2</version.smrsservicemodel>
+        <!-- ERICsecuritymodel_CXP9030952 -->
+        <version.securitymodel>1.21.1</version.securitymodel>
+
+        <!-- CPP model version -->
+        <!-- ERICmediationcppconnectivityinfomodel_CXP9031294 -->
+        <version.cpp-ci-model-models>1.6.2</version.cpp-ci-model-models>
+        <!-- ERICmediationerbsnodemodelcommon_CXP9032151 -->
+        <version.erbs-node-model-common-jar>1.53.1</version.erbs-node-model-common-jar>
+        <!-- ERICmediationrbsnodemodelcommon_CXP9032278 -->
+        <version.rbs-node-model-common-jar>1.40.1</version.rbs-node-model-common-jar>
+        <!-- ERICkpicalculationflowmodel_CXP9031710 -->
+        <version.kpi-calculation-flow-model-jar>1.70.3</version.kpi-calculation-flow-model-jar>
+        <!-- ERICeniqtopologyservicemodel_CXP9031298 -->
+        <version.eniq-topology-service-model-config-model>1.88.1</version.eniq-topology-service-model-config-model>
+        <!-- ERICautocellidmodel_CXP9031283 -->
+        <version.autocellidmodel-model>1.51.2</version.autocellidmodel-model>
+        <!-- ERICshmmodels_CXP9031349 -->
+        <version.shm-models-model>1.112.1</version.shm-models-model>
+        <!-- ERICpmulservicemodel_CXP9032949 -->
+        <version.pmul-service-model>1.71.1</version.pmul-service-model>
+        <!-- ERICerbsnodemodel_CXP9034437 -->
+        <version.erbs-node-model-1-129-20-Q1-J-4-606-jar>1.58.1</version.erbs-node-model-1-129-20-Q1-J-4-606-jar>
+
+        <!-- COM-ECIM model versions -->
+        <!-- ERICcommodels_CXP9034467 -->
+        <version.com-models-jar>3.17.1</version.com-models-jar>
+        <!-- ERICcommodels_CXP9034467 -->
+        <version.com-models-r7.0-jar>3.11.4</version.com-models-r7.0-jar> <!-- Old version ToBeClarify -->
+        <!-- ERICmsrbsv2nodemodelcommon_CXP9032227 -->
+        <version.msrbsv2-node-model-common-jar>1.80.3</version.msrbsv2-node-model-common-jar>
+        <!-- ERICradionodenodemodel_CXP9033949 -->
+        <version.radionode-node-model-1-162-21-Q2-R29A13-jar>2.50.2</version.radionode-node-model-1-162-21-Q2-R29A13-jar>
+        <!-- ERICnhcecimmodels_CXP9036041 -->
+        <version.nodehealthcheck-ecim-models-model>1.12.1</version.nodehealthcheck-ecim-models-model>
+        <!-- ERICradiocommonnodemodel_CXP9037668 -->
+        <version.radio-common-node-model-jar>1.20.2</version.radio-common-node-model-jar>
+
+        <!-- ERICmediationsgsnmmenetypemodel_CXP9031399 -->
+        <!--version.neType.sgsn-mme.model.jar>1.0.20</version.neType.sgsn-mme.model.jar-->
+        <!-- ERICmediationsgsnplatformtypemodel_CXP9031437 -->
+        <!--version.platform.type.model.sgsn>1.0.18</version.platform.type.model.sgsn-->
+        <!-- ERICcbaconfigurationmodel_CXP9031361 -->
+        <!--version.cba.configuration.model.jar>1.3.2</version.cba.configuration.model.jar-->
+        <!-- ERICcbacmsyncnodehandlermodel_CXP9031501 -->
+        <!--version.cba.cm.sync.node.handler.models.jar>1.1.1</version.cba.cm.sync.node.handler.models.jar-->
+        <!-- ERICcbacmsyncnodeflowmodels_CXP9031502 -->
+        <!--version.cba.cm.sync.node.flow.models.jar>1.1.9</version.cba.cm.sync.node.flow.models.jar-->
+        <!-- ERICcbacmnetconfhandlermodel_CXP9031222 -->
+        <!--version.cba.cm.netconf.handler.model.jar>1.4.3</version.cba.cm.netconf.handler.model.jar-->
+        <!-- ERICcbanetconfconnecthandlermodel_CXP9031346 -->
+        <!--version.cba.netconf.connect.handler.model.jar>1.1.1</version.cba.netconf.connect.handler.model.jar-->
+        <!-- ERICcbanetconfdisconnecthandlermodel_CXP9031348 -->
+        <!--version.cba.netconf.disconnect.handler.model.jar>1.2.1</version.cba.netconf.disconnect.handler.model.jar-->
+        <!-- ERICcbanetconfwritecontrollermodel_CXP9032025 -->
+        <!--version.cba.netconf.write.controller.handler.models.jar>1.3.2
+        </version.cba.netconf.write.controller.handler.models.jar-->
+        <!-- ERICmediationcbaplatformtypemodel_CXP9031438 -->
+        <!--version.platform.type.model.cba>1.0.18</version.platform.type.model.cba-->
+
+        <!-- Cisco/Juniper model versions -->
+        <!-- ERICciscoroutercmmediatonconfig_CXP9033118-->
+        <version.cisco-router-cm-mediation-configuration-jar>1.13.1</version.cisco-router-cm-mediation-configuration-jar>
+        <!-- ERICciscorouternodemodelcommon_CXP9033120 -->
+        <version.cisco-router-node-model-common-jar>1.14.1</version.cisco-router-node-model-common-jar>
+        <!-- ERICciscoasr900nodemodelcommon_CXP9035812 -->
+        <version.cisco-asr900-node-model-common-jar>1.12.1</version.cisco-asr900-node-model-common-jar>
+        <!-- ERICciscoasr9000nodemodelcommon_CXP9035813 	 -->
+        <version.cisco-asr9000-node-model-common-jar>1.12.1</version.cisco-asr9000-node-model-common-jar>
+        <!-- ERICjunipermxnodemodelcommon_CXP9035811 -->
+        <version.juniper-mx-node-model-common-jar>1.31.1</version.juniper-mx-node-model-common-jar>
+        <!-- ERICsnmpcmflows_CXP9032994 -->
+        <version.snmp-cm-flows-model>1.78.1</version.snmp-cm-flows-model>
+
+        <!-- Minilink model versions -->
+        <!-- ERICminilinkindoornodemodelcommon_CXP9032236 -->
+        <version.mini-link-indoor-node-model-common-jar>1.57.2</version.mini-link-indoor-node-model-common-jar>
+        <!-- ERICminilink6366nodemodelcommon_CXP9036050 -->
+        <version.mini-link-6366-node-model-common-jar>1.30.1</version.mini-link-6366-node-model-common-jar>
+        <!-- ERICminilink6352nodemodelcommon_CXP9034956 -->
+        <version.mini-link-6352-node-model-common-jar>1.39.1</version.mini-link-6352-node-model-common-jar>
+        <!-- ERICminilink6351nodemodelcommon_CXP9034958 -->
+        <version.mini-link-6351-node-model-common-jar>1.37.1</version.mini-link-6351-node-model-common-jar>
+        <!-- ERICminilinkpt2020nodemodelcommon_CXP9034960 -->
+        <version.mini-link-pt2020-node-model-common-jar>1.38.1</version.mini-link-pt2020-node-model-common-jar>
+        <!-- ERICminilinkcn210nodemodelcommon_CXP9035821 -->
+        <version.mini-link-cn210-node-model-common-jar>1.31.1</version.mini-link-cn210-node-model-common-jar>
+        <!-- ERICminilink665xnodemodelcommon_CXP9036061 -->
+        <version.mini-link-665x-node-model-common-jar>1.32.1</version.mini-link-665x-node-model-common-jar>
+        <!-- ERICminilink669xnodemodelcommon_CXP9036056 -->
+        <version.mini-link-669x-node-model-common-jar>1.33.2</version.mini-link-669x-node-model-common-jar>
+         <!-- ERICminilinkmw2nodemodelcommon_CXP9042349  -->
+        <version.mini-link-mw2-node-model-common-jar>1.0.5</version.mini-link-mw2-node-model-common-jar>
+        <!-- ERICminilinkcn510r2nodemodelcommon_CXP9036035 -->
+        <version.mini-link-cn510r2-node-model-common-jar>1.30.1</version.mini-link-cn510r2-node-model-common-jar>
+        <!-- ERICminilinkcn810r1nodemodelcom_CXP9035822 -->
+        <version.mini-link-cn810r1-node-model-common-jar>1.30.1</version.mini-link-cn810r1-node-model-common-jar>
+        <!-- ERICminilinkcn810r2nodemodelcommon_CXP9035819 -->
+        <version.mini-link-cn810r2-node-model-common-jar>1.29.1</version.mini-link-cn810r2-node-model-common-jar>
+        <!-- ERICminilinkcn510r1nodemodelcommon_CXP9035820 -->
+        <version.mini-link-cn510r1-node-model-common-jar>1.31.1</version.mini-link-cn510r1-node-model-common-jar>
+        <!-- ERICfronthaul6392nodemodelcommon_CXP9035662 -->
+        <version.fronthaul-6392-node-model-common-jar>1.36.1</version.fronthaul-6392-node-model-common-jar>
+        <!-- ERICswitch6391nodemodelcommon_CXP9034621 -->
+        <version.switch-6391-node-model-common-jar>1.38.1</version.switch-6391-node-model-common-jar>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- here we specify what version of Service Framework we want to use.
+                All modules will be imported -->
+            <dependency>
+                <groupId>com.ericsson.oss.itpf.sdk</groupId>
+                <artifactId>ServiceFrameworkBOM</artifactId>
+                <version>${version.service.framework}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian</groupId>
+                <artifactId>arquillian-bom</artifactId>
+                <version>${version.arquillian.bom}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.oss.itpf.datalayer.dps</groupId>
+                <artifactId>data-persistence-service-bom</artifactId>
+                <version>${version.dps}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.oss.presentation.server</groupId>
+                <artifactId>WebPushServiceBOM</artifactId>
+                <version>${version.webpush.bom}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--dependency>
+                <groupId>com.ericsson.nms.mediation</groupId>
+                <artifactId>mediation-sdk-bom</artifactId>
+                <version>${version.mediation.sdk}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency-->
+            <dependency>
+                <groupId>com.ericsson.oss.itpf.security.cryptography</groupId>
+                <artifactId>cryptography-service-api-jar</artifactId>
+                <version>${version.cryptography.service.api}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.oss.itpf.security</groupId>
+                <artifactId>key-management-jar</artifactId>
+                <version>${version.key-management-jar}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${version.apache.httpclient}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${version.commons-codec}</version>
+            </dependency>
+            <!-- commons-validator dependency only with scope test -->
+            <dependency>
+                <groupId>commons-validator</groupId>
+                <artifactId>commons-validator</artifactId>
+                <version>${version.commons-validator}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${version.jackson-core}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${version.jackson-annotations}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${version.jackson-databind}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.oss.services.cm</groupId>
+                <artifactId>script-engine-editor-spi</artifactId>
+                <version>${version.script-engine-spi}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.oss.services</groupId>
+                <artifactId>topologyCollectionsService-api</artifactId>
+                <version>${version.topology.collection.service.api}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.oss.services.cm</groupId>
+                <artifactId>cm-writer-api</artifactId>
+                <version>${version.cm-writer}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.resteasy</groupId>
+                <artifactId>resteasy-jackson-provider</artifactId>
+                <version>${version.resteasy-jackson-provider}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk15on</artifactId>
+                <version>${version.bouncycastle}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpkix-jdk15on</artifactId>
+                <version>${version.bouncycastle}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${version.commons-lang3}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-compress</artifactId>
+                <version>${version.commons-compress}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.antlr</groupId>
+                <artifactId>antlr4-runtime</artifactId>
+                <version>${version.antlr4-runtime}</version>
+            </dependency>
+            <dependency>
+                <groupId>xerces</groupId>
+                <artifactId>xercesImpl</artifactId>
+                <version>${version.xercesImpl}</version>
+            </dependency>
+            <!-- Dependencies for tests Spock/groovy -->
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>${version.groovy}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.spockframework</groupId>
+                <artifactId>spock-core</artifactId>
+                <version>${version.spock}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.cds</groupId>
+                <artifactId>cdi-test-support</artifactId>
+                <version>${version.cdi-test-support}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.oss.itpf.datalayer.dps</groupId>
+                <artifactId>dps-test-support</artifactId>
+                <version>${version.dps}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-all</artifactId>
+                <version>${version.hamcrest-all}</version>
+            </dependency>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib-nodep</artifactId>
+                <version>${version.cglib-nodep}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${version.maven-surefire-plugin}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!--This plugin's configuration is used to store Eclipse m2e settings
+                    only. It has no influence on the Maven build itself. -->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-dependency-plugin</artifactId>
+                                        <versionRange>[2.4,)</versionRange>
+                                        <goals>
+                                            <goal>analyze-dep-mgt</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-ear-plugin</artifactId>
+                                        <versionRange>[2.7,)</versionRange>
+                                        <goals>
+                                            <goal>generate-application-xml</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>com.ericsson.maven.plugins</groupId>
+                                        <artifactId>rstate-maven-plugin</artifactId>
+                                        <versionRange>[1.0,)</versionRange>
+                                        <goals>
+                                            <goal>rstate</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-enforcer-plugin</artifactId>
+                                        <versionRange>[1.1,)</versionRange>
+                                        <goals>
+                                            <goal>enforce</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${version.jacoco-maven-plugin}</version>
+                    <executions>
+                        <execution>
+                            <id>prepare-unit-tests</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>report</id>
+                            <phase>test</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <outputDirectory>${project.build.directory}/coverage-reports/jacoco</outputDirectory>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>${version.exec-maven-plugin}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+
+            <plugin>
+                <groupId>org.jboss.as.plugins</groupId>
+                <artifactId>jboss-as-maven-plugin</artifactId>
+                <configuration>
+                    <filename>${project.parent.artifactId}.${project.packaging}</filename>
+                    <skip>false</skip>
+                    <execCommands />
+                    <execCommands />
+                    <execute-commands />
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <!--   <argLine>-Xms512m -Xmx512m</argLine>
+                           <argLine>-Xms512m -Xmx2048m </argLine> -->
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <!-- Workaround until exludeRoot is fixed -->
+                        <exclude>**/SecCommandParser*.java</exclude>
+                        <exclude>**/SecCommandLexer*.java</exclude>
+                    </excludes>
+                    <excludeRoots>
+                        <!-- This is NOT wokring at the moment: works only in case of mvn is
+                            run in 2 phases: mvn clean isntall + mvn pmd:pmd separatley -->
+                        <excludeRoot>${basedir}/target/generated</excludeRoot>
+                    </excludeRoots>
+                </configuration>
+            </plugin>
+            <!-- Plugins for groovy Unit tests -->
+            <plugin>
+                <groupId>org.codehaus.gmaven</groupId>
+                <artifactId>gmaven-plugin</artifactId>
+                <version>1.4</version>
+                <configuration>
+                    <providerSelection>2.0</providerSelection>
+                    <source />
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.gmaven.runtime</groupId>
+                        <artifactId>gmaven-runtime-2.0</artifactId>
+                        <version>1.4</version>
+                        <exclusions>
+                            <exclusion>
+                                <groupId>org.codehaus.groovy</groupId>
+                                <artifactId>groovy-all</artifactId>
+                            </exclusion>
+                        </exclusions>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-all</artifactId>
+                        <version>${version.groovy}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <threadCount>1</threadCount>
+                    <useSystemClassLoader>true</useSystemClassLoader>
+                    <useManifestOnlyJar>false</useManifestOnlyJar>
+                    <useFile>false</useFile>
+                    <includes>
+                        <include>**/*Spec.java</include>
+                        <include>**/*Test.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+            <!-- End plugins for groovy Unit tests -->
+
+        </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+    <dependencies>
+        <!--dependency>
+            <groupId>org.jboss.spec</groupId>
+            <artifactId>jboss-javaee-6.0</artifactId>
+            <version>${version.jboss-javaee-6.0}</version>
+            <type>pom</type>
+            <scope>provided</scope>
+        </dependency-->
+        <dependency>
+            <groupId>org.jboss.spec</groupId>
+            <artifactId>jboss-javaee-8.0</artifactId>
+            <version>${version.jboss-javaee-8.0}</version>
+            <type>pom</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.sdk</groupId>
+            <artifactId>sdk-cache-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!--  Other dependencies moved to the API, because they should not be present here -->
+        <!-- JBoss EJB3 Extensions (@TransationTimeout) -->
+        <dependency>
+            <groupId>org.jboss.ejb3</groupId>
+            <artifactId>jboss-ejb3-ext-api</artifactId>
+            <version>${version.jboss-ejb3-ext-api}</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Dependency for test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${version.slf4j-simple}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
+            <version>${version.easymock}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${version.mockito-all}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${version.assertj-core}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Dependencies for tests Spock/groovy -->
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.cds</groupId>
+            <artifactId>cdi-test-support</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.ericsson.oss.itpf.datalayer.dps</groupId>
+                    <artifactId>dps-test-support</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.datalayer.dps</groupId>
+            <artifactId>dps-test-support</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib-nodep</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <modules>
+        <module>node-security-nbi-api</module>
+        <module>node-security-api</module>
+        <module>node-security-wf-api</module>
+        <module>node-security-jar</module>
+        <module>node-security-ejb</module>
+        <module>node-security-ear</module>
+        <module>node-security-war</module>
+        <module>node-security-nbi-war</module>
+        <module>node-security-vs-jar</module>
+        <module>node-security-vs-ear</module>
+        <module>ERICnodesecurity_CXP9030694</module>
+        <!--module>ERICnodesecurityVS_CXP0000000</module-->
+        <module>testsuite</module>
+        <module>node-security-rest-service-api</module>
+        <module>node-security-rest-service-ejb</module>
+        <module>node-gdpr-api</module>
+        <module>node-gdpr-ejb</module>
+        <module>node-gdpr-war</module>
+        <module>node-security-test-jar</module>
+        <module>node-security-test-war</module>
+    </modules>
+
+    <scm>
+        <tag>node-security-1.127.9</tag>
+    </scm>
+
+</project>

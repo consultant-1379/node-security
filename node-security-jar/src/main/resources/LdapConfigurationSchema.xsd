@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name='Nodes'>
+    <xs:complexType>
+     <xs:sequence>
+         <xs:element name='Node' type='NodeType' minOccurs='0' maxOccurs='unbounded' />
+	 </xs:sequence>
+    </xs:complexType> 	
+</xs:element>
+
+	<xs:complexType name="NodeType">
+	   <xs:sequence>
+		  <xs:element name="nodeFdn" type="xs:string" minOccurs="1" nillable="false"/>
+		  <xs:element name="tlsMode" type="tlsModeType"/>
+		  <xs:element name="userLabel" type="xs:string"/>
+		  <xs:element name="useTls" type="xs:boolean"/>
+	   </xs:sequence>
+	</xs:complexType>	
+
+	<xs:simpleType name="tlsModeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LDAPS" />
+			<xs:enumeration value="STARTTLS" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+</xs:schema>

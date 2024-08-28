@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>node-security</artifactId>
+        <groupId>com.ericsson.nms.security.nscs</groupId>
+        <version>1.173.2-SNAPSHOT</version>
+    </parent>
+    <artifactId>node-security-vs-ear</artifactId>
+    <packaging>ear</packaging>
+
+    <name>[${project.parent.artifactId}] VS EAR module</name>
+
+    <properties>
+        <publish_artifact>false</publish_artifact>
+        <project.ear.contextRoot>${project.parent.artifactId}</project.ear.contextRoot>
+        <project.war.contextRoot>/${project.parent.artifactId}</project.war.contextRoot>
+    </properties>
+
+    <build>
+        <outputDirectory>${project.parent.artifactId}-vs-${project.version}</outputDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.jboss.as.plugins</groupId>
+                <artifactId>jboss-as-maven-plugin</artifactId>
+                <configuration>
+                    <filename>${project.parent.artifactId}-vs.${project.packaging}</filename>
+                    <skip>false</skip>
+                    <execCommands />
+                    <execute-commands />
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>${version.maven-ear-plugin}</version>
+                <configuration>
+                    <version>${version.jee}</version>
+                    <workDirectory>target/${project.parent.artifactId}-vs-${project.version}</workDirectory>
+                    <defaultLibBundleDir>${project.ear.defaultLibBundleDir}</defaultLibBundleDir>
+                    <description>${project.parent.artifactId} VS JEE8 service</description>
+                    <displayName>${project.parent.artifactId} VS JEE8 service</displayName>
+
+                    <archive>
+                        <manifestEntries>
+                            <Dependencies>${project.ear.Dependencies}</Dependencies>
+                        </manifestEntries>
+                    </archive>
+
+                    <modules>
+                        <ejbModule>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>${project.parent.artifactId}-vs-jar</artifactId>
+                        </ejbModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>${project.parent.artifactId}-vs-jar</artifactId>
+            <version>${project.version}</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.sdk</groupId>
+            <artifactId>service-framework-dist</artifactId>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>devel_env</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+        </profile>
+        <profile>
+            <id>production_env</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencies>
+                <!-- All production-ready dependencies to Service Framework implementation 
+                    modules should go here. These are LITP specific -->
+            </dependencies>
+        </profile>
+
+    </profiles>
+
+</project>

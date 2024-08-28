@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+
+<nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="RemoveNTPNodes.xsd">
+  
+ <node>
+ 
+  <keyIds>
+   <keyId>1</keyId>
+   <keyId>2</keyId>
+  </keyIds>
+ </node>
+</nodes>

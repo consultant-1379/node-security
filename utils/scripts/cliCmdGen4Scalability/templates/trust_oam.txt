@@ -1,0 +1,1 @@
+secadm trust distribute --certtype OAM --nodelist XXNODENAMEXX

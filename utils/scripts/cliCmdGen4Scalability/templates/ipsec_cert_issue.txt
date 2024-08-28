@@ -1,0 +1,1 @@
+secadm certificate issue --certtype IPSEC -xf file:XXISSUEFILENAMEXX-IPSEC-issue.xml

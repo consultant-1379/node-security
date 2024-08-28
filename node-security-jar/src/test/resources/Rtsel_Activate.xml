@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rtselConfiguration>
+    <nodeRtselConfig>
+        <nodes>
+            <nodeInfo>
+                <nodeFdns>
+                  <nodeFdn>LTE02ERBS00001</nodeFdn>
+                  <nodeFdn>LTE02ERBS00001</nodeFdn>					
+                </nodeFdns>
+                <entityProfileName>MicroRBSOAM_CHAIN_EP</entityProfileName>
+                <enrollmentMode>CMPv2_INITIAL</enrollmentMode>
+                <keySize>RSA_2048</keySize>
+            </nodeInfo> 		
+        </nodes>
+        <serverConfig>
+            <extServerAddress>192.168.1.2</extServerAddress>
+            <extServProtocol>TLS_OVER_TCP</extServProtocol>
+            <serverName>SyslogServ1</serverName>
+        </serverConfig>
+       <serverConfig>
+            <extServerAddress>192.168.1.3:50005</extServerAddress>
+            <extServProtocol>TLS_OVER_TCP</extServProtocol>
+            <serverName>SyslogServ2</serverName>
+        </serverConfig>
+        <connAttemptTimeOut>10</connAttemptTimeOut>
+        <extServerLogLevel>DEBUG</extServerLogLevel>
+        <extServerAppName>Ericsson</extServerAppName>
+    </nodeRtselConfig>   	
+</rtselConfiguration>

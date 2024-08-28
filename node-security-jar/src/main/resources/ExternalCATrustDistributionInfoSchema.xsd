@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name='ExternalTrustedCACertificatesDetails'>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name='NodesTrustedCACertificateDetails' type='NodesTrustedCACertificateDetails' minOccurs='1' maxOccurs='unbounded' />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="NodesTrustedCACertificateDetails">
+		<xs:sequence>
+			<xs:element name="Nodes" type="Nodes" minOccurs="1" maxOccurs="1" />
+			<xs:element name="TrustedCACertificates" type="TrustedCACertificates" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Nodes">
+		<xs:sequence>
+			<xs:element name="Node" type="Node" minOccurs="1"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Node">
+		<xs:sequence>
+			<xs:element name="NodeFdn" type="minStringLength"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="InterfaceFdn" type="minStringLength"
+				minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="TrustedCACertificates">
+		<xs:sequence>
+			<xs:element name="TrustedCACertificateInfo" type="TrustedCACertificateInfo"
+				minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="TrustedCACertificateInfo">
+		<xs:all>
+			<xs:element name="TDPSUrl" type="minStringLength"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="TrustedCACertIssuerDn" type="minStringLength"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="CertificateSerialNumber" type="minStringLength"
+				minOccurs="1" maxOccurs="1" />
+		</xs:all>
+	</xs:complexType>
+
+	<xs:simpleType name="minStringLength">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:pattern value=".*[^\s].*" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

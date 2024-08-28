@@ -1,0 +1,17 @@
+"secadm" (* slogan = "Manages security configuration and administration on network nodes" *) WS "capability" (* slogan = "Manages security capabilities for specific targets" *) WS CAPABILITY_GET
+
+CAPABILITY_GET ::=  "get" ( CAPABILITY_GET_ALL_TARGETS_CAPABILITIES | CAPABILITY_GET_TARGETS_CAPABILITIES )
+
+CAPABILITY_GET_ALL_TARGETS_CAPABILITIES ::=  CAPABILITY_GET_ALL_TARGETS [ CAPABILITY_GET_CAPABILITY_NAME ]
+
+CAPABILITY_GET_ALL_TARGETS ::=  WS ( "--all" (* slogan = "Get capabilities for all targets." *) )
+
+CAPABILITY_GET_TARGETS_CAPABILITIES ::= CAPABILITY_GET_NE_TYPE [ CAPABILITY_GET_OSS_MODEL_IDENTITY ] [ CAPABILITY_GET_TARGET_CATEGORY ] [ CAPABILITY_GET_CAPABILITY_NAME ]
+
+CAPABILITY_GET_NE_TYPE ::= WS ( "-nt" (* hide = "true" *) | "--netype" (* slogan = "Specify the node type e.g. RadioNode" *) ) WS <netype> (* slogan = "Specify the name of the node type. Tip: -nt for short" *)
+
+CAPABILITY_GET_OSS_MODEL_IDENTITY ::= WS ( "-omi" (* hide = "true" *) | "--ossmodelidentity" (* slogan = "Specify the OSS model identity e.g. 17Q4-R25A12" *) ) WS <ossmodelidentity> (* slogan = "Specify the name of the OSS model identity. Tip: -omi for short" *)
+
+CAPABILITY_GET_TARGET_CATEGORY ::= WS ( "-cat" (* hide = "true" *) | "--targetcategory" (* slogan = "Specify the target category e.g. NODE" *) ) WS <targetcategory> (* slogan = "Specify the name of the target category. Tip: -cat for short" *)
+
+CAPABILITY_GET_CAPABILITY_NAME ::= WS ( "-cap" (* hide = "true" *) | "--capabilityname" (* slogan = "Specify the capability name e.g. isCertificateManagementSupported" *) ) WS <capabilityname> (* slogan = "Specify the name of capability. Tip: -cap for short" *)

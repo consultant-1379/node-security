@@ -1,0 +1,32 @@
+<ExternalTrustedCACertificatesDetails>
+	<NodesTrustedCACertificateDetails>
+		<Nodes>
+			<Node>
+				<NodeFdn>dg2ERBS01</NodeFdn>
+				<InterfaceFdn>ManagedElement=dg2ERBS01,Transport=1,Router=1,Interface=1,AddressIpv4=1</InterfaceFdn>
+			</Node>
+		</Nodes>
+		<TrustedCACertificates>
+			<TrustedCACertificateInfo>
+				<TDPSUrl>http://[2001:1b70:82a1:103::181]:8093/pki-ra-tdps/ca_entity/NE_OAM_CA/2755143a6f274b5/active/ENM_PKI_Root_CA</TDPSUrl>
+				<TrustedCACertIssuerDn>C=SE,O=ERICSSON,OU=BUCI_DUAC_NAM,CN=ENM_PKI_Root_CA</TrustedCACertIssuerDn>
+				<CertificateSerialNumber>2755143a6f274b5</CertificateSerialNumber>
+			</TrustedCACertificateInfo>
+		</TrustedCACertificates>
+	</NodesTrustedCACertificateDetails>
+	<NodesTrustedCACertificateDetails>
+		<Nodes>
+			<Node>
+				<NodeFdn>dg2ERBS02</NodeFdn>
+				<InterfaceFdn>ManagedElement=dg2ERBS02,Transport=1,Router=1,Interface=1,AddressIpv4=1</InterfaceFdn>
+			</Node>
+		</Nodes>
+		<TrustedCACertificates>
+			<TrustedCACertificateInfo>
+				<TDPSUrl>http://192.168.0.155:8093/pki-ra-tdps/ca_entity/NE_IPsec_CA/67fea55c11c812d3/active/ENM_PKI_Root_CA</TDPSUrl>
+				<TrustedCACertIssuerDn>CN=ENM_PKI_Root_CA,OU=BUCI_DUAC_NAM,O=ERICSSON,C=SE</TrustedCACertIssuerDn>
+				<CertificateSerialNumber>67fea55c11c812d3</CertificateSerialNumber>
+			</TrustedCACertificateInfo>
+		</TrustedCACertificates>
+	</NodesTrustedCACertificateDetails>
+</ExternalTrustedCACertificatesDetails>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nodes>
+	<Node>
+		<NodeFdn>LTE01dg2ERBS00026</NodeFdn>
+        <SubjectAltName>192.168.102.91</SubjectAltName>
+        <SubjectAltNameType>IP_ADDRESS</SubjectAltNameType>
+		<EnrollmentMode>CMPv2_VC</EnrollmentMode>
+		<KeySize>RSA_2048</KeySize>
+	</Node>
+
+</Nodes>

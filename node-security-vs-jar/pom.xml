@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>node-security</artifactId>
+        <groupId>com.ericsson.nms.security.nscs</groupId>
+        <version>1.173.2-SNAPSHOT</version>
+    </parent>
+    <artifactId>node-security-vs-jar</artifactId>
+    <name>node-security VS JAR module</name>
+
+    <properties>
+        <publish_artifact>false</publish_artifact>
+        <sonar.exclusions>src/main/java/**</sonar.exclusions>
+    </properties>
+
+    <build>
+        <finalName>${project.parent.artifactId}-vs-${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.jboss.as.plugins</groupId>
+                <artifactId>jboss-as-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                    <execCommands />
+                    <execute-commands />
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <compilerArguments>
+                        <AserviceVersion>${project.version}</AserviceVersion>
+                    </compilerArguments>
+                    <generatedSourcesDirectory>${project.basedir}/target/classes/sdk/</generatedSourcesDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ericsson.nms.security</groupId>
+            <artifactId>smrs-service-api</artifactId>
+            <version>${version.smrs-service}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.sdk</groupId>
+            <artifactId>sdk-resources-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.nms.security</groupId>
+            <artifactId>identitymgmtservices-api</artifactId>
+            <version>${version.identitymgmtservices}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.security</groupId>
+            <artifactId>pki-manager-profilemanagement-api</artifactId>
+            <version>${version.pki-manager-api}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.security</groupId>
+            <artifactId>pki-manager-api-jar</artifactId>
+            <version>${version.pki-manager-api}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.security</groupId>
+            <artifactId>pki-manager-common-model</artifactId>
+            <version>${version.pki-manager-api}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.security</groupId>
+            <artifactId>pki-common-model</artifactId>
+            <version>${version.pki-common}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.security</groupId>
+            <artifactId>pki-manager-certificatemanagement-api</artifactId>
+            <version>${version.pki-manager-api}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.security</groupId>
+            <artifactId>mock-pki-manager-api</artifactId>
+            <version>${version.mock-pki-manager}</version>
+        </dependency>
+        <dependency>
+           <groupId>com.ericsson.oss.services.security.accesscontrol</groupId>
+           <artifactId>access-control-service-laad-api</artifactId>
+           <version>${version.accesscontrolservice.api}</version>
+       </dependency>
+    </dependencies>
+</project>

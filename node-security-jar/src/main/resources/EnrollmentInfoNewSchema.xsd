@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name='EnrollmentDetails'>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name='nodeEnrollmentDetails' type='NodeEnrollmentDetails' minOccurs='1'
+					maxOccurs='unbounded' />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="NodeEnrollmentDetails">
+		<xs:sequence>
+			<xs:element name="Nodes" type="Nodes" minOccurs="1" />
+			<xs:element name="externalCAEnrollmentInfo"	type="ExternalCAEnrollmentInfo" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Nodes">
+		<xs:sequence>
+			<xs:element name="Node" type="Node" minOccurs="1"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ExternalCAEnrollmentInfo">
+		<xs:all>
+			<xs:element name="externalCAEnrollmentDetails" type="ExternalCAEnrollmentDetails"
+					minOccurs="1" maxOccurs="1" />
+		    <xs:element name="TrustedCACertificates" type="TrustedCACertificates"
+					minOccurs="0" maxOccurs="1" />
+		</xs:all>
+	</xs:complexType>
+
+	<xs:complexType name="Node">
+		<xs:sequence>
+			<xs:element name="NodeFdn" type="minStringLength"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element type="xs:string" name="EntityProfileName" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>
+										Entity profile name for the certificate.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element type="xs:string" name="SubjectAltName" minOccurs="0"  maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>
+										The subject alternative name for the certificate. Mandatory in case of CERT_TYPE = IPSEC.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element type="xs:string" name="SubjectAltNameType" minOccurs="0"  maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>
+										The subject alternative name type for the certificate. Mandatory in case of CERT_TYPE = IPSEC.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element type="xs:string" name="EnrollmentMode" minOccurs="0"  maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>
+										The enrollment mode for the certificate. Optional field: if not present we'll use enrollment type previously configured or the default value for the specified node type/node version.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element type="xs:string" name="KeySize" minOccurs="0"  maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>
+										The keysize for the certificate. Optional field: if not present we'll use key size previously configured or the default value for the specified node type/node version.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element type="xs:string" name="CommonName" minOccurs="0"  maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>
+										The CN used in the Subject DN of the certificate. Optional field: if not present we'll use the Entity Name as CN value.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="CertificateSubjectDn" type="minStringLength" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>
+										The Subject DN of the certificate to be issued by the External CA.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ChallengePhrase" type="minStringLength" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>
+										The challenge Phrase to be used for generating Certificate by External CA.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="InterfaceFdn" type="minStringLength" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>
+										The InterfaceFdn is the fdn of Interface Address MO to be given for EnrollmentInterface, TrustPointInterface and CrlInterface MO attributes.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ExternalCAEnrollmentDetails">
+		<xs:all>
+			<xs:element name="certificateAuthorityDn" type="minStringLength"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="caCertificate" minOccurs="1" maxOccurs="1">
+				<xs:complexType mixed="true">
+					<xs:sequence>
+						<xs:any processContents="skip" minOccurs="0" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="enrollmentServerUrl" type="minStringLength"
+				minOccurs="1" maxOccurs="1" />
+		</xs:all>
+	</xs:complexType>
+
+	<xs:complexType name="TrustedCACertificates">
+		<xs:sequence>
+			<xs:element name="TrustedCACertificateInfo" type="TrustedCACertificateInfo" minOccurs="1"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="TrustedCACertificateInfo">
+		<xs:all>
+			<xs:element name="TDPSUrl" type="minStringLength"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="TrustedCACertIssuerDn" type="minStringLength"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="CertificateSerialNumber" type="minStringLength"
+				minOccurs="1" maxOccurs="1" />
+		</xs:all>
+	</xs:complexType>
+
+	<xs:simpleType name="minStringLength">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:pattern value=".*[^\s].*" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

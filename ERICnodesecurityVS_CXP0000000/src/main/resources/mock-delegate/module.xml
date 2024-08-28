@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.0" name="com.ericsson.oss.itpf.datalayer.dps.mock-delegate.api">
+	<resources>
+		<resource-root path="RESOURCE_PATH"/>
+	</resources>
+	<dependencies>
+		<module name="com.ericsson.oss.itpf.datalayer.dps.api"/>
+		<module name="com.ericsson.oss.itpf.datalayer.dps.delegate.api"/>
+		<module name="com.ericsson.oss.itpf.sdk.service-framework" slot="4.x" export="true" services="export"/>
+	</dependencies>
+</module>

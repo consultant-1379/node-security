@@ -1,0 +1,1 @@
+secadm certificate XXCERTCOMMANDXX --certtype XXCERTTYPEXX --nodefile file:XXNODEFILEXX-nodefile.txt

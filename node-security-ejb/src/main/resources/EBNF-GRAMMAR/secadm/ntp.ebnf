@@ -1,0 +1,41 @@
+"secadm" (* slogan = "Manages security configuration and administration on network nodes" *) WS "ntp" (* slogan = "Configures and removes ntp server details on the node" *) WS ( NTP_LIST | NTP_REMOVE | NTP_CONFIGURE )
+
+NTP_REMOVE ::=  ( "rem" (* hide = "true" *) | "remove" (* slogan = "Start a job to remove ntp server details on the nodes. Tip: rem for short" *) )  WS REMOVE_TARGET_NODES
+
+NTP_LIST ::= ( "ls" (* hide = "true" *) | "list" (* slogan = "Lists the ntp server details on the CPP and Baseband Radio nodes. Tip: ls for short" *) ) WS NTP_LIST_TARGET_NODES
+
+NTP_CONFIGURE ::= ( "conf" (* hide = "true" *) | "configure" (* slogan = "Starts a job to configure ntp server details on the nodes. Tip: conf for short" *) ) WS CONFIGURE_TARGET_NODES
+
+NTP_LIST_TARGET_NODES ::= ( NTP_NODE_LIST | NTP_NODE_FILE | SAVED_SEARCH | COLLECTION )
+
+REMOVE_TARGET_NODES ::= (  NTP_XML_FILE | NTP_KEY_ID_DATA )
+
+CONFIGURE_TARGET_NODES ::= ( NTP_NODE_LIST | NTP_NODE_FILE | SAVED_SEARCH | COLLECTION )
+
+NTP_NODE_LIST ::= ( "-n" (* hide = "true" *) | "--nodelist" (* slogan = "List of nodes. Tip: -n for short" *) ) WS NTP_NODE_NAME { ( "," | ";" ) (* slogan = "Command used to add another node name to the list." *) NTP_NODE_NAME }
+
+NTP_NODE_FILE ::=  ( "-nf" (* hide = "true" *) | "--nodefile" (* slogan = "Specify the file containing a list of nodes. Tip: -nf for short" *) ) WS "file:" <file_name> (* inputType = "fileName" slogan = "Specify a file containing a list of nodes" *)
+
+SAVED_SEARCH ::= ( "-sa" (* hide = "true" *) | "--savedsearch" (* slogan = "Specify the savedsearch containing list of nodes. Tip: -sa for short" *) ) WS SAVED_SEARCH_NAME { "," (* slogan = "Comma used to add another savedsearch to the list." *) SAVED_SEARCH_NAME }
+
+COLLECTION ::= ( "-co" (* hide = "true" *) | "--collection" (* slogan = "Specify the collection containing list of nodes. Tip: -co for short" *) ) WS COLLECTION_NAME { "," (* slogan = "Comma used to add another collection to the list." *) COLLECTION_NAME }
+
+NTP_XML_FILE ::= ( "-xf" (* hide = "true" *) | "--xmlfile" (* slogan = "Specify the xml file. Tip: -xf for short" *) ) WS "file:" <file_name> (* inputType = "fileName" slogan = "Specify an xml file" *)
+
+SAVED_SEARCH_NAME ::= <saved_search_name> (* slogan = "Scope the Command using savedsearch names. E.g. MySavedSearch1, MySavedSearch2" *) )
+
+COLLECTION_NAME ::= <collection_name> (* slogan = "Scope the Command using collection names. E.g. MyCollection1, MyCollection2" *) )
+
+NTP_NODE_NAME ::= <node_name> (* slogan = "Scope the Command using Node names. E.g. MyNode1,MyNode2" *)
+
+NTP_KEY_ID_DATA ::= ( "-nn" (* hide = "true" *) | "--nodename" (* slogan = "single node name for ntp remove. Tip: -n for short" *) ) WS NTP_NODE_NAME KEY_IDS_OR_SERVER_IDS
+
+KEY_IDS_OR_SERVER_IDS ::= WS ( NTP_KEY_ID_LIST | NTP_SERVER_ID_LIST )
+
+NTP_KEY_ID_LIST ::= ( "-kl" (* hide = "true" *) | "--keyidlist" (* slogan = "Specify comma separated list of NTP key IDs. Tip: -kl for short" *) ) WS KEY_ID { "," (* slogan = "Comma used to add another key id to the command." *) KEY_ID }
+
+NTP_SERVER_ID_LIST ::= ( "-sl" (* hide = "true" *) | "--serveridlist" (* slogan = "Specify comma separated list of NTP Server IDs. Tip: -sl for short" *) ) WS SERVER_ID { "," (* slogan = "Comma used to add another Server ID to the command." *) SERVER_ID }
+
+KEY_ID ::= <key_id> (* slogan = "Scope the Command using keyid's. E.g. 123,567" *)
+
+SERVER_ID ::= <server_id> (* slogan = "Scope the Command using Server ID's. E.g. enmapache_1.1.0.1" *)

@@ -1,0 +1,38 @@
+"secadm" (* slogan = "Manages security configuration and administration on network nodes" *) WS "set" (* slogan = "set ciphers on a single or multiple nodes for SSH and TLS protocols" *) WS "ciphers" (* slogan = "ciphers attribute" *) WS ( CIPHER_XML_FILE | PROTOCOL_CIPHERS ) 
+
+CIPHER_XML_FILE ::= ( "-xf" (* hide = "true" *) | "--xmlfile" (* slogan = "Specify the xml file. Tip: -xf for short" *) ) WS "file:" <file_name> (* inputType = "fileName" slogan = "Specify an xml file" *)
+
+PROTOCOL_CIPHERS ::= ( "--protocol" (* slogan = "protocol type e.g SSH/SFTP,SSL/HTTPS/TLS. Tip: -pr for short" *) | "-pr" (* hide = "true" *) ) WS ( SSH_PROTOCOL_TYPE | TLS_PROTOCOL_TYPE )
+
+SSH_PROTOCOL_TYPE ::= "SSH/SFTP" (* slogan = "SSH/SFTP protocol type" *) CIPHER_OPTIONS
+
+TLS_PROTOCOL_TYPE ::= "SSL/HTTPS/TLS" (* slogan = "SSL/HTTPS/TLS protocol type" *) CIPHER_FILTER  WS CIPHER_TARGET_NODES
+
+CIPHER_OPTIONS ::= (  ENCRYPT_ALGOS_LIST [ KEX_ALGOS_LIST ] [ MAC_ALGOS_LIST ] | ENCRYPT_ALGOS_LIST [ MAC_ALGOS_LIST ] [ KEX_ALGOS_LIST ] | KEX_ALGOS_LIST [ MAC_ALGOS_LIST ] [ ENCRYPT_ALGOS_LIST ] | KEX_ALGOS_LIST  [ ENCRYPT_ALGOS_LIST ] [ MAC_ALGOS_LIST ] | MAC_ALGOS_LIST [ ENCRYPT_ALGOS_LIST ] [ KEX_ALGOS_LIST ] | MAC_ALGOS_LIST [ KEX_ALGOS_LIST ] [ ENCRYPT_ALGOS_LIST ] ) WS CIPHER_TARGET_NODES
+
+ENCRYPT_ALGOS_LIST ::= WS ( "-enc" (* hide = "true" *) | "--encryptalgos" (* slogan = "Specify comma separated encrypt algorithm names. Tip: -enc for short" *) ) WS ( ENCRYPT_ALGOS { "," (* slogan = "Comma used to add another algorithm name to the list." *) ENCRYPT_ALGOS } | EMPTY_VALUE )
+
+ENCRYPT_ALGOS ::= <encrypt_algos> (* regex = "^[A-Za-z0-9@.-]*$" slogan = "Specify the encrypt algorithm name. Tip: -enc for short. Allowed special characters are @.-" *)
+
+KEX_ALGOS_LIST ::= WS ( "-kex" (* hide = "true" *) | "--keyexchangealgos" (* slogan = "Specify comma separated key exchange algorithm names. Tip: -kex for short" *) ) WS ( KEX_ALGOS { "," (* slogan = "Comma used to add another algorithm name to the list." *) KEX_ALGOS } | EMPTY_VALUE )
+
+KEX_ALGOS ::= <kex_algos> (* regex = "^[A-Za-z0-9@.-]*$" slogan = "Specify the key exchange name. Tip: -kex for short. Allowed special characters are @.-" *)
+
+MAC_ALGOS_LIST ::= WS ( "-mac" (* hide = "true" *) | "--macalgos" (* slogan = "Specify comma separated mac algorithm names. Tip: -mac for short" *) ) WS ( MAC_ALGOS { "," (* slogan = "Comma used to add another algorithm name to the list." *) MAC_ALGOS } | EMPTY_VALUE )
+
+MAC_ALGOS ::= <mac_algos> (* regex = "^[A-Za-z0-9@.-]*$" slogan = "Specify the mac algorithm name. Tip: -mac for short. Allowed special characters are @.-" *)
+
+CIPHER_FILTER ::= WS ( "-cf" (* hide = "true" *) | "--cipherfilter" (* slogan = "Specify the cipher filter value. Tip: -cf for short" *) ) WS ( CIPHER_FILTER_VALUE | EMPTY_VALUE )
+
+CIPHER_FILTER_VALUE ::= <cipher_filter> (* regex = "^[A-Za-z0-9:!+-_]*$" slogan = "Specify the key exchange name. Tip: -kex for short. Allowed special characters are :!+-_" *)
+
+EMPTY_VALUE ::= "<empty>" (* slogan = "Specify input value as empty" *)
+
+CIPHER_TARGET_NODES ::= ( CIPHER_NODE_LIST | CIPHER_NODE_FILE )
+
+CIPHER_NODE_LIST ::= ( "-n" (* hide = "true" *) | "--nodelist" (* slogan = "Specify comma separated list of nodes. Tip: -n for short" *) ) WS CIPHER_NODE_NAME { "," (* slogan = "Comma used to add another node name to the list." *) CIPHER_NODE_NAME }
+
+CIPHER_NODE_NAME ::= [ ( "MeContext=" | "NetworkElement=" ) ] <node_name> (* slogan = "Specify the node name. E.g. MyNode1,MyNode2" *)
+
+CIPHER_NODE_FILE ::= ( "-nf" (* hide = "true" *) | "--nodefile" (* slogan = "Specify the file containing list of nodes. Tip: -nf for short" *) ) WS "file:" <file_name> (* inputType = "fileName" slogan = "Specify a file containing list of nodes" *)
+

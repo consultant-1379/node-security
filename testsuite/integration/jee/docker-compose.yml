@@ -1,0 +1,57 @@
+
+version: '2.1'
+
+services:
+
+  models:
+    image: armdocker.rnd.ericsson.se/proj_oss_releases/enm/model-deployment
+    command: startup.sh -IP -s container_startup.sh
+    environment:
+      IMAGE_NAME: model-deployment
+      DOCKER_INIT_DIR: /opt/ericsson/docker/config/init
+      DOCKER_RPMS_DIR: /opt/ericsson/docker/config/init/rpms
+      DOCKER_PRE_START_DIR: /opt/ericsson/docker/config/init/scripts/pre-start
+    hostname: models
+    volumes:
+      - /etc/opt/ericsson/ERICmodeldeployment
+      - ./src/test/docker/models/config:/opt/ericsson/docker/config
+
+  neo4j1:
+    image: armdocker.rnd.ericsson.se/proj_oss_releases/enm/neo4j4:latest
+    ports:
+      - "7474:7474"
+      - "7473:7473"
+      - "7687:7687"
+    hostname: neo4j1
+
+  nscs_service_postgres:
+    build: ./src/test/docker/postgres
+    hostname: postgresql-server
+
+  nscs_service_opendj:
+    image: armdocker.rnd.ericsson.se/proj_oss_releases/enm/access-control
+    volumes:
+      - ./src/test/docker/ldifs:/docker-entrypoint-init.d:ro
+
+  nscs_service_jboss:
+    container_name: jboss
+    build: ./src/test/docker/jboss
+    command: "-IPJ -s jboss"
+    links:
+      - nscs_service_postgres:postgresql-server
+      - models:models
+      - neo4j1:neo4j1
+      - nscs_service_opendj:ldap-remote
+      - nscs_service_opendj:ldap-local
+    volumes:
+      - ./src/test/docker/jboss/config:/opt/ericsson/docker/config
+    volumes_from:
+      - nscs_service_postgres
+      - models
+      - nscs_service_opendj
+    ports:
+      - "9999:9999"
+      - "9990:9990"
+      - "8080:8080"
+      - "8787:8787"
+      - "6300:6300"

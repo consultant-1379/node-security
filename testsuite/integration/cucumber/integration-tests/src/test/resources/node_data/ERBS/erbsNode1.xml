@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:nodesList xmlns:ns2="com.ericsson.oss.mediation.pm.testsuite.data">
+    <nodes>
+        <node>
+            <nodeName>Snmpv3Erbs1</nodeName>
+            <ipAddress>${container.ip}</ipAddress>
+            <type>ERBS</type>
+<!--            
+            <transportProtocol>SSH</transportProtocol>
+-->            
+            <port>2323</port>
+            <userName>root</userName>
+            <passWord>ericsson</passWord>
+            <nodeRelease>16A</nodeRelease>
+            <timezone>Europe/Brussels</timezone>
+            <dataTimeOffset>+02:00</dataTimeOffset>
+        </node>
+    </nodes>
+</ns2:nodesList>

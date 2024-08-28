@@ -1,0 +1,6 @@
+	<Node>
+		<NodeFdn>XXNODENAMEXX</NodeFdn>
+		<EntityProfileName>MicroRBSOAM_CHAIN_EP</EntityProfileName>
+		<EnrollmentMode>CMPv2_INITIAL</EnrollmentMode>
+		<KeySize>RSA_2048</KeySize>
+	</Node>

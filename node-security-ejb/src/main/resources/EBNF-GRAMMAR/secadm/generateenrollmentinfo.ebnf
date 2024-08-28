@@ -1,0 +1,5 @@
+"secadm" (* slogan = "Manages security configuration and administration on network nodes" *) WS "generateenrollmentinfo" (* slogan = "Manages the generateenrollmentinfo for the network nodes." *) [ VERBOSE ] GENERATEENROLLMENTINFO_XML_FILE
+
+VERBOSE ::= WS ( "--verbose" (* slogan = "Verbose mode" *) | "-v" (* hide = "true" *) )
+
+GENERATEENROLLMENTINFO_XML_FILE ::= WS ( "-xf" (* hide = "true" *) | "--xmlfile" (* slogan = "Specify the enrollment configuration xml file. Tip: -xf for short" *) ) WS "file:" <file_name> (* inputType = "fileName" slogan = "Specify an xml file" *)

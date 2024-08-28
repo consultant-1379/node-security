@@ -1,0 +1,1 @@
+secadm trust rm --certtype IPSEC -isdn "XXIPSECISSUERXX" -sn "XXIPSECSNXX" --nodelist XXNODENAMEXX

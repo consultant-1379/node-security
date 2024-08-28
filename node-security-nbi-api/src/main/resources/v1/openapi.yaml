@@ -1,0 +1,831 @@
+#
+# COPYRIGHT Ericsson 2024
+#
+#
+#
+# The copyright to the computer program(s) herein is the property of
+#
+# Ericsson Inc. The programs may be used and/or copied only with written
+#
+# permission from Ericsson Inc. or in accordance with the terms and
+#
+# conditions stipulated in the agreement/contract under which the
+#
+# program(s) have been supplied.
+#
+openapi: 3.0.3
+info:
+  title: ENM Node Security Configuration Service NBI API
+  description: |
+    This is the API documentation for the endpoints provided by NorthBound Interface (NBI) REST interface of ENM Node Security Configuration Service (NSCS).
+    
+    ## Business domain
+    This API models its business domain containing all the necessary resources representing the domain for the API user.  
+    ### Resources
+    Following resources, with their relevant sub-resources, are defined:
+    - nodes
+      * credentials
+      * snmp
+      * PKI domains
+      * ldap
+  version: 0.0.2
+  x-api-id: 91510196-cc4a-4694-866a-09f31ff13cad
+  x-audience: external-partner
+  contact:
+    name: Team Skyfall
+    email: PDLKYFALLT@pdl.internal.ericsson.com
+#    url: 
+  license:
+    name: COPYRIGHT Ericsson 2024
+    url: https://www.ericsson.com/en/legal
+  termsOfService: https://www.ericsson.com/en/legal
+
+tags:
+  - name: nodes
+  
+servers:
+  - url: /oss/nscs/nbi
+    description: ENM Node Security Configuration Service NBI relative path.
+
+paths:
+  /v1/nodes/{nodeNameOrFdn}/credentials:
+    put:
+      description: |
+        Create or update credentials of the specified node:
+        - create or update the NetworkElementSecurity MO of the specified node.
+
+        ### Required RBAC Capabilities
+        Action: update, Resource: nodesec_credentials_nbi.
+
+        ### Prerequisites
+        - the node must exist in the ENM: it must have the NetworkElement MO defined;
+        - the node must have the SecurityFunction MO defined under the NetworkElement MO.
+
+      tags:
+        - nodes
+      summary: Create or update credentials for the specified node.
+      operationId: createOrUpdateNodeCredentials
+      parameters:
+        - $ref: '#/components/parameters/nodeNameOrFdnParam'
+      requestBody:
+        description: The credentials details
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CredentialAttributes'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CredentialsResponse'
+        400:
+          description: Bad request - generic / unknown error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        503:
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v1/nodes/{nodeNameOrFdn}/snmp:
+    put:
+      description: |
+        Create or update SNMP configuration for the specified node:
+        - create or update the SNMP configuration in the NetworkElementSecurity MO of the specified node.
+
+        ### Required RBAC Capabilities
+        Action: update, Resource: nodesec_snmpv3_nbi.
+
+        ### Prerequisites
+        - the node must exist in the ENM: it must have the NetworkElement MO defined;
+        - the node must have the NetworkElementSecurity MO defined.
+
+      tags:
+        - nodes
+      summary: Create or update SNMP V3 configuration for the specified node.
+      operationId: createOrUpdateNodeSnmp
+      parameters:
+        - $ref: '#/components/parameters/nodeNameOrFdnParam'
+      requestBody:
+        description: The SNMP configuration
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SnmpAttributes'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SnmpResponse'
+        400:
+          description: Bad request - generic / unknown error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        503:
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v1/nodes/{nodeNameOrFdn}/domains/{domainName}:
+    post:
+      summary: Generate the enrollment info for the specified PKI domain of the specified node.
+      tags:
+        - nodes
+      description: |
+        Generate the enrollment info for the specified PKI domain of the specified node:
+        - create the PKI End Entity related to the specified PKI domain of the specified node
+        - return the enrollment info
+
+        ### Required RBAC Capabilities
+        Action: create, Resource: nodesec_domains_nbi.
+
+        ### Prerequisites
+        - the node must exist in the ENM: it must have the NetworkElement MO defined;
+        - the IP family query parameter must be passed or, alternatively, the node must have the ConnectivityInformation MO defined;
+        - the node must have the NetworkElementSecurity MO defined.
+
+      operationId: generateEnrollmentInfo
+      parameters:
+        - $ref: '#/components/parameters/nodeNameOrFdnParam'
+        - $ref: '#/components/parameters/domainNameParam'
+        - $ref: '#/components/parameters/ipFamilyParam'
+      requestBody:
+        description: the enrollment request.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EnrollmentRequest'
+            examples:
+              OAM:
+                value:
+                  domain:
+                    domainName: "OAM"
+                    entityProfileName: "OAM_EP"
+                    algorithmAndKeySize: "RSA_1024"
+                    commonName: "5G134SharedCNF001-oam"
+                    subjectAlternativeNames:
+                    - subjectAlternativeNameType: "DNS_NAME"
+                      subjectAlternativeNameValue:
+                        value: "5G134SharedCNF001.ericsson.com"
+                    otpCount: 1
+                    otpValidityPeriodInMinutes: 1440
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EnrollmentResponse'
+              examples:
+                OAM-EOI:
+                  value:
+                    domain:
+                      domainName: "OAM"
+                      enrollmentCmpConfig:
+                        enrollmentAuthorityId: "O=ERICSSON,OU=BUCI_DUAC_NAM,C=SE,CN=NE_OAM_CA"
+                        enrollmentAuthorityName: "O=ERICSSON,OU=BUCI_DUAC_NAM,C=SE,CN=NE_OAM_CA"
+                        enrollmentAuthorityType: "REGISTRATION_AUTHORITY"
+                        enrollmentServerGroupId: "1"
+                        enrollmentServerId: "1"
+                        cmpTrustCategoryId: "oamCmpCaTrustCategory"
+                        url: "http://131.160.128.206:8091/pkira-cmp/NE_OAM_CA/synch"
+                        certificateId: "oamNodeCredential"
+                        algorithm: "rsa2048"
+                        subjectName: "CN=5G134SharedCNF001-oam,C=SE,O=ERICSSON,OU=BUCI DUAC NAM"
+                        challengePassword: "F7bx6GaScu8Pg5pMGZp3i"
+                        trustCategoryId: "oamTrustCategory"
+                      trustedCertificates:
+                      - id: "ENM_PKI_Root_CA-1"
+                        caSubjectName: "O=ERICSSON,OU=BUCI_DUAC_NAM,C=SE,CN=ENM_PKI_Root_CA"
+                        caFingerprint: "82:83:0B:C4:85:3C:40:7D:F6:2E:7D:4E:C0:31:D3:CC:EB:66:59:EC:8D:67:2B:76:D1:56:E4:70:9E:06:19:E8"
+                        tdpsUri: "http://131.160.128.206:8093/pki-ra-tdps/ca_entity/ENM_PKI_Root_CA/37d5d18ebe246c19/active/ENM_PKI_Root_CA"
+                        caPem: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tC...VEUtLS0tLQo="
+                        crls:
+                        - id: "ENM_PKI_Root_CA-1"
+                          cdpsUri: "http://131.160.128.206:8092/pki-cdps?ca_name=ENM_PKI_Root_CA&ca_cert_serialnumber=76df060779abea76"
+                      - id: "ENM_OAM_CA-1"
+                        caSubjectName: "O=ERICSSON,OU=BUCI_DUAC_NAM,C=SE,CN=ENM_OAM_CA"
+                        caFingerprint: "67:40:5A:AF:FD:AF:D2:77:5E:6B:81:26:5A:13:71:EA:2C:57:31:F2:D3:17:93:6D:C7:0F:1B:93:90:32:A7:12"
+                        tdpsUri: "http://131.160.128.206:8093/pki-ra-tdps/ca_entity/ENM_OAM_CA/581c2fa3ea13c25/active/ENM_Infrastructure_CA"
+                        caPem: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tC...VRFLS0tLS0K"
+                        crls:
+                        - id: "ENM_OAM_CA-1"
+                          cdpsUri: "http://131.160.128.206:8092/pki-cdps?ca_name=ENM_OAM_CA&ca_cert_serialnumber=581c2fa3ea13c25"
+                      - id: "ENM_Infrastructure_CA-1"
+                        caSubjectName: "O=ERICSSON,OU=BUCI_DUAC_NAM,C=SE,CN=ENM_Infrastructure_CA"
+                        caFingerprint: "D7:81:58:7D:8B:CB:93:E1:D4:24:72:A0:63:1B:E0:01:A8:2A:F8:07:9E:4E:36:43:89:82:7C:FF:CE:5F:15:3F"
+                        tdpsUri: "http://131.160.128.206:8093/pki-ra-tdps/ca_entity/ENM_Infrastructure_CA/317ebf856297ff2d/active/ENM_PKI_Root_CA"
+                        caPem: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tC...VRFLS0tLS0K"
+                        crls:
+                        - id: "ENM_Infrastructure_CA-1"
+                          cdpsUri: "http://131.160.128.206:8092/pki-cdps?ca_name=ENM_Infrastructure_CA&ca_cert_serialnumber=317ebf856297ff2d"
+                      - id: "NE_OAM_CA-1"
+                        caSubjectName: "O=ERICSSON,OU=BUCI_DUAC_NAM,C=SE,CN=NE_OAM_CA"
+                        caFingerprint: "5A:F2:CB:32:D3:D0:C4:14:5C:EA:C1:F7:D3:92:18:6C:21:60:AD:B3:1B:90:97:A4:B5:1F:2F:C4:4D:25:53:23"
+                        tdpsUri: "http://131.160.128.206:8093/pki-ra-tdps/ca_entity/NE_OAM_CA/5caca47c13d3d23d/active/ENM_PKI_Root_CA"
+                        caPem: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tC...VEUtLS0tLQo="
+                        crls:
+                        - id: "NE_OAM_CA-1"
+                          cdpsUri: "http://131.160.128.206:8092/pki-cdps?ca_name=NE_OAM_CA&ca_cert_serialnumber=5caca47c13d3d23d"
+                      trustCategories:
+                      - id: "oamTrustCategory"
+                        certificates:
+                        - "ENM_PKI_Root_CA-1"
+                        - "ENM_OAM_CA-1"
+                        - "ENM_Infrastructure_CA-1"
+                        - "NE_OAM_CA-1"
+                      - id: "oamCmpCaTrustCategory"
+                        certificates:
+                        - "ENM_PKI_Root_CA-1"
+        400:
+          description: Bad request - generic / unknown error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        409:
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        429:
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        503:
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    delete:
+      summary: Delete the enrollment info for the specified PKI domain of the specified node.
+      tags:
+        - nodes
+      description: |
+        Delete the enrollment info for the specified PKI domain of the specified node:
+        - delete the PKI End Entity related to the specified PKI domain of the specified node
+
+        ### Required RBAC Capabilities
+        Action: delete, Resource: nodesec_domains_nbi.
+
+        ### Prerequisites
+        - the node must exist in the ENM: it must have the NetworkElement MO defined.
+
+      operationId: deleteEnrollmentInfo
+      parameters:
+        - $ref: '#/components/parameters/nodeNameOrFdnParam'
+        - $ref: '#/components/parameters/domainNameParam'
+      responses:
+        # successful DELETE requests will usually generate 200 (if the deleted resource is returned) or 204 (if no content is returned)
+        # failed DELETE requests will usually generate 404 (if the resource cannot be found) or 410 (if the resource was already deleted before)
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceInstance'
+        204:
+          description: No content - There is no response body
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        404:
+          description: Not found
+        410:
+          description: Gone
+
+  /v1/nodes/{nodeNameOrFdn}/ldap:
+    post:
+      summary: Create LDAP configuration for the specified node.
+      tags:
+        - nodes
+      description: |
+        Create LDAP configuration for the specified node:
+        - create an LDAP proxy account for the specified node
+        - return the created LDAP proxy account and the server LDAP configuration parameters.
+
+        ### Required RBAC Capabilities
+        Action: create, Resource: nodesec_ldap_nbi.
+
+        ### Prerequisites
+        - the node must exist in the ENM: it must have the NetworkElement MO defined;
+        - the IP family query parameter must be passed or, alternatively, the node must have the ConnectivityInformation MO defined;
+        - the node must have the NetworkElementSecurity MO defined.
+
+      operationId: createLdapConfiguration
+      parameters:
+        - $ref: '#/components/parameters/nodeNameOrFdnParam'
+        - $ref: '#/components/parameters/ipFamilyParam'
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LdapResponse'
+              examples:
+                IPv4:
+                  value:
+                    tlsPort: "1389"
+                    ldapsPort: "1636"
+                    ldapIpAddress: "192.168.0.186"
+                    fallbackLdapIpAddress: "192.168.0.185"
+                    bindDn: "cn=ProxyAccount_59ad23fa-a3e2-45a1-8494-4acf1a3132a6,ou=proxyagentlockable,ou=com,dc=apache,dc=com"
+                    bindPassword: "usFSt4FXZvyZrRqjQHACLWPN"
+                    baseDn: "dc=apache,dc=com"
+                IPv6:
+                  value:
+                    tlsPort: "1389"
+                    ldapsPort: "1636"
+                    ldapIpAddress: "2001:1b70:82a1:103::172"
+                    fallbackLdapIpAddress: "2001:1b70:82a1:103::171"
+                    bindDn: "cn=ProxyAccount_59ad23fa-a3e2-45a1-8494-4acf1a3132a6,ou=proxyagentlockable,ou=com,dc=apache,dc=com"
+                    bindPassword: "usFSt4FXZvyZrRqjQHACLWPN"
+                    baseDn: "dc=apache,dc=com"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        404:
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        409:
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        429:
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        503:
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    delete:
+      summary: Delete LDAP configuration for the specified node.
+      tags:
+        - nodes
+      description: |
+        Delete LDAP configuration for the specified node:
+        - delete the LDAP proxy account related to the specified node
+
+        ### Required RBAC Capabilities
+        Action: delete, Resource: nodesec_ldap_nbi.
+
+        ### Prerequisites
+        - the node must exist in the ENM: it must have the NetworkElement MO defined;
+        - the node must have the NetworkElementSecurity MO defined.
+
+      operationId: deleteLdapConfiguration
+      parameters:
+        - $ref: '#/components/parameters/nodeNameOrFdnParam'
+      responses:
+        # successful DELETE requests will usually generate 200 (if the deleted resource is returned) or 204 (if no content is returned)
+        # failed DELETE requests will usually generate 404 (if the resource cannot be found) or 410 (if the resource was already deleted before)
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceInstance'
+        204:
+          description: No content - There is no response body
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        404:
+          description: Not found
+        410:
+          description: Gone
+
+components:
+  schemas:
+    CredentialAttributes:
+      type: object
+      properties:
+        enablingPredefinedENMLDAPUser:
+          type: string
+        credentialsList:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserCredentials'
+
+    UserCredentials:
+      type: object
+      properties:
+        credentialsType:
+          $ref: '#/components/schemas/CredentialsType'
+        credUser:
+          type: string
+        credPass:
+          type: string
+
+    CredentialsResponse:
+      type: object
+      properties:
+        credentials:
+          type: array
+          items:
+            $ref: '#/components/schemas/CredentialsType'
+            
+    CredentialsType:
+      type: string
+      enum:
+      - ROOT
+      - SECURE
+      - NORMAL
+      - NWI_E_A
+      - NWI_E_B
+      - NODE_CLI
+
+    SnmpAttributes:
+     type: object
+     properties:
+       authPriv:
+         type: string
+       authPassword:
+         type: string
+       privPassword:
+         type: string
+       authAlgo:
+         type: string
+         enum:
+         - NONE
+         - MD5
+         - SHA1
+       privAlgo:
+         type: string
+         enum:
+         - NONE
+         - DES
+         - AES128
+
+    SnmpResponse:
+      type: object
+      properties:
+        authPriv:
+          type: string
+
+    LdapResponse:
+      type: object
+      properties:
+        tlsPort:
+          type: string
+        ldapsPort:
+          type: string
+        ldapIpAddress:
+          type: string
+        fallbackLdapIpAddress:
+          type: string
+        bindDn:
+          type: string
+        bindPassword:
+          type: string
+        baseDn:
+          type: string
+
+    EnrollmentRequest:
+      type: object
+      properties:
+        domain:
+          $ref: '#/components/schemas/DomainRequest'
+
+    DomainRequest:
+      description: The enrollment request related to a PKI domain.
+      type: object
+      properties:
+        domainName:
+          description: The mandatory name of the PKI domain.
+          type: string
+          example: OAM
+        entityProfileName:
+          description: The name of the PKI Entity Profile to be used when creating the PKI End Entity.
+          type: string
+        algorithmAndKeySize:
+          description: The algorithm and the key size to be used when generating the asymmetric key.
+          $ref: '#/components/schemas/AlgorithmAndKeySize'
+        commonName:
+          description: The optional Common Name (CN) field of the Distinguished Name (DN) of certificates issued for the involved PKI End Entity.
+          type: string
+        subjectAlternativeNames:
+          description: the list of subject alternative names.
+          type: array
+          items:
+            $ref: '#/components/schemas/SubjectAlternativeName'
+        otpCount:
+          description: The One Time Password count. It shall be an integer greater than or equal to zero.
+          type: integer
+          format: int32
+        otpValidityPeriodInMinutes:
+          description: The One Time Password (OTP) validity period expressed in minutes. It shall be an integer in range [1,43200]. The value -1 means never expiring OTP.
+          type: integer
+          format: int32
+
+    AlgorithmAndKeySize:
+      description: The algorithm and the key size to be used when generating the asymmetric key.
+      type: string
+      enum:
+      - RSA_1024
+      - RSA_2048
+      - RSA_3072
+      - RSA_4096
+      - RSA_8192
+      - RSA_16384
+      - DSA_1024
+      - ECDSA_160
+      - ECDSA_224
+      - ECDSA_256
+      - ECDSA_384
+      - ECDSA_512
+      - ECDSA_521
+
+    SubjectAlternativeName:
+      description: The subject alternative name.
+      type: object
+      properties:
+        subjectAlternativeNameType:
+          $ref: '#/components/schemas/SubjectAlternativeNameType'
+        subjectAlternativeNameValue:
+          $ref: '#/components/schemas/SubjectAlternativeNameValue'
+
+    SubjectAlternativeNameType:
+      description: The subject alternative name type.
+      type: string
+      enum:
+      - IPV4
+      - IPV6
+      - DNS_NAME
+      - RFC822_NAME
+
+    SubjectAlternativeNameValue:
+      $ref: '#/components/schemas/SubjectAlternativeNameStringValue'
+
+    SubjectAlternativeNameStringValue:
+      description: The subject alternative name value as a single string.
+      type: object
+      properties:
+        value:
+          type: string
+
+    EnrollmentResponse:
+      type: object
+      properties:
+        domain:
+          $ref: '#/components/schemas/DomainResponse'
+          description: The PKI domain.
+
+    DomainResponse:
+      type: object
+      description: The enrollment response related to a PKI domain.
+      properties:
+        domainName:
+          type: string
+          description: The name of the PKI domain.
+        enrollmentCmpConfig:
+          $ref: '#/components/schemas/EnrollmentCmpConfig'
+        trustedCertificates:
+          type: array
+          items:
+            $ref: '#/components/schemas/TrustedCertificate'
+          description: The list of trusted certificates.
+        trustCategories:
+          type: array
+          items:
+            $ref: '#/components/schemas/TrustCategory'
+          description: The list of trust categories.
+
+    EnrollmentCmpConfig:
+      description: The CMPv2 enrollment configuration.
+      type: object
+      properties:
+        enrollmentAuthorityId:
+          description: The ID of the Managed Object modeling the Enrollment Authority (/keystore/cmp/certificate-authorities/certificate-authority/name for EOI Yang model, /SecM/CertM/EnrollmentAuthority/enrollmentAuthorityId for ECIM model)
+          type: string
+        enrollmentAuthorityName:
+          description: The name of the issuing CA. The X.501 distinguished name of the issuing CA.
+          type: string
+        enrollmentAuthorityType:
+          description: The type of Enrollment Authority (not meaninful for EOI Yang model, CERTIFICATION_AUTHORITY or REGISTRATION_AUTHORITY for ECIM model)
+          type: string
+        enrollmentServerGroupId:
+          description: The ID of the Managed Object modeling the CMPv2 server group used for CMPv2 enrollment (/keystore/cmp/cmp-server-groups/cmp-server-group/name for EOI Yang model, /SecM/CertM/EnrollmentServerGroup/enrollmentServerGroupId for ECIM model)
+          type: string
+        enrollmentServerId:
+          description: The ID of the Managed Object modeling the CMPv2 server (/keystore/cmp/cmp-server-groups/cmp-server-group/cmp-server/name for EOI Yang model, /SecM/CertM/EnrollmentServerGroup/EnrollmentServer/enrollmentServerId for ECIM model)
+          type: string
+        cmpTrustCategoryId:
+          description: The ID of the Managed Object modeling the CMPv2 trust category (/truststore/certificates/name for EOI Yang model, not meaningful for ECIM model). It is a list of certificate authority (CA) certificates used by the CMPv2 client to authenticate the CMPv2 server certificates. A CMPv2 server certificate is authenticated if it has a valid chain of trust to a configured CA certificate.
+          type: string
+        url:
+          description: The URL of the CMPv2 server.
+          type: string
+        certificateId:
+          description: The ID of the Managed Object(s) modeling the certificate (/keystore/asymmetric-keys/asymmetric-key/name and /keystore/asymmetric-keys/asymmetric-key/certificates/certificate for EOI Yang model, /SecM/CertM/NodeCredential/nodeCredentialId for ECIM model)
+          type: string
+        algorithm:
+          description: The algorithm and the key size (in node format) to be used when generating the asymmetric key.
+          type: string
+        subjectName:
+          description: The X.501 DN to be used in the subject field of the requested certificate.
+          type: string
+        challengePassword:
+          description: The CMPv2 challenge password.
+          type: string
+        trustCategoryId:
+          description: The ID of the Managed Object modeling the trust category (/truststore/certificates/name for EOI Yang model, /SecM/CertM/TrustCategory/trustCategoryId for ECIM model). It is a list of trusted certificates. For EOI Yang model, such list of certificate authority (CA) certificates can be updated by the CMPv2 client after completing the CMPv2 enrollment if the CMPv2 server provided CA certificates.
+          type: string
+
+    TrustedCertificate:
+      description: A trusted certificate.
+      type: object
+      properties:
+        id:
+          description: The ID of the Managed Object modeling the trusted certificate (/truststore/certificates/certificate/name for EOI Yang model, /SecM/CertM/TrustedCertificate/trustedCertificateId for ECIM model).
+          type: string
+        caSubjectName:
+          description: The subject name of the trusted certificate.
+          type: string
+        caFingerprint:
+          description: The SHA fingerprint of the trusted certificate.
+          type: string
+        tdpsUri:
+          description: The URI of the Trust Distribution Point Service (TDPS) where to fetch the trusted certificate. It is meaningful for ECIM model.
+          type: string
+        caPem:
+          description: The certificate in PEM format base64-encoded without line wrapping of the trusted certificate.
+          type: string
+        crls:
+          type: array
+          items:
+            $ref: '#/components/schemas/Crl'
+          description: The list of Certificate Revocation Lists (CRLs) for this trusted certificate.
+
+    Crl:
+      description: A Certificate Revocation List (CRL).
+      type: object
+      properties:
+        id:
+          description: The ID of the Managed Object modeling the certificate revocation list (/truststore/certificate-revocations/certificate-revocation/name for EOI Yang model).
+          type: string
+        cdpsUri:
+          description: The URI of the CRL Distribution Point Service (CDPS) where to fetch the CRL.
+          type: string
+
+    TrustCategory:
+      description: A trust category. It is a list of trusted certificates ID.
+      type: object
+      properties:
+        id:
+          description: The ID of the Managed Object modeling the trust category (/truststore/certificates/name for EOI Yang model, /SecM/CertM/TrustCategory/trustCategoryId for ECIM model).
+          type: string
+        certificates:
+          type: array
+          items:
+            type: string
+          description: The list of trusted certificate IDs. A trusted Certificate ID is the ID of the Managed Object modeling the trusted certificate (/truststore/certificates/certificate/name for EOI Yang model, /SecM/CertM/TrustedCertificate/trustedCertificateId for ECIM model).
+
+    ResourceInstance:
+      description: A resource or sub-resource instance.
+      type: object
+      properties:
+        resource:
+          type: string
+        resourceId:
+          type: string
+        subResource:
+          type: string
+        subResourceId:
+          type: string
+
+    ErrorResponse:
+      type: object
+      properties:
+        httpStatus:
+          type: string
+        message:
+          type: string
+        causedBy:
+          type: string
+        suggestedSolution:
+          type: string
+
+  parameters:
+    ipFamilyParam:      # Can be referenced via '#/components/parameters/ipFamilyParam'
+      name: ipFamily
+      in: query
+      description: The IP family.
+      required: false
+      schema:
+        type: string
+        enum:
+        - INET
+        - INET6
+
+    nodeNameOrFdnParam:      # Can be referenced via '#/components/parameters/nodeNameOrFdnParam'
+      name: nodeNameOrFdn
+      in: path
+      description: The node name or FDN
+      required: true
+      schema:
+        type: string
+      example: "5G134SharedCNF001"
+
+    domainNameParam:      # Can be referenced via '#/components/parameters/domainNameParam'
+      name: domainName
+      in: path
+      description: The domain name.
+      required: true
+      schema:
+        type: string
+      example: "OAM"

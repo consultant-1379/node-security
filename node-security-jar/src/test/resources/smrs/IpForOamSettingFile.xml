@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SiteBasic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="SiteBasic.xsd">
+	<Format revision="T" />
+	<Ip dnsServer1="003_dnsServer1" dnsServer2="004_dnsServer2">
+		<IpHostLink ipAddress="005_ipAddressOaMOuter" ipHostLinkId="1"
+			ipInterfaceMoRef="DU-1-IP-3" userLabel="OAM IP address" />
+	</Ip>
+	<IpInterface ipInterfaceId="3" ipInterfaceSlot="DU-1"
+		defaultRouter0="006_defaultRouter0" networkPrefixLength="007_networkPrefixLength"
+		vid="2200" accessControlListRef="3" />
+	<IpSystem>
+		<AccessControlList accessControlListId="3">
+			<AclEntries aclPriority="0" aclAction="BYPASS" icmpType="256"
+				localIpAddress="005_ipAddressOaMOuter" localIpAddressMask="32"
+				localPort="0" localPortFiltering="FALSE" protocol="TCP"
+				remoteIpAddress="008_remoteIpAddress" remoteIpAddressMask="20"
+				remotePort="0" remotePortFiltering="FALSE" />
+			<AclEntries aclPriority="1" aclAction="BYPASS" icmpType="256"
+				localIpAddress="005_ipAddressOaMOuter" localIpAddressMask="32"
+				localPort="0" localPortFiltering="FALSE" protocol="UDP"
+				remoteIpAddress="008_remoteIpAddress" remoteIpAddressMask="20"
+				remotePort="0" remotePortFiltering="FALSE" />
+			<AclEntries aclPriority="3" aclAction="DROP" icmpType="0"
+				localIpAddress="0.0.0.0" localIpAddressMask="0" localPort="0"
+				localPortFiltering="FALSE" protocol="ANY" remoteIpAddress="0.0.0.0"
+				remoteIpAddressMask="0" remotePort="0" remotePortFiltering="FALSE" />
+		</AccessControlList>
+	</IpSystem>
+</SiteBasic>

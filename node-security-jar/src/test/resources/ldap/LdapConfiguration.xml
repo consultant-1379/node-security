@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="LdapConfigurationSchema.xsd">
+	<Node>
+		<nodeFdn>LTE08ERBS00001</nodeFdn>
+		<tlsMode>startTls</tlsMode>
+		<userLabel>Ldap Configuration</userLabel>
+		<useTls>true</useTls>
+	</Node>
+</Nodes>

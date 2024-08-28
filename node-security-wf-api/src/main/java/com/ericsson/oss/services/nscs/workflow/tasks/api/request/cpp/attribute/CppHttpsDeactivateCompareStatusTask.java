@@ -1,0 +1,35 @@
+/*------------------------------------------------------------------------------
+ *******************************************************************************
+ * COPYRIGHT Ericsson 2017
+ *
+ * The copyright to the computer program(s) herein is the property of
+ * Ericsson Inc. The programs may be used and/or copied only with written
+ * permission from Ericsson Inc. or in accordance with the terms and
+ * conditions stipulated in the agreement/contract under which the
+ * program(s) have been supplied.
+ *******************************************************************************
+ *----------------------------------------------------------------------------*/
+
+package com.ericsson.oss.services.nscs.workflow.tasks.api.request.cpp.attribute;
+
+import com.ericsson.oss.services.nscs.workflow.tasks.api.request.WorkflowQueryTask;
+import com.ericsson.oss.services.nscs.workflow.tasks.api.request.WorkflowTaskType;
+
+/**
+ * Created by ekrzsia on 9/6/17.
+ */
+public class CppHttpsDeactivateCompareStatusTask extends WorkflowQueryTask {
+
+
+    public static final String SHORT_DESCRIPTION = "Compare Https status for deactivate";
+
+    public CppHttpsDeactivateCompareStatusTask(){
+        super(WorkflowTaskType.CPP_COMPARE_HTTPS_STATUS_FOR_DEACTIVATE);
+        setShortDescription(SHORT_DESCRIPTION);
+    }
+
+    public CppHttpsDeactivateCompareStatusTask(final String nodeName){
+        super(WorkflowTaskType.CPP_COMPARE_HTTPS_STATUS_FOR_DEACTIVATE,nodeName);
+        setShortDescription(SHORT_DESCRIPTION);
+    }
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+            ProductNumber  = 'CXC 179 9121/4' R-State  = 'R2C'
+            DocumentNumber = '6/006 91-HRB 105 500'
+            Node version: L14B
+            File    : IpForOamSetting.xml
+            Purpose : Template for the IpForOamSetting file for OaM,
+                      for an OAM IP configuration of the following type:
+                      o IPsec for OAM is activated
+                      o OAM has a separate IpInterface/VLAN
+                      o OAM has a separate IpAccessHostEt (outer IP host)
+
+        --><SiteBasic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SiteBasic.xsd">
+<Format revision="T"/>
+<Ip dnsServer1="2.2.2.2" dnsServer2="3.3.3.3">
+<IpHostLink ipAddress="3.3.3.36" ipHostLinkId="1" ipInterfaceMoRef="VPN-2" userLabel="OAM IP address"/>
+</Ip>
+<IpInterface ipInterfaceId="3" ipInterfaceSlot="DU-1" defaultRouter0="1" networkPrefixLength="32" vid="200" accessControlListRef="3"/>
+<IpSystem>
+<IpAccessHostEt ipAccessHostEtId="3" ipInterfaceMoRef="DU-1-IP-3" ipAddress="" userLabel="IPsec tunnel endpoint for OAM"/>
+<VpnInterface vpnInterfaceId="2" networkPrefixLength="32" ipAccessHostEtRef="3"/>
+<IpSec featureState="ACTIVATED">
+<IkePeer ikePeerId="2" peerIdentityIdFqdn="FQDN" peerIdentityIdType="ER" peerIpAddress="3.2.3.2"/>
+<IpSecTunnel ikePeerRef="2" ipSecTunnelId="2" priority="1" tsLocalIpAddress="3.3.3.36" tsLocalIpAddressMask="32" vpnInterfaceRef="2">
+<TsRemoteIpAddressRanges ipAddress="34.34.34.34" mask="32"/>
+<TsRemoteIpAddressRanges ipAddress="34.34.34.34" mask="32"/>
+</IpSecTunnel>
+</IpSec>
+<AccessControlList accessControlListId="3">
+<AclEntries aclPriority="0" aclAction="BYPASS" icmpType="256" localIpAddress="12.12.12.12" localIpAddressMask="32" localPort="0" localPortFiltering="FALSE" protocol="TCP" remoteIpAddress="10.212.96.0" remoteIpAddressMask="20" remotePort="0" remotePortFiltering="FALSE"/>
+<AclEntries aclPriority="1" aclAction="BYPASS" icmpType="256" localIpAddress="12.12.12.12" localIpAddressMask="32" localPort="0" localPortFiltering="FALSE" protocol="UDP" remoteIpAddress="10.212.96.0" remoteIpAddressMask="20" remotePort="0" remotePortFiltering="FALSE"/>
+<AclEntries aclPriority="2" aclAction="BYPASS" icmpType="256" localIpAddress="12.12.12.12" localIpAddressMask="32" localPort="0" localPortFiltering="FALSE" protocol="ICMP" remoteIpAddress="10.212.96.0" remoteIpAddressMask="20" remotePort="0" remotePortFiltering="FALSE"/>
+<AclEntries aclPriority="3" aclAction="DROP" icmpType="0" localIpAddress="0.0.0.0" localIpAddressMask="0" localPort="0" localPortFiltering="FALSE" protocol="ANY" remoteIpAddress="0.0.0.0" remoteIpAddressMask="0" remotePort="0" remotePortFiltering="FALSE"/>
+</AccessControlList>
+</IpSystem>
+</SiteBasic>

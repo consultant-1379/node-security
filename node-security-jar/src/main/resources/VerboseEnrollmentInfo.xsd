@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="enrollmentInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="challengePassword" type="xs:string" />
+        <xs:element name="issuerCA" type="xs:string" />
+        <xs:element name="keyInfo" type="xs:string" />
+        <xs:element name="subjectName" type="xs:string" />
+        <xs:element name="trustedCertificateFingerPrints">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="certificateFingerPrint" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="verboseEnrollmentInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CertificateType" type="xs:string" />
+              <xs:element name="enrollmentCmpConfig">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="NodeCredentialId" type="xs:string" />
+                    <xs:element name="EnrollmentServerGroupId" type="xs:string" />
+                    <xs:element name="EnrollmentServerId" type="xs:string" />
+                    <xs:element name="EnrollmentAuthority" type="xs:string" />
+                    <xs:element name="cacerts" type="xs:string" />
+                    <xs:element name="TrustedCerts" type="xs:string" />
+                    <xs:element name="AuthorityType" type="xs:string" />
+                    <xs:element name="AuthorityName" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="trustedCertificates">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="trustedCertificate">
+                      <xs:complexType mixed="true">
+                        <xs:sequence>
+                          <xs:element name="name" type="xs:string" />
+                          <xs:element name="caSubjectName" type="xs:string" />
+                          <xs:element name="cafingerprint" type="xs:string" />
+                          <xs:element name="tdpsUri" type="xs:string" />
+                          <xs:element name="caPem" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="trustCategories">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="trustCategory">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="name" type="xs:string" />
+                          <xs:element name="certificates">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="certificate" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

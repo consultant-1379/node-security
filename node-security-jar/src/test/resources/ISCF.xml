@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<secConfData fileFormatVersion="1.0">
+    <body>
+        <metaData creationTime="20110321160725" logicalName="lienb0645" notValidAfter="20110404160725"/>
+        <security minimumSecurityLevel="1" userLabel="" wantedSecurityLevel="3">
+            <fileTransferClient>Secure</fileTransferClient>
+            <telnetAndFtpServers>Secure</telnetAndFtpServers>
+            <level2>
+                <level2ConfigSettings certExpirWarnTime="90" installTrustedCertDuration="30">
+                    <logonServerAddress>https://10.75.24.12:8443/ericsson/servlet/sls</logonServerAddress>
+                </level2ConfigSettings>
+                <level2Files>
+                    <certFile category="corbaPeer"
+                        certFingerprint="SHA-1 Fingerprint=D3:75:A6:52:13:A0:F1:58:6D:41:08:27:6E:C6:5F:AA:BF:1F:8D:78" certSerialNumber="993958624">
+                        <encryptedContent PBKDF2iterationCount="1024" PBKDF2salt="i30WwLmQ/Na/HqQ2D/QnJL7QdZS+">0xQrkiIEhTAWTj7OCp17ySw2qixpTIFhH88E2m0g9ExOk/3zvmRL/2w9xgE7Hid0&#xd;
+2KsjNqHm2xy2ljMZ3VzSnSh9Q7pIcKCbq3G8C+gJhK4WhCxeU/soVrXLh7Pt7/fA&#xd;
+NSXS6vQHdUbfxy0OSJ9aplgj2qwGIKmSxYMxrTCiUvo557VSVfA/tIjf1y8MlYUp&#xd;
+HydoRRt4Kib5l1iDnsBakGaW+DvvSsBBEIvU116O5d59jLJRFzyEMwTJwb5ib0un&#xd;
+FbymBYxISH5yaqF1Jaor/RofWzpAI8HRCwF9GMpRFUx3AiS5Ox6n3xkGtnzU+e0t&#xd;
+ZhNfFjCaWHuZyl5YNlOw7nBGiTvXN3NRZhxa8XTKUGHDEPZTkriVEaET6DFYsFP0&#xd;
+H2ppkSt3lFl0S0PtV8mq8LrodX4WRkccogCgWwukYfts4jkXusgaYsfpiGIe5wQz&#xd;
+EE2fFqxbB4dEgUOtgeOdvy+1vJMitQWuzOZW7IH6AnYkOcCwXkDd4s3SN9WfzdfA&#xd;
+/KZYJMNyaV7SX8/ah7Ek+3f4+BdaYtzQpJnlUZhrweUQ+qj3d35RWTJMIZkcDz/D&#xd;
+nFQ9SE+tFeYe2ti5gQ1k5/ZGP0kgcIOTkvpPvYlhPZXrqx76bpC0dS/iksz56lrP&#xd;
+aaSulggeMVGlocBW3kWwUzseIOA9oXiB8P/11IXoqqRdyXTwqF3F8Z2dRB6omMuW&#xd;
+JB6o6vNwU5IO4HeUURmLpsbpyvU0IxRAnwaMal28HEBXYnDusCxQHi0UyECoABwP&#xd;
+mu1u9zaRGPVTcc8m77WZbwCf3IwX8pQSJC7AJj9GDgNlQHV+799OuKLMV4u0heKv</encryptedContent>
+                    </certFile>
+                    <certFile category="corbaPeer"
+                        certFingerprint="SHA-1 Fingerprint=81:CF:88:EB:BA:D4:75:D1:C2:ED:DA:0D:7C:A4:3D:37:7D:57:FC:07" certSerialNumber="185013500">
+                        <encryptedContent PBKDF2iterationCount="1024" PBKDF2salt="8ctoWF4YLH+6iq5KTTQ1iQq19TeG">hmmfvsRPNrIXiYz2ydnMaSpyYm+dsd3wwW+hsjCpPsBDaKwMkn568UgD+Nq/fTwj&#xd;
+Hl39pn1uhuJV5d1lCHSlYjOiOvDuJ2tc51PfgBffZsY3B8itesIrziyp5FJxfWT4&#xd;
+/xqDgXt8uArc4ZvpbCcxgxXIlUIfeJl5i0/qJbvYW286moSJzGUXGatuPHMwVY5H&#xd;
+5FCf1jKTP5I44orDEPRbYFd4NUm36wU04MOKN1HD3XmhrxnmsUz8zZzWtBd6LRSO&#xd;
+/kuyLz6ujgHQS1Hh+Gpo05ZTt40qxNiDTrWwnTaXAulKvqsXFo7nFhUWDJBu/cRi&#xd;
+u/x9ZRV8Ld1xU81Aw95iPRgxus1rz+HHs8w2BsRzVE8lT+QJU9EFtXZRyZdUfZ7K&#xd;
+EL34P6DfySaXiViN0wjoTEqUY0Sn3I1oC3XzTP2NwXXp/2U5o4TIYieElvxSiJVS&#xd;
+j1pwPSAd93Xf4hn91JdStpHGkwPMuaMbQIDn0Qm8afAKqWqC/V5orC47L8CIK6Nv&#xd;
+84Czu6dkuTUUgmetdxbgnIMoZQJXvPjoSLw9l/OVJwum84wB5TJftJNsB5bVEU68&#xd;
+vgcqD4dULdgsSw1SR4ebnVvB6R5d9tMHhsllpqsuO/E5airBkKpnbVbCEmMbXKwF&#xd;
+3X40s2Ub5OK40GYvdZ3gV3GqZJmnI6S2iylooVZw3mp3RQJI4FVBc7FFkwpnxylQ&#xd;
+UPW631A4R9yYOzbNzgb4AHpMqoIF4YsP5V+ktcKJTekfY3x5qNGRDTsTcoE1JeAj&#xd;
+YgXmPsN9QwVa9E0FzcIPljtfiZPw8Lnmeto/EuyyiLig9PqRxC59QNaulKR9q34A</encryptedContent>
+                    </certFile>
+                </level2Files>
+                <secEnrollmentData rollbackTimeout="10">
+                    <enrollmentData
+                        cAFingerprint="MD5 Fingerprint=50:D8:28:23:17:32:97:9C:94:26:D6:A7:98:0F:25:9E"
+                        distinguishedName="CN=lteoss1:lienb0645"
+                        enrollmentServerURL="http://10.75.24.12:8081//scepraserver/scep/lteoss1pkiclient.exe" keyLength="0">
+                        <dataChallengePassword>
+                            <encryptedContent
+                                PBKDF2iterationCount="1024" PBKDF2salt="5/50M75ZYa67g/lpwPZFZxXVJPWf">bcerQbmsg0Q5+qlQKXosaA==</encryptedContent>
+                        </dataChallengePassword>
+                    </enrollmentData>
+                </secEnrollmentData>
+            </level2>
+        </security>
+		<ipsec>
+		</ipsec>
+    </body>
+    <validators hash="U1W6vNB8+8Hy83AGOyva33FBvmQ=" hmac="8qntthhe+feFgKiDO5SZ9SDlI8c="/>
+</secConfData>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name='proxyAccountsData'>
+        <xs:complexType>
+	        <xs:sequence>
+	            <xs:element name='proxyAccountsCounters' type='ProxyAccountsCounters' minOccurs='0' maxOccurs='1' />
+	            <xs:element name='proxyAccounts' type='ProxyAccounts' minOccurs='1' maxOccurs='1' />
+		    </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name='ProxyAccountsCounters'>
+        <xs:sequence>
+            <xs:element name='numOfProxyAccounts' type='xs:int' minOccurs='1' maxOccurs='1' />
+            <xs:element name='numOfRequestedProxyAccounts' type='xs:int' minOccurs='1' maxOccurs='1' />
+            <xs:element name='numOfLegacyProxyAccounts' type='xs:int' minOccurs='1' maxOccurs='1' />
+            <xs:element name='numOfRequestedLegacyProxyAccounts' type='xs:int' minOccurs='1' maxOccurs='1' />
+	    </xs:sequence>
+    </xs:complexType> 	
+    
+    <xs:complexType name="ProxyAccounts">
+     <xs:sequence>
+         <xs:element name='proxyAccount' type='ProxyAccount' minOccurs='0' maxOccurs='unbounded' />
+	 </xs:sequence>
+    </xs:complexType> 	
+
+	<xs:complexType name="ProxyAccount">
+	   <xs:sequence>
+		  <xs:element name="dn" type="xs:string" minOccurs="1" nillable="false"/>
+		  <xs:element name="adminStatus" type="ProxyAccountAdminStatus"
+		  	minOccurs="0" maxOccurs="1" />
+		  <xs:element name="createDate" type="xs:string" minOccurs="0"
+		  	maxOccurs="1" />
+		  <xs:element name="lastLoginDate" type="xs:string"
+		  	minOccurs="0" maxOccurs="1" />
+	   </xs:sequence>
+	</xs:complexType>	
+
+	<xs:simpleType name="ProxyAccountAdminStatus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DISABLED" />
+			<xs:enumeration value="ENABLED" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+</xs:schema>

@@ -1,0 +1,3 @@
+# Deployments for Cucumber/Blast test framework
+# ERICtpattributeresolver2_CXP9038530
+com/ericsson/oss/services/test:ERICsharedserviceshelper_CXP0000000

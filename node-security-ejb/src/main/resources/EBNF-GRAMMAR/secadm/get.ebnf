@@ -1,0 +1,14 @@
+"secadm" (* slogan = "Manages security configuration and administration on network nodes" *) WS "get" (* slogan = "lists the supported and enabled ciphers on a single or multiple nodes for either SSH or TLS protocol" *) WS "ciphers" (* slogan = "ciphers attribute" *) WS PROTOCOL WS CIPHERS_GET_TARGET_NODES
+
+PROTOCOL ::= ( "--protocol" (* slogan = "protocol type e.g SSH/SFTP,SSL/HTTPS/TLS. Tip: -pr for short" *) | "-pr" (* hide = "true" *) ) WS PROTOCOL_TYPE
+
+PROTOCOL_TYPE ::= ( "SSH/SFTP" (* slogan = "SSH/SFTP protocol type" *) | "SSL/HTTPS/TLS" (* slogan = "SSL/HTTPS/TLS protocol type" *) )
+
+CIPHERS_GET_TARGET_NODES ::= ( CIPHERS_GET_NODE_LIST | CIPHERS_GET_NODE_FILE )
+
+CIPHERS_GET_NODE_LIST ::= ( "-n" (* hide = "true" *) | "--nodelist" (* slogan = "Specify comma separated list of nodes. Tip: -n for short" *) ) WS CIPHERS_GET_NODE_NAME { "," (* slogan = "Comma used to add another node name to the list." *) CIPHERS_GET_NODE_NAME }
+
+CIPHERS_GET_NODE_NAME ::= [ ( "MeContext=" | "NetworkElement=" ) ] <node_name> (* slogan = "Specify the node name. E.g. MyNode1,MyNode2" *)
+
+CIPHERS_GET_NODE_FILE ::= ( "-nf" (* hide = "true" *) | "--nodefile" (* slogan = "Specify a file containing list of nodes. Tip: -nf for short" *) ) WS "file:" <file_name> (* inputType = "fileName" slogan = "Specify a file containing list of nodes" *)
+

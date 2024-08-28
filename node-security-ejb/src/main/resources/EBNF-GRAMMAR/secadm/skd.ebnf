@@ -1,0 +1,10 @@
+"secadm" (* slogan = "Manages security configuration and administration on network nodes" *) WS "skd" (* hide = "true" *) WS SK_CREATE_TARGET_NODES
+
+SK_CREATE_TARGET_NODES ::= ( SK_CREATE_NODE_LIST | SK_CREATE_NODE_FILE )
+
+SK_CREATE_NODE_LIST ::= ( "-n" (* hide = "true" *) | "--nodelist" (* slogan = "Specify the list of nodes. Tip: -n for short" *) ) WS SK_CREATE_NODE_NAME { "," (* slogan = "Comma used to add another node name to the list." *) SK_CREATE_NODE_NAME }
+
+SK_CREATE_NODE_NAME ::= [ "NetworkElement=" ] <node_name> (* slogan = "Scope the Command using Node names. E.g. MyNode1,MyNode2" *) )
+
+SK_CREATE_NODE_FILE ::= ( "-nf" (* hide = "true" *) | "--nodefile" (* slogan = "Specify the file containing a list of nodes. Tip: -nf for short" *) ) WS "file:" <file_name> (* inputType = "fileName" slogan = "Specify a file containing a list of nodes" *)
+

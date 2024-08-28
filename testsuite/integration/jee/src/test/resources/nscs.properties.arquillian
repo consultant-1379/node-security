@@ -1,0 +1,6 @@
+mock.entity=false
+mock.profile=false
+mock.certificate=false
+mock.capabilitymodel=true
+acceptance.tests.env=true
+arquillian.deploy=true

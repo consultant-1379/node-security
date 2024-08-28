@@ -1,0 +1,5 @@
+	<Node>
+		<NodeFdn>XXNODENAMEXX</NodeFdn>
+		<SubjectAltName>XXIPADDRESSXX</SubjectAltName>
+		<SubjectAltNameType>IP_ADDRESS</SubjectAltNameType>
+	</Node>

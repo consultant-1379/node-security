@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nodes>
+	<Node>
+		<NodeFdn>NODE001</NodeFdn>
+		<EntityProfileName>DUSGen2IPSec EP</EntityProfileName>
+		<SubjectAltName>10.0.0.1</SubjectAltName>
+		<SubjectAltNameType>IP_ADDRESS</SubjectAltNameType>
+		<EnrollmentMode>SCEP</EnrollmentMode>
+		<KeySize>RSA_1024</KeySize>
+		<CommonName>1234.Despicable.Us</CommonName>
+	</Node>
+	<Node>
+		<NodeFdn>NODE002</NodeFdn>
+		<EntityProfileName>MacroRBSGen1IPSec EP</EntityProfileName>
+		<CommonName>5678.Despicable.Us</CommonName>
+		<SubjectAltName>10.0.0.2</SubjectAltName>
+		<SubjectAltNameType>IP_ADDRESS</SubjectAltNameType>
+		<KeySize>RSA_2048</KeySize>
+	</Node>
+	<Node>
+		<NodeFdn>NODE003</NodeFdn>
+		<EntityProfileName>MicroRBSIPSec EP</EntityProfileName>
+		<SubjectAltName>10.0.0.3</SubjectAltName>
+		<SubjectAltNameType>DNS_NAME</SubjectAltNameType>
+		<CommonName>6789.Despicable.Us</CommonName>
+		<EnrollmentMode>CMPv2_INITIAL</EnrollmentMode>
+	</Node>
+</Nodes>

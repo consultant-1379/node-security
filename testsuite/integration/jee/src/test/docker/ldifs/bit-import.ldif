@@ -1,0 +1,46 @@
+
+# ----------------------------------------------------------------------------------
+# This file sets the Users and Roles used on the Integration tests.
+# ----------------------------------------------------------------------------------
+
+
+# Test Users
+#-----------------------------------------------------------------------------------
+
+dn: uid=Administrator,ou=People,dc=vts,dc=com
+uid: bitAdministrator
+cn: nscsAdministrator
+sn: User
+userType: enmUser
+userPassword: TestPassw0rd
+ds-pwp-account-disabled: false
+objectClass: person
+objectClass: userTypeOC
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: top
+
+
+# Roles
+# --------------------------------------------------------------------------------------------------------
+
+#dn: cn=ADMINISTRATOR,ou=Roles,dc=vts,dc=com
+#cn: Administrator
+#objectClass: groupOfUniqueNames
+#objectClass: top
+#objectClass: enmRole
+#description: Administrator Role
+
+
+# roles to users
+# --------------------------------------------------------------------------------------------------------
+
+dn: cn=ADMINISTRATOR,ou=Roles,dc=vts,dc=com
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=Administrator,ou=People,dc=vts,dc=com
+
+dn: cn=SECURITY_ADMIN,ou=Roles,dc=vts,dc=com
+changetype: modify
+add: uniqueMember
+uniqueMember: uid=Administrator,ou=People,dc=vts,dc=com

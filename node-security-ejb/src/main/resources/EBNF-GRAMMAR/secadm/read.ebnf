@@ -1,0 +1,14 @@
+"secadm" (* slogan = "Manages security configuration and administration on network nodes" *) WS "read" (* slogan = "Read the status of CRL Check (Activated/Deactivated) on nodes for OAM and IPSEC certificate types" *) WS "crlcheck" (* slogan = "crlcheck attribute" *) WS CRL_CERTIFICATE_TYPE WS CRL_TARGET_NODES
+
+CRL_CERTIFICATE_TYPE ::= ( "--certtype" (* slogan = "cert type to issue e.g IPSEC,OAM. Tip: -ct for short" *) | "-ct" (* hide = "true" *) ) WS CRL_TYPE
+
+CRL_TYPE ::= ( "IPSEC" (* slogan = "Internet Protocol security (ipsec) certificate type" *) | "OAM" (* slogan = "OAM cert type" *) )
+
+CRL_TARGET_NODES ::= ( CRL_NODE_LIST | CRL_NODE_FILE )
+
+CRL_NODE_LIST ::= ( "-n" (* hide = "true" *) | "--nodelist" (* slogan = "Specify the list of nodes. Tip: -n for short" *) ) WS CRL_NODE_NAME { "," (* slogan = "Comma used to add another node name to the list." *) CRL_NODE_NAME }
+
+CRL_NODE_NAME ::= [ "MeContext=" ] <node_name> (* slogan = "Scope the Command using Node names. E.g. MyNode1,MyNode2" *) )
+
+CRL_NODE_FILE ::= ( "-nf" (* hide = "true" *) | "--nodefile" (* slogan = "Specify the file containing a list of nodes. Tip: -nf for short" *) ) WS "file:" <file_name> (* inputType = "fileName" slogan = "Specify a file containing a list of nodes" *)
+

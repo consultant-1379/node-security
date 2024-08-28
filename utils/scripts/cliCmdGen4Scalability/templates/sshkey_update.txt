@@ -1,0 +1,1 @@
+secadm keygen update -n XXNODENAMEXX -t RSA_2048

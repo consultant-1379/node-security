@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.ericsson.nms.security.nscs</groupId>
+        <artifactId>node-security-project-testsuite-integration</artifactId>
+        <version>1.135.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <groupId>com.ericsson.nms.security.nscs.cucumber</groupId>
+    <artifactId>node-security-testsuite-integration-cucumber</artifactId>
+    <packaging>pom</packaging>
+    <name>[${project.artifactId}] JEE8 Project</name>
+
+    <properties>
+        <ericsson.scm.url>scm:git:[fetch=]ssh://gerritmirror-ha.lmera.ericsson.se:29418/OSS/com.ericsson.nms.security.nscs.blast/node-security-blast[push=]ssh://gerrit.ericsson.se:29418/OSS/com.ericsson.nms.security.nscs.blast/node-security-blast</ericsson.scm.url>
+        <testsuite.name>BLAST USAT SAMPLE</testsuite.name>
+        <arquillian.cucumber.options>--tags ~@Netsim</arquillian.cucumber.options>
+
+        <!-- Blast docker configuration -->
+        <blast.docker.setup>false</blast.docker.setup>
+        <blast.docker.setup.param>docker-compose.log</blast.docker.setup.param>
+        <blast.docker.setup.bash>./docker-netsim-start.sh</blast.docker.setup.bash>
+        <!--blast.docker.setup.param>.,${docker.setup.param}</blast.docker.setup.param>
+        <blast.docker.setup.groovy>src/test/resources/groovy_scripts/docker_setup.groovy</blast.docker.setup.groovy-->
+        <blast.docker.compose.dir>.</blast.docker.compose.dir>
+        <blast.docker.containers>docker_secserv_1</blast.docker.containers>
+
+    </properties>
+    <!--Profile to deploy latest site-->
+    <profiles>
+        <profile>
+            <id>site_latest</id>
+            <distributionManagement>
+                <site>
+                    <id>site</id>
+                    <name>Site</name>
+                    <url>${site.url}/node-security-blast/latest</url>
+                </site>
+            </distributionManagement>
+        </profile>
+
+        <!--Profile to stage site for review-->
+        <profile>
+            <id>site_review</id>
+            <distributionManagement>
+                <site>
+                    <id>site</id>
+                    <name>Site</name>
+                    <url>${site.url}</url>
+                </site>
+            </distributionManagement>
+        </profile>
+    </profiles>
+
+    <!--Deployment of versioned documentation-->
+    <distributionManagement>
+        <site>
+            <id>site</id>
+            <name>Site</name>
+            <url>${site.url}/node-security-blast/${project.version}</url>
+        </site>
+    </distributionManagement>
+
+    <modules>
+        <module>integration-tests</module>
+        <module>cucumber-steps</module>
+    </modules>
+
+    <scm>
+        <tag>node-security-1.127.9</tag>
+    </scm>
+
+</project>

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nodes>
+	<Node>
+		<NodeFdn>NODE001</NodeFdn>
+		<SubAltName>DEMO_SUB_ALT_NAME_001</SubAltName>
+		<EnableOMConfiguration1>
+			<removeTrustOnFailure>false</removeTrustOnFailure>
+			<trustedCertificateFilePath>string</trustedCertificateFilePath>
+			<dnsServer1>192.168.0.1</dnsServer1>
+			<dnsServer2>192.168.1.1</dnsServer2>
+			<ipAddressOaMInner>192.168.32.1</ipAddressOaMInner>
+			<networkPrefixLength>10</networkPrefixLength>
+			<ipAccessHostEtId>string</ipAccessHostEtId>
+			<defaultrouter0>192.168.20.1</defaultrouter0>
+			<ipAddressOaMOuter>192.168.32.2</ipAddressOaMOuter>
+			<remoteIpAddress>192.168.99.8</remoteIpAddress>
+			<remoteIpAddressMask>20</remoteIpAddressMask>
+			<peerOaMIpAddress>192.168.51.1</peerOaMIpAddress>
+			<peerIdentityIdFqdn>192.168.2.2</peerIdentityIdFqdn>
+			<peerIdentityIdType>string</peerIdentityIdType>
+			<tsLocalIpAddressMask>32</tsLocalIpAddressMask>
+			<tsRemoteIpAddressRanges>
+				<ipAddress>192.168.88.2</ipAddress>
+				<mask>32</mask>
+			</tsRemoteIpAddressRanges>
+			<tsRemoteIpAddressRanges>
+				<ipAddress>192.168.88.3</ipAddress>
+				<mask>32</mask>
+			</tsRemoteIpAddressRanges>
+			<ipSecTunnelAllowedTransforms>
+				<ipSecTunnelAllowedTransform>
+					<encryptionAlgorithm>AES_CBC_128</encryptionAlgorithm>
+					<integrityAlgorithm>HMAC_SHA_1_96</integrityAlgorithm>
+				</ipSecTunnelAllowedTransform>
+			</ipSecTunnelAllowedTransforms>
+			<ikePeerAllowedTransforms>
+			    <ikePeerAllowedTransform>
+			         <pseudoRandomFunction>HMAC_SHA1</pseudoRandomFunction>
+			         <diffieHellmanGroup>GROUP_2</diffieHellmanGroup>
+                     <integrityAlgorithm>HMAC_SHA_1_96</integrityAlgorithm>
+				     <encryptionAlgorithm>AES_CBC_128</encryptionAlgorithm>
+			    </ikePeerAllowedTransform>
+			</ikePeerAllowedTransforms>
+		</EnableOMConfiguration1>
+	</Node>
+	<Node>
+		<NodeFdn>NODE002</NodeFdn>
+		<SubAltName>DEMO_SUB_ALT_NAME_002</SubAltName>
+		<EnableOMConfiguration2>
+			<removeTrustOnFailure>true</removeTrustOnFailure>
+			<trustedCertificateFilePath>string</trustedCertificateFilePath>
+			<dnsServer1>192.168.0.2</dnsServer1>
+			<dnsServer2>192.168.1.2</dnsServer2>
+			<ipAddressOaMInner>192.168.32.3</ipAddressOaMInner>
+			<networkPrefixLength>10</networkPrefixLength>
+			<ipAccessHostEtRef>string</ipAccessHostEtRef>
+			<peerOaMIpAddress>192.168.2.2</peerOaMIpAddress>
+			<peerIdentityIdFqdn>192.168.2.2</peerIdentityIdFqdn>
+			<peerIdentityIdType>string</peerIdentityIdType>
+			<tsLocalIpAddressMask>32</tsLocalIpAddressMask>
+			<tsRemoteIpAddressRanges>
+				<ipAddress>192.168.88.2</ipAddress>
+				<mask>32</mask>
+			</tsRemoteIpAddressRanges>
+			<tsRemoteIpAddressRanges>
+				<ipAddress>192.168.88.3</ipAddress>
+				<mask>32</mask>
+			</tsRemoteIpAddressRanges>
+		</EnableOMConfiguration2>
+	</Node>
+	<Node>
+		<NodeFdn>NODE003</NodeFdn>
+		<SubAltName>DEMO_SUB_ALT_NAME_003</SubAltName>
+		<EnableOMConfiguration1>
+			<removeTrustOnFailure>false</removeTrustOnFailure>
+			<trustedCertificateFilePath>string</trustedCertificateFilePath>
+			<dnsServer1>192.168.0.3</dnsServer1>
+			<dnsServer2>192.168.1.3</dnsServer2>
+			<ipAddressOaMInner>192.168.32.4</ipAddressOaMInner>
+			<networkPrefixLength>10</networkPrefixLength>
+			<ipAccessHostEtId>string</ipAccessHostEtId>
+			<defaultrouter0>192.168.20.2</defaultrouter0>
+			<ipAddressOaMOuter>192.168.32.5</ipAddressOaMOuter>
+			<remoteIpAddress>192.168.99.8</remoteIpAddress>
+			<remoteIpAddressMask>20</remoteIpAddressMask>
+			<peerOaMIpAddress>192.168.51.1</peerOaMIpAddress>
+			<peerIdentityIdFqdn>192.168.2.2</peerIdentityIdFqdn>
+			<peerIdentityIdType>string</peerIdentityIdType>
+			<tsLocalIpAddressMask>32</tsLocalIpAddressMask>
+			<tsRemoteIpAddressRanges>
+				<ipAddress>192.168.88.2</ipAddress>
+				<mask>32</mask>
+			</tsRemoteIpAddressRanges>
+			<tsRemoteIpAddressRanges>
+				<ipAddress>192.168.88.3</ipAddress>
+				<mask>32</mask>
+			</tsRemoteIpAddressRanges>
+			<ipSecTunnelAllowedTransforms>
+				<ipSecTunnelAllowedTransform>
+					<encryptionAlgorithm>AES_CBC_128</encryptionAlgorithm>
+					<integrityAlgorithm>HMAC_SHA_1_96</integrityAlgorithm>
+				</ipSecTunnelAllowedTransform>
+			</ipSecTunnelAllowedTransforms>
+			<ikePeerAllowedTransforms>
+			    <ikePeerAllowedTransform>
+			         <pseudoRandomFunction>HMAC_SHA1</pseudoRandomFunction>
+			         <diffieHellmanGroup>GROUP_2</diffieHellmanGroup>
+                     <integrityAlgorithm>HMAC_SHA_1_96</integrityAlgorithm>
+				     <encryptionAlgorithm>AES_CBC_128</encryptionAlgorithm>
+			    </ikePeerAllowedTransform>
+			</ikePeerAllowedTransforms>
+		</EnableOMConfiguration1>
+	</Node>
+	<Node>
+		<NodeFdn>NODE004</NodeFdn>
+		<SubAltName>DEMO_SUB_ALT_NAME_004</SubAltName>
+		<DisableOMConfiguration>
+			<removeCert>false</removeCert>
+			<removeTrust>
+				<serialNumber>10001</serialNumber>
+				<issuer>ERICSSON</issuer>
+			</removeTrust>
+			<dnsServer1>192.168.0.5</dnsServer1>
+			<dnsServer2>192.168.1.5</dnsServer2>
+			<ipAddressOaMOuter>192.168.32.7</ipAddressOaMOuter>
+			<defaultRouter0>192.168.20.3</defaultRouter0>
+			<networkPrefixLength>23</networkPrefixLength>
+			<remoteIpAddress>192.168.20.3</remoteIpAddress>
+			<remoteIpAddressMask>20</remoteIpAddressMask>
+		</DisableOMConfiguration>
+	</Node>
+	<!-- IPv6 starts -->
+	<Node>
+		<NodeFdn>NODE001</NodeFdn>
+		<SubAltName>DEMO_SUB_ALT_NAME_001</SubAltName>
+		<EnableOMConfiguration1>
+			<removeTrustOnFailure>false</removeTrustOnFailure>
+			<trustedCertificateFilePath>string</trustedCertificateFilePath>
+			<dnsServer1>192:192:192:192:192:192:192:192</dnsServer1>
+			<dnsServer2>192:192:192:192:192:192:192:192</dnsServer2>
+			<ipAddressOaMInner>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</ipAddressOaMInner>
+			<networkPrefixLength>10</networkPrefixLength>
+			<ipAccessHostEtId>string</ipAccessHostEtId>
+			<defaultrouter0>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</defaultrouter0>
+			<ipAddressOaMOuter>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</ipAddressOaMOuter>
+			<remoteIpAddress>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</remoteIpAddress>
+			<remoteIpAddressMask>20</remoteIpAddressMask>
+			<peerOaMIpAddress>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</peerOaMIpAddress>
+			<peerIdentityIdFqdn>FE80::0202:B3FF:FE1E:8329</peerIdentityIdFqdn>
+			<peerIdentityIdType>string</peerIdentityIdType>
+			<tsLocalIpAddressMask>32</tsLocalIpAddressMask>
+			<tsRemoteIpAddressRanges>
+				<ipAddress>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</ipAddress>
+				<mask>32</mask>
+			</tsRemoteIpAddressRanges>
+			<tsRemoteIpAddressRanges>
+				<ipAddress>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</ipAddress>
+				<mask>32</mask>
+			</tsRemoteIpAddressRanges>
+			<ipSecTunnelAllowedTransforms>
+				<ipSecTunnelAllowedTransform>
+					<encryptionAlgorithm>AES_CBC_128</encryptionAlgorithm>
+					<integrityAlgorithm>HMAC_SHA_1_96</integrityAlgorithm>
+				</ipSecTunnelAllowedTransform>
+			</ipSecTunnelAllowedTransforms>
+			<ikePeerAllowedTransforms>
+			    <ikePeerAllowedTransform>
+			         <pseudoRandomFunction>HMAC_SHA1</pseudoRandomFunction>
+			         <diffieHellmanGroup>GROUP_2</diffieHellmanGroup>
+                     <integrityAlgorithm>HMAC_SHA_1_96</integrityAlgorithm>
+				     <encryptionAlgorithm>AES_CBC_128</encryptionAlgorithm>
+			    </ikePeerAllowedTransform>
+			</ikePeerAllowedTransforms>
+		</EnableOMConfiguration1>
+	</Node>
+	<Node>
+		<NodeFdn>NODE002</NodeFdn>
+		<SubAltName>DEMO_SUB_ALT_NAME_002</SubAltName>
+		<EnableOMConfiguration2>
+			<removeTrustOnFailure>true</removeTrustOnFailure>
+			<trustedCertificateFilePath>string</trustedCertificateFilePath>
+			<dnsServer1>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</dnsServer1>
+			<dnsServer2>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</dnsServer2>
+			<ipAddressOaMInner>FE80::0202:B3FF:FE1E:8329</ipAddressOaMInner>
+			<networkPrefixLength>10</networkPrefixLength>
+			<ipAccessHostEtRef>string</ipAccessHostEtRef>
+			<peerOaMIpAddress>FE80::0202:B3FF:FE1E:8329</peerOaMIpAddress>
+			<peerIdentityIdFqdn>FE80::0202:B3FF:FE1E:8329</peerIdentityIdFqdn>
+			<peerIdentityIdType>string</peerIdentityIdType>
+			<tsLocalIpAddressMask>32</tsLocalIpAddressMask>
+			<tsRemoteIpAddressRanges>
+				<ipAddress>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</ipAddress>
+				<mask>32</mask>
+			</tsRemoteIpAddressRanges>
+			<tsRemoteIpAddressRanges>
+				<ipAddress>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</ipAddress>
+				<mask>32</mask>
+			</tsRemoteIpAddressRanges>
+		</EnableOMConfiguration2>
+	</Node>
+	<Node>
+		<NodeFdn>NODE003</NodeFdn>
+		<SubAltName>DEMO_SUB_ALT_NAME_003</SubAltName>
+		<EnableOMConfiguration1>
+			<removeTrustOnFailure>false</removeTrustOnFailure>
+			<trustedCertificateFilePath>string</trustedCertificateFilePath>
+			<dnsServer1>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</dnsServer1>
+			<dnsServer2>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</dnsServer2>
+			<ipAddressOaMInner>FE80::0202:B3FF:FE1E:8329</ipAddressOaMInner>
+			<networkPrefixLength>10</networkPrefixLength>
+			<ipAccessHostEtId>string</ipAccessHostEtId>
+			<defaultrouter0>FE80::0202:B3FF:FE1E:8329</defaultrouter0>
+			<ipAddressOaMOuter>FE80::0202:B3FF:FE1E:8329</ipAddressOaMOuter>
+			<remoteIpAddress>FE80::0202:B3FF:FE1E:8329</remoteIpAddress>
+			<remoteIpAddressMask>20</remoteIpAddressMask>
+			<peerOaMIpAddress>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</peerOaMIpAddress>
+			<peerIdentityIdFqdn>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</peerIdentityIdFqdn>
+			<peerIdentityIdType>string</peerIdentityIdType>
+			<tsLocalIpAddressMask>32</tsLocalIpAddressMask>
+			<tsRemoteIpAddressRanges>
+				<ipAddress>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</ipAddress>
+				<mask>32</mask>
+			</tsRemoteIpAddressRanges>
+			<tsRemoteIpAddressRanges>
+				<ipAddress>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</ipAddress>
+				<mask>32</mask>
+			</tsRemoteIpAddressRanges>
+			<ipSecTunnelAllowedTransforms>
+				<ipSecTunnelAllowedTransform>
+					<encryptionAlgorithm>AES_CBC_128</encryptionAlgorithm>
+					<integrityAlgorithm>HMAC_SHA_1_96</integrityAlgorithm>
+				</ipSecTunnelAllowedTransform>
+			</ipSecTunnelAllowedTransforms>
+			<ikePeerAllowedTransforms>
+			    <ikePeerAllowedTransform>
+			         <pseudoRandomFunction>HMAC_SHA1</pseudoRandomFunction>
+			         <diffieHellmanGroup>GROUP_2</diffieHellmanGroup>
+                     <integrityAlgorithm>HMAC_SHA_1_96</integrityAlgorithm>
+				     <encryptionAlgorithm>AES_CBC_128</encryptionAlgorithm>
+			    </ikePeerAllowedTransform>
+			</ikePeerAllowedTransforms>
+		</EnableOMConfiguration1>
+	</Node>
+	<Node>
+		<NodeFdn>NODE004</NodeFdn>
+		<SubAltName>DEMO_SUB_ALT_NAME_004</SubAltName>
+		<DisableOMConfiguration>
+			<removeCert>false</removeCert>
+			<removeTrust>
+				<serialNumber>10001</serialNumber>
+				<issuer>ERICSSON</issuer>
+			</removeTrust>
+			<dnsServer1>FE80::0202:B3FF:FE1E:8329</dnsServer1>
+			<dnsServer2>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</dnsServer2>
+			<ipAddressOaMOuter>FE80:0000:0000:0000:0202:B3FF:FE1E:8329</ipAddressOaMOuter>
+			<defaultRouter0>FE80::0202:B3FF:FE1E:8329</defaultRouter0>
+			<networkPrefixLength>23</networkPrefixLength>
+			<remoteIpAddress>FE80::0202:B3FF:FE1E:8329</remoteIpAddress>
+			<remoteIpAddressMask>20</remoteIpAddressMask>
+		</DisableOMConfiguration>
+	</Node>
+	<!-- IPv6 ends -->
+	<Node>
+		<NodeFdn>NODE005</NodeFdn>
+		<SubAltName>DEMO_SUB_ALT_NAME_005</SubAltName>
+		<InstallTrustCertificates>
+			<removeTrustOnFailure>false</removeTrustOnFailure>
+			<trustedCertificateFilePath>/home/smrs/abc.pem</trustedCertificateFilePath>
+		</InstallTrustCertificates>
+	</Node>
+	
+	<Node>
+		<NodeFdn>LTE04ERBS00003</NodeFdn>
+		<SubAltName>192.168.104.27</SubAltName>
+		<SubAltNameType>IPV4</SubAltNameType>
+		<SiteBasic>
+			<Format revision="T" />
+			<Ip dnsServer1="2.2.2.2" dnsServer2="3.3.3.3">
+				<IpHostLink ipAddress="3.3.3.36" ipHostLinkId="1"
+					ipInterfaceMoRef="VPN-2" userLabel="OAM IP address" />
+			</Ip>
+			<IpInterface ipInterfaceId="3" ipInterfaceSlot="DU-1"
+				defaultRouter0="FE80::0202:B3FF:FE1E:8329" networkPrefixLength="29" vid="200"
+				accessControlListRef="3" />
+			<IpSystem>
+				<IpAccessHostEt ipAccessHostEtId="3"
+					ipInterfaceMoRef="DU-1-IP-3" ipAddress="192.2.3.4"
+					userLabel="IPsec tunnel endpoint for OAM" />
+				<VpnInterface vpnInterfaceId="2" networkPrefixLength="29"
+					ipAccessHostEtRef="3" />
+				<IpSec featureState="ACTIVATED">
+					<IkePeer ikePeerId="2" peerIdentityIdFqdn="FQDN"
+						peerIdentityIdType="ANY" peerIpAddress="3.2.3.2" >
+						<AllowedTransforms diffieHellmanGroup = "GROUP_2" encryptionAlgorithm = "AES_CBC_128" integrityAlgorithm = "AES_XCBC_MAC_96" pseudoRandomFunction = "AES_XCBC_PRF128"/>
+					</IkePeer>	
+					<IpSecTunnel ikePeerRef="2" ipSecTunnelId="2" priority="1"
+						tsLocalIpAddress="3.3.3.36" tsLocalIpAddressMask="32"
+						vpnInterfaceRef="2">
+						<TsRemoteIpAddressRanges ipAddress="34.34.34.34"
+							mask="32" />
+						<TsRemoteIpAddressRanges ipAddress="34.34.34.34"
+							mask="32" />
+					</IpSecTunnel>
+				</IpSec>
+				<AccessControlList accessControlListId="3" >
+					<AclEntries aclPriority="0" aclAction="BYPASS" icmpType="256"
+						localIpAddress="12.12.12.12" localIpAddressMask="32" localPort="0"
+						localPortFiltering="FALSE" protocol="TCP" remoteIpAddress="10.212.96.0"
+						remoteIpAddressMask="20" remotePort="0" remotePortFiltering="FALSE" />
+					<AclEntries aclPriority="1" aclAction="BYPASS" icmpType="256"
+						localIpAddress="12.12.12.12" localIpAddressMask="32" localPort="0"
+						localPortFiltering="FALSE" protocol="UDP" remoteIpAddress="10.212.96.0"
+						remoteIpAddressMask="20" remotePort="0" remotePortFiltering="FALSE" />
+					<AclEntries aclPriority="2" aclAction="BYPASS" icmpType="256"
+						localIpAddress="12.12.12.12" localIpAddressMask="32" localPort="0"
+						localPortFiltering="FALSE" protocol="ICMP" remoteIpAddress="10.212.96.0"
+						remoteIpAddressMask="20" remotePort="0" remotePortFiltering="FALSE" />
+					<AclEntries aclPriority="3" aclAction="DROP" icmpType="0"
+						localIpAddress="0.0.0.0" localIpAddressMask="0" localPort="0"
+						localPortFiltering="FALSE" protocol="ANY" remoteIpAddress="0.0.0.0"
+						remoteIpAddressMask="0" remotePort="0" remotePortFiltering="FALSE" />
+				</AccessControlList>
+			</IpSystem>
+		</SiteBasic>
+	</Node>
+</Nodes>

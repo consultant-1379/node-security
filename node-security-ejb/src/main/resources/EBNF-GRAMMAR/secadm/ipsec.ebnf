@@ -1,0 +1,14 @@
+"secadm" (* slogan = "Manages security configuration and administration on network nodes" *) WS "ipsec" (* slogan = "Configuration and administration of Internet Protocol security (ipsec)" *) ( IPSEC | IPSEC_WITH_STATUS )
+
+IPSEC ::=  WS IPSEC_XML_FILE
+
+(*As part of MR 43112, only configuration 1 is in scope. IPSEC_CONFIG will be re introduced as part of configuration 2 MR 55921*)
+IPSEC_WITH_STATUS ::= WS IPSEC_STATUS WS IPSEC_NODE_FILE
+
+IPSEC_STATUS ::= ( "--status" (* slogan = "Internet Protocol security (ipsec) status. Tip: -s for short" *) | "-s" (* hide = "true" *) )
+
+IPSEC_CONFIG ::= WS ( "--configuration" (* slogan = "Internet Protocol security (ipsec) configuration option. Tip: -cf for short" *) | "-cf" (* hide = "true" *) )
+
+IPSEC_XML_FILE ::= ( "-xf" (* hide = "true" *) | "--xmlfile" (* slogan = "Specify the xml file. Tip: -xf for short" *) ) WS "file:" <file_name> (* inputType = "fileName" slogan = "Specify an xml file" *)
+
+IPSEC_NODE_FILE ::= ( "-nf" (* hide = "true" *) | "--nodefile" (* slogan = "Specify the file containing a list of nodes. Tip: -nf for short" *) ) WS "file:" <file_name> (* inputType = "fileName" slogan = "Specify a file containing a list of nodes" *)

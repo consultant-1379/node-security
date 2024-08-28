@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rtselDeleteServerConfiguration>
+	<nodeRtselDetails>
+		<nodes>
+			<nodeFdn>LTE08ERBS00002</nodeFdn>
+			<nodeFdn>LTE08ERBS00002ee</nodeFdn>
+			<nodeFdn>LTE08ERBS00003</nodeFdn>
+			<nodeFdn>LTE08ERBS00004</nodeFdn>
+			<nodeFdn>LTE08aaERBS00002</nodeFdn>
+		</nodes>
+		<servers>
+			<serverName>syslog1</serverName>
+		</servers>
+	</nodeRtselDetails>
+</rtselDeleteServerConfiguration>

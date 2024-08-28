@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <jboss-deployment-structure>
+         <ear-subdeployments-isolated>false</ear-subdeployments-isolated>
+            <deployment>
+                <dependencies>
+                    <module name="org.slf4j" />
+                    <module name="org.hornetq" slot="main" export="true" />
+                    <module name="org.apache.xerces" />
+
+                    <!--  <module name="org.jboss.as.camel.camel-subsystem" /> -->
+                    <module name="org.jboss.remoting3" slot="main" />
+                    <module name="org.jboss.xnio" slot="main" />
+
+                    <!-- <module name="com.ericsson.oss.mediation.engine-api" slot="main" export="true" />  -->  
+                    <module name="com.ericsson.oss.itpf.datalayer.dps.api" export="true" />
+                    <module name="com.ericsson.oss.itpf.datalayer.dps.delegate.api" export="true" />
+                    <module name="com.ericsson.oss.itpf.modeling.modelservice.api" slot="main" meta-inf="import" export="true"/>
+                    <module name="com.ericsson.oss.itpf.sdk.service-framework" slot="4.x" export="true" services="import" meta-inf="import" />
+                    <module name="com.ericsson.oss.itpf.security.cryptography.api"  export="true" services="import" meta-inf="import" />
+                    <module name="com.ericsson.oss.itpf.security.cryptography.impl"  export="true" services="import" meta-inf="import" />
+
+                    <module name="com.google.guava"  export="true" services="import" meta-inf="import" />
+                    <module name="org.apache.httpcomponents.httpclient"  export="true" services="import" meta-inf="import" />
+                    <module name="org.apache.httpcomponents.httpcore"  export="true" services="import" meta-inf="import" />
+                    <module name="com.fasterxml.jackson.core.jackson-annotations"  export="true" services="import" meta-inf="import" />
+                    <module name="com.fasterxml.jackson.core.jackson-core"  export="true" services="import" meta-inf="import" />
+                    <module name="com.fasterxml.jackson.core.jackson-databind" export="true" services="import" meta-inf="import" />
+                </dependencies>
+        </deployment>
+</jboss-deployment-structure>

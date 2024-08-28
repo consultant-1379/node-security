@@ -1,0 +1,21 @@
+"secadm" (* slogan = "Manages security configuration and administration on network nodes" *) WS "disable" (* slogan = "Set the crlcheck attribute as deactivated on nodes for OAM and IPSEC certificate types" *) WS "crlcheck" (* slogan = "crlcheck attribute" *) WS CRL_DISABLE_CERTIFICATE_TYPE WS CRL_TARGET_NODES
+
+CRL_DISABLE_CERTIFICATE_TYPE ::= ( "--certtype" (* slogan = "cert type to issue e.g IPSEC,OAM. Tip: -ct for short" *) | "-ct" (* hide = "true" *) ) WS CRL_DISABLE_TYPE
+
+CRL_DISABLE_TYPE ::= ( "IPSEC" (* slogan = "Internet Protocol security (ipsec) certificate type" *) | "OAM" (* slogan = "OAM cert type" *) | "ALL" (* slogan = "ALL cert types i.e both IPSEC and OAM" *) )
+
+CRL_TARGET_NODES ::= ( CRL_NODE_LIST | CRL_NODE_FILE | CRL_SAVED_SEARCH | CRL_COLLECTION )
+
+CRL_NODE_LIST ::= ( "-n" (* hide = "true" *) | "--nodelist" (* slogan = "Specify the list of nodes. Tip: -n for short" *) ) WS CRL_NODE_NAME { "," (* slogan = "Comma used to add another node name to the list." *) CRL_NODE_NAME }
+
+CRL_NODE_NAME ::= [ "MeContext=" ] <node_name> (* slogan = "Scope the Command using Node names. E.g. MyNode1,MyNode2" *) )
+
+CRL_NODE_FILE ::= ( "-nf" (* hide = "true" *) | "--nodefile" (* slogan = "Specify the file containing a list of nodes. Tip: -nf for short" *) ) WS "file:" <file_name> (* inputType = "fileName" slogan = "Specify a file containing a list of nodes" *)
+
+CRL_SAVED_SEARCH ::= ( "-sa" (* hide = "true" *) | "--savedsearch" (* slogan = "Specify the savedsearch containing list of nodes. Tip: -sa for short" *) ) WS CRL_SAVED_SEARCH_NAME { "," (* slogan = "Comma used to add another savedsearch name to the list." *) CRL_SAVED_SEARCH_NAME }
+
+CRL_COLLECTION ::= ( "-co" (* hide = "true" *) | "--collection" (* slogan = "Specify the collection containing list of nodes. Tip: -co for short" *) ) WS CRL_COLLECTION_NAME { "," (* slogan = "Comma used to add another collection name to the list." *) CRL_COLLECTION_NAME }
+
+CRL_SAVED_SEARCH_NAME ::= <saved_search_name> (* slogan = "Scope the Command using saved search names. E.g. MySavedSearch1, MySavedSearch2" *) )
+
+CRL_COLLECTION_NAME ::= <collection_name> (* slogan = "Scope the Command using saved search names. E.g. MyCollection1, MyCollection2" *) )

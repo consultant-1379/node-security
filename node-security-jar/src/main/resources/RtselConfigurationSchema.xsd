@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name='rtselConfiguration'>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name='nodeRtselConfig' type='nodeRtselConfig'
+					minOccurs='1' maxOccurs='unbounded' />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="nodeRtselConfig">
+		<xs:sequence>
+			<xs:element name="nodes" type="Nodes" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="serverConfig" type="ServerConfig"
+				minOccurs="1" maxOccurs="2" />
+			<xs:element name="connAttemptTimeOut" type="xs:int"
+				minOccurs="0" maxOccurs="1" />
+			<xs:element name="extServerLogLevel" type="xs:string"
+				minOccurs="0" maxOccurs="1" />
+			<xs:element name="extServerAppName" type="xs:string"
+				minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Nodes">
+		<xs:sequence>
+			<xs:element name="nodeInfo" type="nodeInfo" minOccurs="1"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="nodeInfo">
+		<xs:sequence>
+			<xs:element name="nodeFdns" type="nodeFdns" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="entityProfileName" type="xs:string"
+				minOccurs="0" maxOccurs="1" />
+			<xs:element name="enrollmentMode" type="xs:string"
+				minOccurs="0" maxOccurs="1" />
+			<xs:element name="keySize" type="xs:string" minOccurs="0"
+				maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="nodeFdns">
+		<xs:sequence>
+			<xs:element name="nodeFdn" type="xs:string" minOccurs="1"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ServerConfig">
+		<xs:all>
+			<xs:element name="extServerAddress" type="xs:string"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="extServProtocol" type="xs:string"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="serverName" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+		</xs:all>
+	</xs:complexType>
+</xs:schema>

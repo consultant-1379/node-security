@@ -1,0 +1,8 @@
+	<Node>
+		<NodeFdn>XXNODENAMEXX</NodeFdn>
+		<EntityProfileName>MicroRBSIPSec_SAN_CHAIN_EP</EntityProfileName>
+		<SubjectAltName>XXIPADDRESSXX</SubjectAltName>
+		<SubjectAltNameType>IP_ADDRESS</SubjectAltNameType>
+		<EnrollmentMode>CMPv2_INITIAL</EnrollmentMode>
+		<KeySize>RSA_2048</KeySize>
+	</Node>

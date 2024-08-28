@@ -1,0 +1,22 @@
+<Nodes>
+	<Node>
+		<NodeFdn></NodeFdn>
+		<SubAltName></SubAltName>
+		<EnableOMConfiguration2>
+			<!-- Remove the trust on failure -->
+			<removeTrustOnFailure>
+			</removeTrustOnFailure>
+			<!-- Provision to install operator provided certificate (Optional attribute. 
+				If node does not have certificate and this attribute is missing then configuration 
+				will fail) -->
+			<trustedCertificateFilePath></trustedCertificateFilePath>
+			<dnsServer1>
+			</dnsServer1>
+			<dnsServer2></dnsServer2>
+			<ipAddressOaMInner></ipAddressOaMInner>
+			<networkPrefixLength></networkPrefixLength>
+			<peerOaMIpAddres></peerOaMIpAddres>
+			<peerIdentityIdFqd></peerIdentityIdFqd>
+		</EnableOMConfiguration2>
+	</Node>
+</Nodes>

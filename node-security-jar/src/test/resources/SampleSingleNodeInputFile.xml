@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nodes>
+	<Node>
+		<NodeFdn>NODE001</NodeFdn>
+		<SubAltName>DEMO_SUB_ALT_NAME_001</SubAltName>
+		<EnableOMConfiguration1>
+			<removeTrustOnFailure>false</removeTrustOnFailure>
+			<trustedCertificateFilePath>string</trustedCertificateFilePath>
+			<dnsServer1>192.168.0.1</dnsServer1>
+			<dnsServer2>192.168.1.1</dnsServer2>
+			<ipAddressOaMInner>192.168.32.1</ipAddressOaMInner>
+			<networkPrefixLength>10</networkPrefixLength>
+			<ipAccessHostEtId>string</ipAccessHostEtId>
+			<defaultrouter0>192.168.20.1</defaultrouter0>
+			<ipAddressOaMOuter>192.168.32.2</ipAddressOaMOuter>
+			<remoteIpAddress>192.168.99.8</remoteIpAddress>
+			<remoteIpAddressMask>20</remoteIpAddressMask>
+			<peerOaMIpAddress>192.168.51.1</peerOaMIpAddress>
+			<peerIdentityIdFqdn>192.168.2.2</peerIdentityIdFqdn>
+			<peerIdentityIdType>string</peerIdentityIdType>
+			<tsLocalIpAddressMask>32</tsLocalIpAddressMask>
+			<tsRemoteIpAddressRanges>
+				<ipAddress>192.168.88.2</ipAddress>
+				<mask>32</mask>
+			</tsRemoteIpAddressRanges>
+			<tsRemoteIpAddressRanges>
+				<ipAddress>192.168.88.3</ipAddress>
+				<mask>32</mask>
+			</tsRemoteIpAddressRanges>
+			<ipSecTunnelAllowedTransforms>
+				<ipSecTunnelAllowedTransform>
+					<encryptionAlgorithm>AES_CBC_128</encryptionAlgorithm>
+					<integrityAlgorithm>HMAC_SHA_1_96</integrityAlgorithm>
+				</ipSecTunnelAllowedTransform>
+			</ipSecTunnelAllowedTransforms>
+			<ikePeerAllowedTransforms>
+			    <ikePeerAllowedTransform>
+			         <pseudoRandomFunction>HMAC_SHA1</pseudoRandomFunction>
+			         <diffieHellmanGroup>GROUP_2</diffieHellmanGroup>
+                     <integrityAlgorithm>HMAC_SHA_1_96</integrityAlgorithm>
+				     <encryptionAlgorithm>AES_CBC_128</encryptionAlgorithm>
+			    </ikePeerAllowedTransform>
+			</ikePeerAllowedTransforms>
+		</EnableOMConfiguration1>
+	</Node>
+</Nodes>

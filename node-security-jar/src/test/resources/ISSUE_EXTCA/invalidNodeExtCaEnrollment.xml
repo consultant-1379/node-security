@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EnrollmentDetails>
+    <nodeEnrollmentDetails>
+        <Nodes>
+            <Node>
+                <NodeFdn>node1234</NodeFdn>
+                <SubjectAltName>192.168.102.98</SubjectAltName>
+                <SubjectAltNameType>IP_ADDRESS</SubjectAltNameType>
+                <CertificateSubjectDn>CN=LTE04dg2ERBS00003-ipsec,C=SE,O=ERICSSON,OU=BUCI DUAC NAM</CertificateSubjectDn>
+                <ChallengePhrase>Ericsson@1</ChallengePhrase>
+                <InterfaceFdn>ManagedElement=node1234,Transport=1</InterfaceFdn>
+            </Node>
+        </Nodes>
+        <externalCAEnrollmentInfo>
+            <externalCAEnrollmentDetails>
+                <certificateAuthorityDn>C=SE,OU=BUCI_DUAC_NAM,O=ERICSSON,CN=NE_IPsec_CA</certificateAuthorityDn>
+                <caCertificate>MIIEczCCA1ugAwIBAgIIIJ7mJS1tDeMwDQYJKoZIhvcNAQELBQAwUjEYMBYGA1UEAwwPRU5NX1BLSV9Sb290X0NBMRYwFAYDVQQLDA1CVUNJX0RVQUNfTkFNMQswCQYDVQQGEwJTRTERMA8GA1UECgwIRVJJQ1NTT04wHhcNMTgxMTE5MTQxODI1WhcNMjYxMTE5MTQxODI1WjBOMRQwEgYDVQQDDAtORV9JUHNlY19DQTEWMBQGA1UECwwNQlVDSV9EVUFDX05BTTELMAkGA1UEBhMCU0UxETAPBgNVBAoMCEVSSUNTU09OMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsfw9RZ4ZboP5gbjMLhFygrWx8w3256xV7cNp36fU7Rml9TQkLFg8+p5uumzcs8m8BKEVWSS6O68enPSHHKxO0UHk7iJhCHFBVg3/rdm5FAeO0ClQ2Vw/uKhrQn4/eGHnyaIfe67dNVjoo9W4QLIoln7J+qnqvnVgJWjlgf/hVlBH6kFZHugDpq7zQdz0ZZW286V/2o/s4WyRH7V+3jhupI8B9lmKoDZJ18QW3VktDcEyCHUcFLDQ+vPzJVEOC+lt7T+zy4t1uaY8jllT9uQBCZkVPbmdZsL2pvcJzZKiUIOYwnSeWR0kpJOU0s9w08ymo84MGsP0Hk4PBAO8ZNQBuQIDAQABo4IBTzCCAUswgecGA1UdHwSB3zCB3DBmoGSgYoZgaHR0cDovLzE5Mi4xNjguMC4xNTU6ODA5Mi9wa2ktY2Rwcz9jYV9uYW1lPUVOTV9QS0lfUm9vdF9DQSZjYV9jZXJ0X3NlcmlhbG51bWJlcj02MzM0YzVmNzY5MDUxNzE3MHKgcKBuhmxodHRwOi8vWzIwMDE6MWI3MDo4MmExOjEwMzo6MTgxXTo4MDkyL3BraS1jZHBzP2NhX25hbWU9RU5NX1BLSV9Sb290X0NBJmNhX2NlcnRfc2VyaWFsbnVtYmVyPTYzMzRjNWY3NjkwNTE3MTcwHQYDVR0OBBYEFBQ9Y992m1wywAWw8GK1TIWgE5rEMA8GA1UdEwEB/wQFMAMBAf8wHwYDVR0jBBgwFoAUPafyFCAvENtCbmDXmUCWr4SV1okwDgYDVR0PAQH/BAQDAgEGMA0GCSqGSIb3DQEBCwUAA4IBAQAVn/l7j5eXf3R9lDfnKgJegH53ucZNk7gpqJEfNdPJ7NcBcW5tDF9p6BiXLRoU1VE1xZhqyJ9WrRY71uzKFWbKdh9WphMBocs6XsThAWuJVKF5L/2kjjpHmjOKX/NocUtjyyQHcnwtCz0jelyNcS3apMwvD1LYqU3wYv4u6XW7RERiVCmKooh37Nm1vFIy0EyC7Pv1dv8FQ2lAkLLP557O+2Z7uHmRiQxso7VT3R0OUktzauH2uxM3drJ2GCkmt5J609HM+ozgZkyQMuVUBgETgJU4FEuD2o/ul3JDFIEw7Byt1WqHUk3IcVyO++IH7p9Vz/xjvN+rA4RHZABWU5Ct</caCertificate> <!-- mandatory --> <!-- will be provided in base64 format -->
+                <enrollmentServerUrl>http://192.168.0.155:8091/pkira-cmp/NE_IPsec_CA</enrollmentServerUrl>
+            </externalCAEnrollmentDetails>
+			<TrustedCACertificates>
+				<TrustedCACertificateInfo>
+					<TDPSUrl>http://192.168.0.155:8093/pki-ra-tdps/ca_entity/NE_OAM_CA/1914a4925f029e5b/active/ENM_PKI_Root_CA</TDPSUrl>
+					<TrustedCACertIssuerDn>C=SE,OU=BUCI_DUAC_NAM,O=ERICSSON,CN=ENM_PKI_Root_CA</TrustedCACertIssuerDn>
+					<CertificateSerialNumber>1914a4925f029e5b</CertificateSerialNumber>
+				</TrustedCACertificateInfo>
+			</TrustedCACertificates>
+        </externalCAEnrollmentInfo>
+    </nodeEnrollmentDetails>
+</EnrollmentDetails>

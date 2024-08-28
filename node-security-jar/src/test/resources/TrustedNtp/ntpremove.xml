@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="RemoveNTPNodes.xsd">
+  
+ <node>
+  <nodeFdn>LTE01ERBS00001</nodeFdn>
+  <keyIds>
+   <keyId>1</keyId>
+   <keyId>2</keyId>
+  </keyIds>
+ </node>
+ 
+ <node>
+ <nodeFdn>node1234</nodeFdn>
+  <keyIds>
+   <keyId>1</keyId>
+   <keyId>2</keyId>
+  </keyIds>
+ </node>
+</nodes>

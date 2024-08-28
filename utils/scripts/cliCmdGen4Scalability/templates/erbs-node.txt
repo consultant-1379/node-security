@@ -1,0 +1,140 @@
+# get all NetworkElement trees
+cmedit get * NetworkElement.(*)
+cmedit get * NetworkElementSecurity.(normalUserName, normalUserPassword)
+
+# get specific NetworkElement
+cmedit get * NetworkElement.networkElementId==XXNODENAMEXX
+
+# NSCS PKI MANAGER MOCK STATUS
+# svc-1-secserv
+secadm test --restGet "http://10.247.246.125:8080/node-security/pkimanager/mockStatus"
+# svc-2-secserv
+secadm test --restGet "http://10.247.246.126:8080/node-security/pkimanager/mockStatus"
+
+# PKI ENTITY
+pkiadm etm --list -type ee -n XXNODENAMEXX-oam
+pkiadm etm --list -type ee -n XXNODENAMEXX-ipsec
+
+# ISCF OAM SCEP
+# svc-1-secserv
+secadm test --restGet "http://10.247.246.125:8080/node-security/iscf/seclevel?wanted=LEVEL_2&minimum=LEVEL_2&node=XXNODENAMEXX&logical=XXNODENAMEXXOAMSCEP&mode=SCEP&version=XXMIMXX&nodeType=ERBS"
+# svc-2-secserv
+secadm test --restGet "http://10.247.246.126:8080/node-security/iscf/seclevel?wanted=LEVEL_2&minimum=LEVEL_2&node=XXNODENAMEXX&logical=XXNODENAMEXXOAMSCEP&mode=SCEP&version=XXMIMXX&nodeType=ERBS"
+
+# ISCF OAM CMPv2_INITIAL
+# svc-1-secserv
+secadm test --restGet "http://10.247.246.125:8080/node-security/iscf/seclevel?wanted=LEVEL_2&minimum=LEVEL_2&node=XXNODENAMEXX&logical=XXNODENAMEXXOAMCMPV2INITIAL&mode=CMPv2_INITIAL&version=XXMIMXX&nodeType=ERBS"
+# svc-2-secserv
+secadm test --restGet "http://10.247.246.126:8080/node-security/iscf/seclevel?wanted=LEVEL_2&minimum=LEVEL_2&node=XXNODENAMEXX&logical=XXNODENAMEXXOAMCMPV2INITIAL&mode=CMPv2_INITIAL&version=XXMIMXX&nodeType=ERBS"
+
+# ISCF OAM CMPv2_VC
+# svc-1-secserv
+secadm test --restGet "http://10.247.246.125:8080/node-security/iscf/seclevel?wanted=LEVEL_2&minimum=LEVEL_2&node=XXNODENAMEXX&logical=XXNODENAMEXXOAMCMPV2VC&mode=CMPv2_VC&version=XXMIMXX&nodeType=ERBS"
+# svc-2-secserv
+secadm test --restGet "http://10.247.246.126:8080/node-security/iscf/seclevel?wanted=LEVEL_2&minimum=LEVEL_2&node=XXNODENAMEXX&logical=XXNODENAMEXXOAMCMPV2VC&mode=CMPv2_VC&version=XXMIMXX&nodeType=ERBS"
+
+# ISCF IPSEC SCEP
+# svc-1-secserv
+secadm test --restGet "http://10.247.246.125:8080/node-security/iscf/ipsec?node=XXNODENAMEXX&logical=XXNODENAMEXXIPSECSCEP&subjectAltName=172.13.14.15&subjectAltNameType=IPV4&ipsecAreas=OM&mode=SCEP&version=XXMIMXX&nodeType=ERBS"
+# svc-2-secserv
+secadm test --restGet "http://10.247.246.126:8080/node-security/iscf/ipsec?node=XXNODENAMEXX&logical=XXNODENAMEXXIPSECSCEP&subjectAltName=172.13.14.15&subjectAltNameType=IPV4&ipsecAreas=OM&mode=SCEP&version=XXMIMXX&nodeType=ERBS"
+
+# ISCF IPSEC CMPv2_INITIAL
+# svc-1-secserv
+secadm test --restGet "http://10.247.246.125:8080/node-security/iscf/ipsec?node=XXNODENAMEXX&logical=XXNODENAMEXXIPSECCMPV2INITIAL&subjectAltName=172.13.14.15&subjectAltNameType=IPV4&ipsecAreas=OM&mode=CMPv2_INITIAL&version=XXMIMXX&nodeType=ERBS"
+# svc-2-secserv
+secadm test --restGet "http://10.247.246.126:8080/node-security/iscf/ipsec?node=XXNODENAMEXX&logical=XXNODENAMEXXIPSECCMPV2INITIAL&subjectAltName=172.13.14.15&subjectAltNameType=IPV4&ipsecAreas=OM&mode=CMPv2_INITIAL&version=XXMIMXX&nodeType=ERBS"
+
+# ISCF IPSEC CMPv2_VC
+# svc-1-secserv
+secadm test --restGet "http://10.247.246.125:8080/node-security/iscf/ipsec?node=XXNODENAMEXX&logical=XXNODENAMEXXIPSECCMPV2VC&subjectAltName=172.13.14.15&subjectAltNameType=IPV4&ipsecAreas=OM&mode=CMPv2_VC&version=XXMIMXX&nodeType=ERBS"
+# svc-2-secserv
+secadm test --restGet "http://10.247.246.126:8080/node-security/iscf/ipsec?node=XXNODENAMEXX&logical=XXNODENAMEXXIPSECCMPV2VC&subjectAltName=172.13.14.15&subjectAltNameType=IPV4&ipsecAreas=OM&mode=CMPv2_VC&version=XXMIMXX&nodeType=ERBS"
+
+# ISCF COMBO (IPSEC + OAM) SCEP
+# svc-1-secserv
+secadm test --restGet "http://10.247.246.125:8080/node-security/iscf/combined?node=XXNODENAMEXX&logical=XXNODENAMEXXCOMBOSCEP&wanted=LEVEL_2&minimum=LEVEL_1&subjectAltName=172.13.14.15&subjectAltNameType=IPV4&ipsecAreas=OM&mode=SCEP&version=XXMIMXX&nodeType=ERBS"
+# svc-2-secserv
+secadm test --restGet "http://10.247.246.126:8080/node-security/iscf/combined?node=XXNODENAMEXX&logical=XXNODENAMEXXCOMBOSCEP&wanted=LEVEL_2&minimum=LEVEL_1&subjectAltName=172.13.14.15&subjectAltNameType=IPV4&ipsecAreas=OM&mode=SCEP&version=XXMIMXX&nodeType=ERBS"
+
+# ISCF COMBO (IPSEC + OAM) CMPv2_INITIAL
+# svc-1-secserv
+secadm test --restGet "http://10.247.246.125:8080/node-security/iscf/combined?node=XXNODENAMEXX&logical=XXNODENAMEXXCOMBOCMPV2INITIAL&wanted=LEVEL_2&minimum=LEVEL_1&subjectAltName=172.13.14.15&subjectAltNameType=IPV4&ipsecAreas=OM&mode=CMPv2_INITIAL&version=XXMIMXX&nodeType=ERBS"
+# svc-2-secserv
+secadm test --restGet "http://10.247.246.126:8080/node-security/iscf/combined?node=XXNODENAMEXX&logical=XXNODENAMEXXCOMBOCMPV2INITIAL&wanted=LEVEL_2&minimum=LEVEL_1&subjectAltName=172.13.14.15&subjectAltNameType=IPV4&ipsecAreas=OM&mode=CMPv2_INITIAL&version=XXMIMXX&nodeType=ERBS"
+
+# ISCF COMBO (IPSEC + OAM) CMPv2_VC
+# svc-1-secserv
+secadm test --restGet "http://10.247.246.125:8080/node-security/iscf/combined?node=XXNODENAMEXX&logical=XXNODENAMEXXCOMBOCMPV2VC&wanted=LEVEL_2&minimum=LEVEL_1&subjectAltName=172.13.14.15&subjectAltNameType=IPV4&ipsecAreas=OM&mode=CMPv2_VC&version=XXMIMXX&nodeType=ERBS"
+# svc-2-secserv
+secadm test --restGet "http://10.247.246.126:8080/node-security/iscf/combined?node=XXNODENAMEXX&logical=XXNODENAMEXXCOMBOCMPV2VC&wanted=LEVEL_2&minimum=LEVEL_1&subjectAltName=172.13.14.15&subjectAltNameType=IPV4&ipsecAreas=OM&mode=CMPv2_VC&version=XXMIMXX&nodeType=ERBS"
+
+# create SubNetwork and MeContext and NetworkElement
+cmedit create SubNetwork=Italy SubNetworkId=Italy -ns=OSS_TOP -version=3.0.0
+cmedit create SubNetwork=Italy,SubNetwork=Genoa SubNetworkId=Genoa -ns=OSS_TOP -version=3.0.0
+cmedit create SubNetwork=Italy,SubNetwork=Genoa,SubNetwork=Erzelli SubNetworkId=Erzelli -ns=OSS_TOP -version=3.0.0
+cmedit get SubNetwork=Italy
+cmedit get SubNetwork=Italy,SubNetwork=Genoa
+cmedit get SubNetwork=Italy,SubNetwork=Genoa,SubNetwork=Erzelli
+cmedit create SubNetwork=Italy,SubNetwork=Genoa,SubNetwork=Erzelli,MeContext=XXNODENAMEXX MeContextId=XXNODENAMEXX, neType=ERBS, platformType=CPP -ns=OSS_TOP -version=3.0.0
+cmedit get SubNetwork=Italy,SubNetwork=Genoa,SubNetwork=Erzelli,MeContext=XXNODENAMEXX
+cmedit create NetworkElement=XXNODENAMEXX networkElementId=XXNODENAMEXX, neType=ERBS, platformType=CPP, ossModelIdentity="XXOSSMODELIDENTITYXX", ossPrefix="SubNetwork=Italy,SubNetwork=Genoa,SubNetwork=Erzelli,MeContext=XXNODENAMEXX" -ns=OSS_NE_DEF -version=2.0.0
+
+# create MeContext and NetworkElement tree
+cmedit create MeContext=XXNODENAMEXX MeContextId=XXNODENAMEXX, neType=ERBS, platformType=CPP -ns=OSS_TOP -version=3.0.0
+cmedit get MeContext=XXNODENAMEXX
+cmedit create NetworkElement=XXNODENAMEXX networkElementId=XXNODENAMEXX, neType=ERBS, platformType=CPP, ossModelIdentity="XXOSSMODELIDENTITYXX", ossPrefix="MeContext=XXNODENAMEXX" -ns=OSS_NE_DEF -version=2.0.0
+cmedit get NetworkElement=XXNODENAMEXX
+
+# create Connectivity Info
+cmedit create NetworkElement=XXNODENAMEXX,CppConnectivityInformation=1 CppConnectivityInformationId=1, ipAddress="XXIPADDRESSXX", port=80 -ns=CPP_MED -version=1.0.0
+cmedit get NetworkElement=XXNODENAMEXX,CppConnectivityInformation=1
+
+# check that the NetworkElement 'add' flow worked ok... i.e. that the CmFunction, SecurityFunction and Supervision objects have been created
+cmedit get NetworkElement=XXNODENAMEXX,CmFunction=1
+cmedit get * CmFunction.syncStatus==SYNCHRONIZED
+cmedit get NetworkElement=XXNODENAMEXX,SecurityFunction=1
+cmedit get NetworkElement=XXNODENAMEXX,CmNodeHeartbeatSupervision=1
+
+# sets all supervision tasks... including sync, notifications, FM, PM & SHM supervision etc
+cmedit set NetworkElement=XXNODENAMEXX,CmNodeHeartbeatSupervision=1 active=true
+cmedit get NetworkElement=XXNODENAMEXX,CmNodeHeartbeatSupervision=1
+
+# set the alarm notification 
+fmedit set NetworkElement=XXNODENAMEXX,FmAlarmSupervision=1 alarmSupervisionState=true
+
+# check sync status
+cmedit get NetworkElement=XXNODENAMEXX,CmFunction=1
+
+# credentials create
+secadm credentials create --rootusername root --rootuserpassword shroot --secureusername netsim --secureuserpassword netsim --normalusername enm --normaluserpassword ericsson -n XXNODENAMEXX
+
+# credentials update
+secadm credentials update --rootusername root --rootuserpassword shroot --secureusername netsim --secureuserpassword netsim --normalusername enmuser --normaluserpassword ericsson -n XXNODENAMEXX
+
+# check that the NetworkElementSecurity object has been created
+cmedit get NetworkElement=XXNODENAMEXX,SecurityFunction=1,NetworkElementSecurity=1
+
+# keygen
+secadm keygen create -n XXNODENAMEXX -t RSA_1024
+http://localhost:8380/node-security/workflow/SSHKeyGeneration/XXNODENAMEXX?wfVariables=IS_CREATE=true,ALGORITHM=RSA_1024
+
+# issue certificate OAM
+secadm get certEnrollState --certtype OAM --nodelist XXNODENAMEXX
+secadm certificate issue -ct OAM -xf file:XXNODENAMEXX-OAM.xml
+
+# issue certificate IPSEC
+secadm get certEnrollState --certtype IPSEC --nodelist XXNODENAMEXX
+secadm certificate issue -ct IPSEC -xf file:XXNODENAMEXX-IPSEC.xml
+ 
+# Turn off supervision, for safe delete of Node in DPS
+cmedit set NetworkElement=XXNODENAMEXX,CmNodeHeartbeatSupervision=1 active=false
+cmedit set NetworkElement=XXNODENAMEXX,InventorySupervision=1 active=false
+cmedit set NetworkElement=XXNODENAMEXX,FmAlarmSupervision=1 active=false
+fmedit set NetworkElement=XXNODENAMEXX,FmAlarmSupervision=1 alarmSupervisionState=false
+
+# Node delete
+cmedit action NetworkElement=XXNODENAMEXX,CmFunction=1 deleteNrmDataFromEnm
+#cmedit delete MeContext=XXNODENAMEXX -ALL
+cmedit delete NetworkElement=XXNODENAMEXX -ALL
+

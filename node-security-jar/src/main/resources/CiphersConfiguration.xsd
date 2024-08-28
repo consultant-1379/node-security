@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name='ciphersConfiguration'>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name='nodeCiphers' type='NodeCiphers'
+					minOccurs='1' maxOccurs='unbounded' />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="NodeCiphers">
+		<xs:all>
+			<xs:element name="nodes" type="Nodes" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="sshProtocol" type="sshProtocol"
+				minOccurs="0" maxOccurs="1" />
+			<xs:element name="tlsProtocol" type="tlsProtocol"
+				minOccurs="0" maxOccurs="1" />
+		</xs:all>
+	</xs:complexType>
+
+	<xs:complexType name="Nodes">
+		<xs:sequence>
+			<xs:element name="nodeFdn" type="minStringLength"
+				minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="sshProtocol">
+		<xs:all>
+			<xs:element name="keyExchangeCiphers" type="keyExchangeCiphers"
+				minOccurs="0" maxOccurs="1" />
+			<xs:element name="encryptCiphers" type="encryptCiphers"
+				minOccurs="0" maxOccurs="1" />
+			<xs:element name="macCiphers" type="macCiphers" minOccurs="0"
+				maxOccurs="1" />
+		</xs:all>
+	</xs:complexType>
+
+	<xs:complexType name="tlsProtocol">
+		<xs:sequence>
+			<xs:element name="cipherFilter" type="xs:string"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="keyExchangeCiphers">
+		<xs:sequence>
+			<xs:element name="cipher" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="encryptCiphers">
+		<xs:sequence>
+			<xs:element name="cipher" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="macCiphers">
+		<xs:sequence>
+			<xs:element name="cipher" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="minStringLength">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:pattern value=".*[^\s].*" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

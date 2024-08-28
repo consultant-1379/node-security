@@ -1,0 +1,496 @@
+[ {
+  "targetCategory" : "NODE",
+  "targetType" : "SCU",
+  "targetModelIdentities" : [ "15D", "21A", "20A", "19B", "17C", "15A", "13A" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CISCO-ASR900",
+  "targetModelIdentities" : [ "17A" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "EPG-OI",
+  "targetModelIdentities" : [ "2.0", "2.1", "2.2", "2.3", "2.14", "3.4", "2.5", "3.5", "2.6", "2.11" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "UPG",
+  "targetModelIdentities" : [ "UPG-1.0", "1.5", "15A-R1A", "1.13" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vTIF",
+  "targetModelIdentities" : [ "18.Q4-R1A102", "20.Q1-R2A207" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CCES",
+  "targetModelIdentities" : [ "0.1.13" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "BSC",
+  "targetModelIdentities" : [ "BSC-G20.Q3-R1AY-APG43L-3.7.0-R8C", "BSC-G21.Q2-R1BK-APG43L-4.0.0-R1D", "BSC-G20.Q4-R1BC-APG43L-3.7.0-R8C", "BSC-G18.Q4-R1T-APG43L-3.6.0-R7A05", "BSC-G18.Q4-R1S-APG43L-3.5.0-R6A", "BSC-G21.Q1-R1BG-APG43L-4.0.0-R1D", "BSC-G20.Q1-R1AL-APG43L-3.7.0-R8C", "BSC-G18.Q2-R1J-APG43L-3.4.4-R5F", "BSC-G20.Q3-R1AX-APG43L-3.7.0-R8C", "BSC-G20.Q2-R1AT-APG43L-3.7.0-R8C", "BSC-G20.Q4-R1BD-APG43L-3.7.0-R8C", "BSC-G17.Q4-R1D-APG43L-3.4.0-R5A", "BSC-G21.Q1-R1BH-APG43L-4.0.0-R1D", "BSC-G19.Q3-R1Z-APG43L-3.6.0-R7D", "BSC-G21.Q2-R1BL-APG43L-4.0.0-R1D", "BSC-G19.Q4-R1AF-APG43L-3.6.0-R7D", "BSC-G19.Q3-R1AB-APG43L-3.6.0-R7D", "BSC-G18.Q3-R1M-APG43L-3.5.0-R6A", "BSC-G20.Q4-R1BA-APG43L-3.7.0-R8C", "BSC-G17.Q4-R1C-APG43L-3.4.0-R5A", "BSC-G19.Q1-R1V-APG43L-3.6.0-R7A", "BSC-G19.Q4-R1AG-APG43L-3.6.0-R7D", "BSC-G21.Q1-R1BE-APG43L-3.8.0-R9C", "BSC-G21.Q2-R1BJ-APG43L-4.0.0-R1D", "BSC-G19.Q2-R1Y-APG43L-3.6.0-R7D", "BSC-G18.Q1-R1F-APG43L-3.4.3-R5E", "BSC-G21.Q1-R1BF-APG43L-4.0.0-R1D", "BSC-G20.Q4-R1BB-APG43L-3.7.0-R8C", "BSC-G19.Q3-R1AC-APG43L-3.6.0-R7D", "BSC-G20.Q3-R1AZ-APG43L-3.7.0-R8C" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "JUNIPER-vMX",
+  "targetModelIdentities" : [ "18.2R1", "18.3R1", "18.4R1", "19.3R1", "19.4R1", "19.1R1", "20.1R1", "20.2R1", "19.2R1" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vCU-UP",
+  "targetModelIdentities" : [ "0.3.1", "0.2.3", "0.4.1" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Switch-6391",
+  "targetModelIdentities" : [ "M17.Q4-6391-2.9", "M17B-6391-2.8" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "BSP",
+  "targetModelIdentities" : [ "R7-R1A", "R14", "R10-R10D", "R13", "R18", "R17", "R19", "BSP-R11" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vWMG-OI",
+  "targetModelIdentities" : [ "2.3" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "RBS",
+  "targetModelIdentities" : [ "18.Q4-U.4.1000", "WRBS01.A09-U.4.1370", "WRBS01.A05-U.4.1360", "17A-U.4.460", "18.Q1-U.4.750", "17.Q4-U.4.720", "20.Q1-U.4.1290", "20.Q2-U.4.1310", "20.Q3-U.4.1340", "18.Q4-U.4.960", "17B-U.4.570", "18.Q4-U.4.1010", "18.Q3-U.4.940", "17B-U.4.630", "WRBS01.A09-U.4.1380", "18.Q1-U.4.800", "16B-U.4.340", "19.Q4-U.4.1230", "19.Q1-U.4.1070", "16A-U.4.210", "19.Q2-U.4.1130", "15B-U.4.91", "18.Q2-U.4.910", "19.Q2-U.4.1110", "19.Q3-U.4.1180" ],
+  "value" : true
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "RBS",
+  "targetModelIdentities" : [ "13B-S2.1.100", "13B-S.1.100" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "WMG-OI",
+  "targetModelIdentities" : [ "2.3" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vRC",
+  "targetModelIdentities" : [ "20.Q3-R4A", "20.Q2-R2E", "20.Q4-R5B", "20.Q4-R7C", "20.Q1-R1D", "21.Q2-R10A" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vEPG-OI",
+  "targetModelIdentities" : [ "2.0", "2.1", "2.2", "2.3", "2.14", "3.4", "2.5", "3.5", "2.6", "2.11" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "JUNIPER-PTX",
+  "targetModelIdentities" : [ "18.2R1", "18.3R1", "18.4R1", "19.3R1", "17A", "19.4R1", "19.1R1", "20.1R1", "19.2R1", "20.2R1" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-CN210",
+  "targetModelIdentities" : [ "M12A-CN210-1.2" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vMTAS",
+  "targetModelIdentities" : [ "1.16", "vMTAS-1.2", "vMTAS-1.0", "vMTAS-1.5", "1.11", "vMTAS-1.7" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-665x",
+  "targetModelIdentities" : [ "M20.Q1-665x-1.12", "M19.Q2-665x-1.9", "M18.Q2-665x-1.5", "M20.Q2-665x-1.13", "M18.Q4-665x-1.7", "M19.Q4-665x-1.11", "M20.Q4-665x-1.15", "M19.Q1-665x-1.8", "M20.Q3-665x-1.14", "M18.Q1-665x-1.4", "M19.Q3-665x-1.10" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "WMG",
+  "targetModelIdentities" : [ "WMG-1.0", "16B-R11D03", "1.3-R8A06" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vMRF",
+  "targetModelIdentities" : [ "1.10.0", "vMRF-1.2", "vMRF-1.1", "17A-R29C", "1.6" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MTAS",
+  "targetModelIdentities" : [ "MTAS-1.5", "MTAS-1.2", "MTAS-1.0" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-CN810R1",
+  "targetModelIdentities" : [ "M13B-CN810R1-1.0" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MRF",
+  "targetModelIdentities" : [ "MRF-1.1", "17A-R29C" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-CN810R2",
+  "targetModelIdentities" : [ "M16A-CN810R2-2.4FP" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vSD",
+  "targetModelIdentities" : [ "18A-R3A11", "20.Q2-R34A02", "20.Q2-R36A02", "20.Q4-R46A03" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MSRBS_V1",
+  "targetModelIdentities" : [ "18.Q3-R4J", "17B-R4C", "18.Q3-R4H", "18.Q1-R4E", "18.Q2-R4G", "17B-R4B", "16A-R9F", "19.Q1-R4N", "16A-R4B" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-PT2020",
+  "targetModelIdentities" : [ "M17.Q4-PT2020-2.9", "M17B-PT2020-2.8" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CCPC",
+  "targetModelIdentities" : [ "1.0" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vHSS-FE",
+  "targetModelIdentities" : [ "1.28", "1.25", "1.21", "1.31" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MRS",
+  "targetModelIdentities" : [ "6.9.4.0", "6.11.6.0", "6.10.6.0", "6.10.2.0", "6.11.2.0" ],
+  "value" : true
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "SC",
+  "targetModelIdentities" : [ "1.0.0_70", "1.1.0_829", "0.1.1", "1.0.0_58" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vEME",
+  "targetModelIdentities" : [ "16A-100", "vEME-1.1", "vEME-1.8", "17A-100" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "ESC",
+  "targetModelIdentities" : [ "15D", "17C", "15A", "18E", "13A" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "5GRadioNode",
+  "targetModelIdentities" : [ "19.Q2-R17A07" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "SGSN-MME",
+  "targetModelIdentities" : [ "15B-CP01", "15B-CP00", "1.11-R72B17", "1.45", "16A-CP09", "1.24", "16A-CP06", "14B-CP11", "1.42", "1.20", "16A-CP02", "16A-CP12", "1.18", "1.39", "1.13-R74B15", "1.36", "15A-CP01", "1.15", "1.33", "1.30", "16A-CP00", "16A-CP01", "1.28", "1.48" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vBGF",
+  "targetModelIdentities" : [ "16A-100", "vBGF-1.7", "vBGF-1.9", "1.13", "1.24" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "VTFRadioNode",
+  "targetModelIdentities" : [ "18.Q2-R3A03", "18.Q3-R9A48" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vDSC",
+  "targetModelIdentities" : [ "17B-R1A", "17A-R1A", "1.14", "1.13", "1.11", "1.9" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Router6x71",
+  "targetModelIdentities" : [ "R18Q2-GA", "R18Q3-GA", "R18Q2-EP2", "R18Q4-GA", "R18A-EP2", "R18Q3-CP1", "R19Q2-GA", "R19Q1-GA", "R18A-GA", "R20Q3-GA", "R18Q4-CP2", "R19Q1-CP1", "R20Q4-GA", "R20Q1-GA", "R20Q2-GA" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vBNG",
+  "targetModelIdentities" : [ "3.1" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CISCO-ASR9000",
+  "targetModelIdentities" : [ "17A" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "RVNFM",
+  "targetModelIdentities" : [ "20.Q2-R31A06", "20.Q3-R40A03", "18B-R13A02", "18A-R3A02", "20.Q4-R48A04" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "RadioTNode",
+  "targetModelIdentities" : [ "17.Q4-R17A193", "16B-R2JH", "17.Q2-R12B21", "17B-R9A57", "17A-R1ASL", "17.Q4-R19C07" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "RNC",
+  "targetModelIdentities" : [ "15B-V.5.4658", "18.Q3-V.14.340", "18.Q2-V.13.601", "19.Q1-V.16.389", "16B-V.7.1659-M9", "20.Q1-V.20.246", "18.Q1-V.12.290", "16A-V.6.940", "21.Q1-V.24.215", "19.Q2-V.17.543", "20.Q4-V.23.179", "21.Q1-V.24.49", "18.Q4-V.15.439",  "20.Q2-V.21.303", "20.Q2-V.21.229",  "17.Q4-V.11.338", "17B-V.9.1240", "20.Q3-V.22.308", "20.Q2-V.21.78", "17B-V.10.304", "17A-V.8.1349", "21.Q1-V.24.9", "20.Q4-V.23.107", "19.Q3-V.18.406", "20.Q4-V.23.61", "16A-V.6.940-J2", "15B-V.5.4658-G4",   "19.Q4-V.19.304", "16B-V.7.1659", "21.Q1-V.24.99" ],
+  "value" : true
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vDU",
+  "targetModelIdentities" : [ "0.5.1", "0.4.0", "0.7.3", "0.9.1", "0.7.4", "0.10.1", "0.3.0" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CCRC",
+  "targetModelIdentities" : [ "0.5.0", "0.7.2" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "JUNIPER-vSRX",
+  "targetModelIdentities" : [ "18.2R1", "18.3R1", "18.4R1", "19.3R1", "19.4R1", "19.1R1", "20.1R1", "20.2R1", "19.2R1" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Controller6610",
+  "targetModelIdentities" : [ "20.Q4-R1A04" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "HSS-FE",
+  "targetModelIdentities" : [ "1.28", "1.25", "1.21", "1.31" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-669x",
+  "targetModelIdentities" : [ "M19.Q1-669x-1.8", "M18.Q1-669x-1.4", "M18.Q2-669x-1.5", "M18.Q4-669x-1.7", "M20.Q3-669x-1.14", "M20.Q2-669x-1.13", "M19.Q2-669x-1.9", "M19.Q3-669x-1.10", "M20.Q1-669x-1.12", "M19.Q4-669x-1.11", "M20.Q4-669x-1.15" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vSAPC",
+  "targetModelIdentities" : [ "1.4", "1.12", "1.10", "1.8", "1.2-R2E" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vSBG",
+  "targetModelIdentities" : [ "vSBG-1.4", "vSBG-1.6", "vSBG-1.1", "2.1", "2.9.0" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "DSC",
+  "targetModelIdentities" : [ "17B-R1A", "17A-R1A", "1.14", "1.13", "1.11", "1.9" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vIPWorks",
+  "targetModelIdentities" : [ "vIPWorks-1.9", "vIPWorks-2.7", "vIPWorks-2.6", "vIPWorks-2.5", "vIPWorks-2.3", "vIPWorks-1.3", "17A-8" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-6351",
+  "targetModelIdentities" : [ "M17.Q4-6351-2.9", "M17B-6351-2.8" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-6352",
+  "targetModelIdentities" : [ "M17B-6352-2.8", "M20.Q1-6352-2.17", "M20.Q2-6352-2.18", "M19.Q1-6352-2.14", "M20.Q4-6352-2.19", "M17A-6352-2.7", "M18.Q4-6352-2.13", "M19.Q4-6352-2.16", "M18.Q2-6352-2.11", "M19.Q2-6352-2.15", "M17.Q4-6352-2.9" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "EME",
+  "targetModelIdentities" : [ "16A-100", "17A-100" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "ERBS",
+  "targetModelIdentities" : [ "4322-436-393", "4322-940-032", "1777-370-163", "1998-184-092", "17.Q2-H.1.362", "4280-987-331", "17A-H.1.80", "18.Q4-J.2.300", "17B-H.1.361", "17B-H.1.263", "18.Q3-J.2.150", "20.Q1-J.4.604", "16B-G.1.308", "4613-704-163", "3958-644-341", "17A-H.1.160", "17Q2-H.1.351", "19.Q4-J.4.252", "20.Q1-J.4.500", "16B-G.1.301", "19.Q3-J.4.50", "19.Q2-J.2.650", "16A-G.1.142", "16A-G.1.143", "3520-829-806", "20.Q1-J.4.606", "17.Q3-J.1.82", "18.Q2-J.1.280", "17.Q4-J.1.185", "17.Q3-J.1.81", "18.Q1-J.1.220", "19.Q1-J.2.450", "6824-690-779", "20.Q1-J.4.550", "17A-H.1.190", "20.Q1-J.4.555", "6607-651-025", "19.Q3-J.3.50" ],
+  "value" : true
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "BGF",
+  "targetModelIdentities" : [ "16A-100", "BGF-1.7" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CCSM",
+  "targetModelIdentities" : [ "0.15.0", "0.12.0" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Router6274",
+  "targetModelIdentities" : [ "R18Q2-GA", "R18Q3-GA", "R18Q2-EP2", "R18Q4-GA", "R18Q3-CP1", "R19Q2-GA", "R19Q1-GA", "R20Q3-GA", "R18Q4-CP2", "R19Q1-CP1", "R20Q4-GA", "R20Q1-GA", "R20Q2-GA" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Router6273",
+  "targetModelIdentities" : [ "R20Q3-GA", "R20Q4-GA", "R20Q1-GA", "R20Q2-GA" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-CN510R2",
+  "targetModelIdentities" : [ "M16A-CN510R2-2.4FP" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Router6672",
+  "targetModelIdentities" : [ "R18Q2-GA", "R18Q3-GA", "R18Q2-EP2", "R18Q4-GA", "R18A-EP2", "R18Q3-CP1", "R19Q2-GA", "R19Q1-GA", "R18A-GA", "R18Q4-CP2", "R20Q3-GA", "R19Q1-CP1", "R20Q4-GA", "R20Q2-GA", "R20Q1-GA", "R17B-GA", "R17A-GA" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Router6673",
+  "targetModelIdentities" : [ "R20Q4-GA" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Router6675",
+  "targetModelIdentities" : [ "R18Q2-GA", "R18Q3-GA", "R18Q2-EP2", "R18Q4-GA", "R18A-EP2", "R18Q3-CP1", "R19Q2-GA", "R19Q1-GA", "R18A-GA", "R18A-PRA2", "R20Q3-GA", "R18Q4-CP2", "R19Q1-CP1", "R20Q4-GA", "R20Q2-GA", "R20Q1-GA" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-CN510R1",
+  "targetModelIdentities" : [ "M12A-CN510R1-1.2" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "PCC",
+  "targetModelIdentities" : [ "1.9" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "IPWorks",
+  "targetModelIdentities" : [ "IPWorks-2.3", "IPWorks-1.3", "IPWorks-2.5", "17A-8", "IPWorks-2.7", "IPWorks-2.6", "IPWorks-1.9" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-6366",
+  "targetModelIdentities" : [ "M20.Q2-6366-1.13", "M18.Q1-6366-1.4", "M19.Q1-6366-1.8", "M20.Q3-6366-1.14", "M19.Q3-6366-1.10", "M20.Q1-6366-1.12", "M19.Q2-6366-1.9", "M20.Q4-6366-1.15", "M19.Q4-6366-1.11", "M18.Q4-6366-1.7", "M18.Q2-6366-1.5" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "PCG",
+  "targetModelIdentities" : [ "1.0" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "SIU02",
+  "targetModelIdentities" : [ "17A" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "NeLS",
+  "targetModelIdentities" : [ "2.9.0", "2.4.0" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "FRONTHAUL-6020",
+  "targetModelIdentities" : [ "18.Q2", "20.Q4", "19.Q4", "19.Q3", "18.Q3", "18.Q4", "20.Q2", "20.Q2.1", "19.Q2" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MINI-LINK-Indoor",
+  "targetModelIdentities" : [ "M19.Q4-TN-6.1.6-LH-2.1.6", "M20.Q3-TN-6.1.8-LH-2.1.8", "M18.Q2-TN-6.1.2-LH-2.1.2", "M15A-TN-5.3FP-LH-1.5FP", "M18.Q4-TN-6.1.3-LH-2.1.3", "M19.Q2-TN-6.1.5-LH-2.1.5", "M16A-TN-5.4FP-LH-1.6FP", "M17A-TN-6.0-LH-2.0", "M17.Q4-TN-6.1-LH-2.1", "M11B-TN-4.4FP.7", "M18.Q1-TN-6.1.1-LH-2.1.1", "M19.Q1-TN-6.1.4-LH-2.1.4" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Router8800",
+  "targetModelIdentities" : [ "2.0" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vCU-CP",
+  "targetModelIdentities" : [ "0.1.6", "0.1.3", "0.2.1" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CSCF",
+  "targetModelIdentities" : [ "CSCF-1.2", "CSCF-7.2", "CSCF-7.4" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "Fronthaul-6392",
+  "targetModelIdentities" : [ "M17.Q4-6392-2.9" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vWMG",
+  "targetModelIdentities" : [ "vWMG-1.0", "16B-R11D03", "1.3-R8A06" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "VEPG",
+  "targetModelIdentities" : [ "17B-1.0", "16B-R13C", "1.3", "1.6", "16A-CP06" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "JUNIPER-SRX",
+  "targetModelIdentities" : [ "18.2R1", "18.3R1", "18.4R1", "19.3R1", "17A", "19.4R1", "19.1R1", "20.1R1", "19.2R1", "20.2R1" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vCSCF",
+  "targetModelIdentities" : [ "vCSCF-1.3", "vCSCF-1.2", "vCSCF-7.2", "1.7.0", "vCSCF-7.4", "1.13.0" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "SBG",
+  "targetModelIdentities" : [ "SBG-1.4", "SBG-1.1" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vUPG",
+  "targetModelIdentities" : [ "vUPG-1.0", "15A-R1A", "1.13" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "SAPC",
+  "targetModelIdentities" : [ "1.1-R2A", "17A-R1C", "SAPC-1.0", "1.12", "1.10", "1.2-R2E", "1.8", "16B-R1A" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "RadioNode",
+  "targetModelIdentities" : [ "16A-R29AJ", "21.Q1-R23A35", "16B-R2ZV", "18.Q3-R49A16", "20.Q1-R83A03", "15B-R12EC", "18.Q1-R36A20", "18.Q4-R57A02", "19.Q2-R38A59", "16A-R28CJ", "19.Q2-R37A02", "20.Q2-R6A06", "18.Q2-R43A23", "17.Q3-R25D04", "17.Q3-R25C05", "17B-R12B12", "20.Q4-R19A30", "17A-R2E", "19.Q3-R40A04", "17A-R2YX", "17B-R5B02", "19.Q4-R82A02", "20.Q1-R87A18", "20.Q1-R88A07", "19.Q3-R44A20", "17.Q2-R12G10", "20.Q2-R3A08", "19.Q1-R31A15", "18.Q4-R55A36", "18.Q1-R36A20_P1", "20.Q3-R13A40", "17.Q4-R32B07" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "JUNIPER-MX",
+  "targetModelIdentities" : [ "16.1R7", "18.2R1", "18.3R1", "18.4R1", "19.3R1", "17A", "19.4R1", "19.1R1", "20.1R1", "20.2R1", "19.2R1" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "FRONTHAUL-6080",
+  "targetModelIdentities" : [ "17.Q3", "17.Q4" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "SSR",
+  "targetModelIdentities" : [ "4.0" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vWCG",
+  "targetModelIdentities" : [ "vWCG-1.2", "15B-6220" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "CCDM",
+  "targetModelIdentities" : [ "0.4.0", "0.8.1" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "vPP",
+  "targetModelIdentities" : [ "18.Q4-R17A05", "19.Q3-R24A163", "21.Q1-R48A17", "20.Q2-R34A14", "19.Q4-R24A325", "20.Q4-R43A04", "20.Q4-R46A03", "19.Q2-R22A96", "20.Q1-R30A33", "20.Q3-R41A01" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "TCU02",
+  "targetModelIdentities" : [ "17A" ],
+  "value" : false
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "MGW",
+  "targetModelIdentities" : [ "6.11.6.0", "6.9.6.0", "1484-383-806", "6.10.2.0", "14B-C.1.141", "6.9.2.0", "17A-C.1.257", "17A-C.1.267", "6.10.6.0", "17B-C.1.278", "17B-C.1.288", "6.11.2.0", "16A-C.1.203", "16A-C.1.214", "16B-C.1.243" ],
+  "value" : true
+}, {
+  "targetCategory" : "NODE",
+  "targetType" : "EPG",
+  "targetModelIdentities" : [ "16A-CP00", "17B-1.0", "16B-R13C", "1.3", "1.6" ],
+  "value" : false
+} ]

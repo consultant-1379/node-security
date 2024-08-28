@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ciphersConfiguration>
+  <nodeCiphers>
+    <nodes>
+      <nodeFdn>DG200001</nodeFdn>	  
+    </nodes>    
+	<sshProtocol>
+      <keyExchangeCiphers>
+	  <cipher>ssh-dss</cipher>        
+	   </keyExchangeCiphers>
+	  <encryptCiphers>
+	  <cipher>3des-cbc</cipher>	
+      </encryptCiphers>
+	  <macCiphers>
+        <cipher>hmac-sha2-512</cipher>		
+      </macCiphers>
+    </sshProtocol>
+	<tlsProtocol>
+	   <cipherFilter>RSA+SHA</cipherFilter>
+	 </tlsProtocol>			 
+</nodeCiphers>
+<nodeCiphers>
+    <nodes>
+      <nodeFdn>DG200001</nodeFdn>	  
+    </nodes>    
+	<sshProtocol>
+      <keyExchangeCiphers>
+	  <cipher>ssh-dss</cipher>        
+	   </keyExchangeCiphers>
+	  <encryptCiphers>
+	  <cipher>3des-cbc</cipher>	
+      </encryptCiphers>
+	  <macCiphers>
+        <cipher>hmac-sha2-512</cipher>		
+      </macCiphers>
+    </sshProtocol>
+	<tlsProtocol>
+	   <cipherFilter>RSA+SHA</cipherFilter>
+	 </tlsProtocol>			 
+</nodeCiphers>
+</ciphersConfiguration>

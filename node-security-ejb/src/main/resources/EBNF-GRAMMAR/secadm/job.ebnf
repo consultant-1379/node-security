@@ -1,0 +1,7 @@
+"secadm" (* slogan = "Manages security configuration and administration on network nodes" *) WS "job" (* slogan = "Get the current status of started job ids of secadm commands involving security operations on nodes" *) WS "get" WS ( "--all" (* slogan = "Gets the current status of all the job enrollments." *) | JOB_LIST ) [ JOB_SUMMARY ]
+
+JOB_LIST ::= ( "-j" (* hide = "true" *) | "--joblist" (* slogan = "Specify a list of jobs" *) ) WS JOB_ID { "," (* slogan = "Comma used to add another job id to the list." *) JOB_ID }
+
+JOB_ID ::= <job_id> (* slogan = "Specify Id of the job" *)
+
+JOB_SUMMARY ::= WS ( "-su" (* hide = "true" *) | "--summary" )

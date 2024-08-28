@@ -1,0 +1,1 @@
+secadm keygen create -n XXNODENAMEXX -t RSA_1024

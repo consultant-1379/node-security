@@ -1,0 +1,53 @@
+"secadm" (* slogan = "Manages security configuration and administration on network nodes" *) WS "ldap" (* slogan = "Configure and reconfigure the LDAP settings on a single or multiple nodes" *) WS ( CONFIGURE | RECONFIGURE | RENEW | LDAP_PROXY )
+
+CONFIGURE ::= "configure" (* slogan = "Configure Ldap Settings on Node" *)   WS ( LDAP_XML_FILE | MANUAL )
+
+RECONFIGURE ::= "reconfigure" (* slogan = "Reconfigure Ldap Settings on Node" *) WS LDAP_XML_FILE
+
+RENEW ::= "renew" (* slogan = "Renew Ldap Settings on Node" *) WS LDAP_XML_FILE
+
+MANUAL ::= ( "-ml" (* hide = "true" *) | "--manual" (* slogan = "Ldap Configuration on node. Tip: -ml for short" *) )
+
+LDAP_PROXY ::= "proxy" (* slogan = "Manage proxy accounts" *) WS ( LDAP_PROXY_GET | LDAP_PROXY_SET | LDAP_PROXY_DELETE )
+
+LDAP_PROXY_GET ::= "get" (* slogan = "Get proxy accounts" *) WS ( LDAP_PROXY_GET_ALL | LDAP_PROXY_GET_BY_INACTIVITY_SECONDS | LDAP_PROXY_GET_BY_INACTIVITY_HOURS | LDAP_PROXY_GET_BY_INACTIVITY_DAYS | LDAP_PROXY_GET_BY_ADMIN_STATUS ) [ LDAP_PROXY_GET_OPTIONALS ] [ LDAP_PROXY_GET_COUNT ]
+
+LDAP_PROXY_GET_ALL ::= "--all" (* slogan = "Gets the current status of all the proxy accounts" *)
+
+LDAP_PROXY_GET_BY_INACTIVITY_SECONDS ::= ( "-inacts" (* hide = "true" *) | "--inactivity-seconds" (* slogan = "Get the current status of the proxy accounts inactive for the given number of seconds. Tip: -inacts for short" *) ) WS INACTIVITY_SECONDS
+
+INACTIVITY_SECONDS ::= <inactivity_seconds> (* regex = "^[0-9]+$" slogan = "Specify the inactivity period in seconds" *)
+
+LDAP_PROXY_GET_BY_INACTIVITY_HOURS ::= ( "-inacth" (* hide = "true" *) | "--inactivity-hours" (* slogan = "Get the current status of the proxy accounts inactive for the given number of hours. Tip: -inacth for short" *) ) WS INACTIVITY_HOURS
+
+INACTIVITY_HOURS ::= <inactivity_hours> (* regex = "^[0-9]+$" slogan = "Specify the inactivity period in hours" *)
+
+LDAP_PROXY_GET_BY_INACTIVITY_DAYS ::= ( "-inactd" (* hide = "true" *) | "--inactivity-days" (* slogan = "Get the current status of the proxy accounts inactive for the given number of days. Tip: -inactd for short" *) ) WS INACTIVITY_DAYS
+
+INACTIVITY_DAYS ::= <inactivity_days> (* regex = "^[0-9]+$" slogan = "Specify the inactivity period in days" *)
+
+LDAP_PROXY_GET_BY_ADMIN_STATUS ::= LDAP_PROXY_ADMIN_STATUS_OPTION WS LDAP_PROXY_ADMIN_STATUS
+
+LDAP_PROXY_GET_OPTIONALS ::= ( LDAP_PROXY_LEGACY | LDAP_PROXY_SUMMARY )
+
+LDAP_PROXY_SUMMARY ::= WS ( "-su" (* hide = "true" *) | "--summary" (* slogan = "Get only global counters of the requested proxy accounts. Tip: -su for short" *) )
+
+LDAP_PROXY_LEGACY ::= WS ( "-le" (* hide = "true" *) | "--legacy" (* hide = "true"  slogan = "Get the current status of the requested proxy accounts on legacy branch only. Tip: -le for short" *) )
+
+LDAP_PROXY_GET_COUNT ::= WS ( "-c" (* hide = "true" *) | "--count" (* hide = "true" slogan = "Get the current status of the specified maximum number of proxy accounts. Tip: -c for short" *) ) WS COUNT
+
+COUNT ::= <count> (* regex = "^[0-9]+$" slogan = "Specify the maximum number of proxy accounts to return" *)
+
+LDAP_PROXY_SET ::= "set" (* slogan = "Set proxy accounts" *) WS LDAP_PROXY_SET_ADMIN_STATUS WS LDAP_XML_FILE [ LDAP_PROXY_FORCE ]
+
+LDAP_PROXY_SET_ADMIN_STATUS ::= LDAP_PROXY_ADMIN_STATUS_OPTION WS LDAP_PROXY_ADMIN_STATUS
+
+LDAP_PROXY_ADMIN_STATUS_OPTION ::= ( "-admin" (* hide = "true" *) | "--admin-status" (* slogan = "Set the administrative status of the proxy accounts. Tip: -admin for short" *) )
+
+LDAP_PROXY_ADMIN_STATUS ::= ( "ENABLED" (* slogan = "administrative status enabled" *) | "DISABLED" (* slogan = "administrative status disabled" *) )
+
+LDAP_PROXY_DELETE ::= "delete" (* slogan = "Delete proxy accounts" *) WS LDAP_XML_FILE [ LDAP_PROXY_FORCE ]
+
+LDAP_XML_FILE ::= ( "-xf" (* hide = "true" *) | "--xmlfile" (* slogan = "Specify the xml file. Tip: -xf for short" *) ) WS "file:" <file_name> (* inputType = "fileName" slogan = "Specify an xml file" *)
+
+LDAP_PROXY_FORCE ::= WS "--force" (* hide = "true" slogan = "Force the command execution" *)

@@ -1,0 +1,28 @@
+#################################
+# install specific dependencies #
+#################################
+#ERICwfscamunda_CXP9030500
+#ERICwfsmodel_CXP9031037
+#
+# Implementation of DataAccessDelegate interface
+#ERICdpsmediationclient2_CXP9038436
+#
+ERICftpjcaconnectorapi_CXP9031542
+ERICmediationengineapi2_CXP9038435
+ERICcryptographyservice_CXP9031013
+ERICcryptographyserviceapi_CXP9031014
+ERICpib_CXP9030194
+ERICscripteng_CXP9030314
+ERICwfsjee_CXP9030499
+ERICsecurityworkflows_CXP9031010
+ERICcmeditcommon_CXP9035095
+ERICcmwrite_CXP9030317
+ERICcmread_CXP9030316
+ERICcppaaservice_CXP9036618
+
+#################################
+# install NEO4J dependencies    #
+#################################
+ERICneo4jjcaapi_CXP9032725
+ERICneo4jjca_CXP9032726
+ERICdpsneo4j_CXP9032728

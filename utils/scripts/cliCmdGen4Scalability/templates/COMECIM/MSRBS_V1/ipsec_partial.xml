@@ -1,0 +1,6 @@
+	<Node>
+		<NodeFdn>XXNODENAMEXX</NodeFdn>
+		<EntityProfileName>PicoRBSIPSec_RS_SAN_CHAIN_EP</EntityProfileName>
+		<SubjectAltName>XXIPADDRESSXX</SubjectAltName>
+		<SubjectAltNameType>IP_ADDRESS</SubjectAltNameType>
+	</Node>

@@ -1,0 +1,17 @@
+<ExternalTrustedCACertificatesDetails>
+  <NodesTrustedCACertificateDetails>
+    <Nodes>
+        <Node>
+            <NodeFdn>LTE100ERBS00001</NodeFdn>
+            <InterfaceFdn>null</InterfaceFdn>
+        </Node>
+    </Nodes>
+    <TrustedCACertificates>
+      <TrustedCACertificateInfo>
+        <TDPSUrl>http://[2001:1b70:82a1:103::181]:8093/pki-ra-tdps/ca_entity/NE_OAM_CA/2755143a6f274b5/active/ENM_PKI_Root_CA</TDPSUrl>
+        <TrustedCACertIssuerDn>C=SE,O=ERICSSON,OU=BUCI_DUAC_NAM,CN=ENM_PKI_Root_CA </TrustedCACertIssuerDn>
+        <CertificateSerialNumber>2755143a6f274b5</CertificateSerialNumber>
+      </TrustedCACertificateInfo>
+    </TrustedCACertificates>
+  </NodesTrustedCACertificateDetails>
+</ExternalTrustedCACertificatesDetails>

@@ -1,0 +1,26 @@
+"secadm" (* slogan = "Manages security configuration and administration on network nodes" *) WS "sshkey" (* slogan = "Manage public and private SSH keys (key pair)" *) WS ( SK_UPDATE | SK_CREATE | SK_IMPORT | SK_DELETE )
+
+SK_UPDATE ::= "update" (* slogan = "Updates the public and private SSH keys (key pair). Tip: sku for short" *) [ SK_ALGORITHM_TYPE_SIZE ]  SK_TARGET_NODES
+
+SK_CREATE ::= "create" (* slogan = "Generates the public and private SSH keys (key pair).Tip: skc for short" *) SK_ALGORITHM_TYPE_SIZE  SK_TARGET_NODES
+
+SK_DELETE ::= "delete" (* slogan = "Deletes the public and private SSH keys (key pair).Tip: skd for short" *)  SK_TARGET_NODES
+
+SK_IMPORT ::= "import" (* slogan = "Imports node ssh privateKey from file and updates enmSshPrivateKey attribute in NetworkElementSecurity MO. Tip: ski for short" *) WS SSH_PRIVATE_KEY_FILE WS SK_SINGLE_NODE_NAME
+
+SSH_PRIVATE_KEY_FILE ::= ( "-skf" (* hide = "true" *) | "--sshprivatekeyfile" (* slogan = "Specify the file private key for a specific node. Tip: -spkf for short" *) ) WS "file:" <sshPrivateKey_file_name> (* inputType = "fileName" slogan = "Specify a file containing private key for a specific node" *)
+
+SK_SINGLE_NODE_NAME ::= ( "-nn" (* hide = "true" *) | "--nodename" (* slogan = "single node name for sshkey import. Tip: -nn for short" *) ) WS SK_NODE_NAME
+
+SK_TARGET_NODES ::= WS ( SK_NODE_LIST | SK_NODE_FILE )
+
+SK_NODE_LIST ::= ( "-n" (* hide = "true" *) | "--nodelist" (* slogan = "Specify the list of nodes. Tip: -n for short" *) ) WS SK_NODE_NAME { ( "," | ";" ) (* slogan = "Comma used to add another node name to the list." *) SK_NODE_NAME }
+
+SK_NODE_NAME ::= [ "NetworkElement=" ] <node_name> (* slogan = "Scope the Command using Node names. E.g. MyNode1,MyNode2" *) )
+
+SK_NODE_FILE ::= ( "-nf" (* hide = "true" *) | "--nodefile" (* slogan = "Specify the file containing a list of nodes. Tip: -nf for short" *) ) WS "file:" <file_name> (* inputType = "fileName" slogan = "Specify a file containing a list of nodes" *)
+
+SK_ALGORITHM_TYPE_SIZE ::= WS ( "-t" (* hide = "true" *) | "--algorithm-type-size" (* slogan = "Algorithm type size. Tip: -t for short" *) ) WS SK_ALGORITHM_NAME_SIZE
+
+SK_ALGORITHM_NAME_SIZE ::= ( "RSA_1024" | "RSA_2048" | "RSA_4096" )
+

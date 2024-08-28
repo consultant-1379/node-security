@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nodes>
+    <Node>
+        <NodeFdn>dg2ERBS01</NodeFdn>
+        <SubjectAltName>192.168.103.1</SubjectAltName>
+        <SubjectAltNameType>IP_ADDRESS</SubjectAltNameType>
+    </Node>
+</Nodes>
